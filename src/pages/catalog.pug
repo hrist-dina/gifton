@@ -1,0 +1,13 @@
+extends ../views/layouts/default
+include ../blocks/components/catalog-category/catalog-category
+
+block variables
+	- var title = "Каталог";
+	- var bg = 'test'
+	// Данные для миксинов Pug
+	include ../data/catalog
+
+block content
+	.container
+		- console.log(catalogCategory)
+		+catalog-category(catalogCategory)

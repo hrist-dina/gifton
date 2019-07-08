@@ -1,0 +1,9 @@
+mixin breadcrumbs(list)
+    if list
+        ul.breadcrumbs
+            for item in list
+                li.breadcrumbs__item
+                    if (item.link)
+                        a.breadcrumbs__link(href=item.link)=item.name
+                    else
+                        span=item.name

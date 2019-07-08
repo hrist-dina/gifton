@@ -1,0 +1,11 @@
+// Компоненты Pug
+// Если это миксин подключается в шапке файла, а вызов идет через "+" (плюс), например: +breadcrumbs(breadcrumbs)
+include ../../components/breadcrumbs/breadcrumbs
+
+header.header
+    .header__top
+    .header__main
+    .header__bottom(style={"background-image": `url(${bg})`})
+        .container
+            h1=title
+            +breadcrumbs(breadcrumbs)

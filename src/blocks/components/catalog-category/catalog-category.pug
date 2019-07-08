@@ -1,0 +1,10 @@
+mixin catalog-category(list)
+    .catalog-category
+        for item in list
+            a(href='#').catalog-category__item(class=item.type?item.type:'' style={"background-image": `url(${item.bg})`})
+                if item.icon
+                    .catalog-category__icon
+                        img(src=item.icon, alt=item.title)
+                .catalog-category__title=item.title
+                if item.arrow
+                    .catalog-category__arrow=item.arrow

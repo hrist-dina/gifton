@@ -1,0 +1,15 @@
+.header {
+
+  & h1 {
+    font-size: 39px;
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  &__bottom {
+    @include p-top(3);
+    @include p-bottom(4);
+    background-position: top center;
+    background-size: cover;
+  }
+}

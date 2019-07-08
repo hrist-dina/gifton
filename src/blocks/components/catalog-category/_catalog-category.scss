@@ -1,0 +1,42 @@
+.catalog-category {
+
+  @include m-top(-2);
+
+  &__item {
+    display: block;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  &__arrow {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 400;
+  }
+
+  & .full {
+    @include p-top(4);
+    @include p-bottom(4);
+    @include row-flex;
+    @include col();
+    @include size(16);
+    padding-left: 76px;
+    padding-right: 125px;
+  }
+
+  & .full &__title {
+    font-size: 31px;
+
+  }
+
+  & .full &__arrow {
+
+  }
+}

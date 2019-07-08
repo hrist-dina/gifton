@@ -1,0 +1,12 @@
+$col-height: 30px;
+
+@mixin m-top($n: 1) {
+  margin-top: $n * $col-height;
+}
+
+@mixin p-top($n: 1) {
+  padding-top: $n * $col-height;
+}
+@mixin p-bottom($n: 1) {
+  padding-bottom: $n * $col-height;
+}

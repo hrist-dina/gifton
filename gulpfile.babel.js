@@ -43,7 +43,8 @@ const webpackConfig = require("./webpack.config.js"),
 			watch: [
 				"./src/blocks/**/*.pug",
 				"./src/pages/**/*.pug",
-				"./src/views/**/*.pug"
+				"./src/views/**/*.pug",
+				"./src/data/**/*.pug"
 			]
 		},
 		styles: {
@@ -124,14 +125,14 @@ export const smartGrid = cb => {
 	smartgrid("./src/styles/vendor", {
 		outputStyle: "scss",
 		filename: "_smart-grid",
-		columns: 12, // number of grid columns
-		offset: "30px", // gutter width
+		columns: 16, // number of grid columns
+		offset: "16px", // gutter width
 		mobileFirst: true,
 		mixinNames: {
 			container: "container"
 		},
 		container: {
-			fields: "15px" // side fields
+			fields: "8px" // side fields
 		},
 		breakPoints: {
 			xs: {
