@@ -1,10 +1,14 @@
 mixin catalog-category(list)
-    .catalog-category
-        for item in list
-            a(href='#').catalog-category__item(class=item.type?item.type:'' style={"background-image": `url(${item.bg})`})
-                if item.icon
-                    .catalog-category__icon
-                        img(src=item.icon, alt=item.title)
-                .catalog-category__title=item.title
-                if item.arrow
-                    .catalog-category__arrow=item.arrow
+    section
+        .container
+            .catalog-category
+                for item in list
+                    a.catalog-category__item(href='#' class=[item.type?item.type:'', item.color?item.color:''])
+                        .catalog-category__bg(style={"background-image": `url(${item.bg})`})
+                        .catalog-category__content
+                            if item.icon
+                                .catalog-category__icon
+                                    img(src=item.icon, alt=item.name)
+                            .catalog-category__name=item.name
+                            if item.arrow
+                                .catalog-category__arrow=item.arrow

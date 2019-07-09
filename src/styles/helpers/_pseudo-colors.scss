@@ -1,0 +1,158 @@
+// pseudo element colors
+
+.red {
+  position: relative;
+
+  &:after {
+    background-color: #e54d3f;
+  }
+
+  &:hover {
+    --box-shadow-color: #e54d3f;
+  }
+}
+
+.dark-blue {
+  position: relative;
+
+  &:after {
+    background-color: #0c225e;
+  }
+
+  &:hover {
+    --box-shadow-color: #0c225e;
+  }
+}
+
+.blue {
+  position: relative;
+
+  &:after {
+    background-color: #00b9ee;
+  }
+
+  &:hover {
+    --box-shadow-color: #00b9ee;
+  }
+}
+
+
+.brown {
+  position: relative;
+
+  &:after {
+    background-color: #ef9534;
+  }
+
+  &:hover {
+    --box-shadow-color: #ef9534;
+  }
+}
+
+.light-red {
+  position: relative;
+
+  &:after {
+    background-color: #eb6d58;
+  }
+
+  &:hover {
+    --box-shadow-color: #eb6d58;
+  }
+}
+
+.light-green {
+  position: relative;
+
+  &:after {
+    background-color: #dadf3a;
+  }
+
+  &:hover {
+    --box-shadow-color: #dadf3a;
+  }
+}
+
+.light-grey {
+  position: relative;
+
+  &:after {
+    background-color: #be9c77;
+  }
+
+  &:hover {
+    --box-shadow-color: #be9c77;
+  }
+}
+
+.green {
+  position: relative;
+
+  &:after {
+    background-color: #a1c63b;
+  }
+
+  &:hover {
+    --box-shadow-color: #a1c63b;
+  }
+}
+
+.purple {
+  position: relative;
+
+  &:after {
+    background-color: #7d2bd8;
+  }
+
+  &:hover {
+    --box-shadow-color: #7d2bd8;
+  }
+}
+
+.orange {
+  position: relative;
+
+  &:after {
+    background-color: #ef9534;
+  }
+
+  &:hover {
+    --box-shadow-color: #ef9534;
+  }
+}
+
+.pacific-blue {
+  position: relative;
+
+  &:after {
+    background-color: #0a95dd;
+  }
+
+  &:hover {
+    --box-shadow-color: #0a95dd;
+  }
+}
+
+.gray {
+  position: relative;
+
+  &:after {
+    background-color: #969696;
+  }
+
+  &:hover {
+    --box-shadow-color: #969696;
+  }
+}
+
+.yellow {
+  position: relative;
+
+  &:after {
+    background-color: #f7ce00;
+  }
+
+  &:hover {
+    --box-shadow-color: #f7ce00;
+  }
+}

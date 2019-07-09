@@ -1,0 +1,14 @@
+mixin type-application(title, list)
+    section.type-application__section
+        .container
+            if title.length
+                .type-application__title
+                    span=title
+            .type-application
+                for item in list
+                    a.type-application__item(href='#')
+                        .type-application__bg(style={"background-image": `url(${item.bg})`})
+                        .type-application__content
+                            .type-application__icon
+                                img(src=item.icon, alt=item.name)
+                            .type-application__name=item.name

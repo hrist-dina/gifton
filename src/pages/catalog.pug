@@ -1,5 +1,6 @@
 extends ../views/layouts/default
 include ../blocks/components/catalog-category/catalog-category
+include ../blocks/components/type-application/type-application
 
 block variables
 	- var title = "Каталог";
@@ -8,6 +9,5 @@ block variables
 	include ../data/catalog
 
 block content
-	.container
-		- console.log(catalogCategory)
-		+catalog-category(catalogCategory)
+	+catalog-category(catalogCategory)
+	+type-application(typeApplication.title, typeApplication.list)

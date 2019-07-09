@@ -4,9 +4,25 @@ $col-height: 30px;
   margin-top: $n * $col-height;
 }
 
+@mixin m-bottom($n: 1) {
+  margin-bottom: $n * $col-height;
+}
+
 @mixin p-top($n: 1) {
   padding-top: $n * $col-height;
 }
 @mixin p-bottom($n: 1) {
   padding-bottom: $n * $col-height;
+}
+
+@mixin blur($value: 5px) {
+  $blur: none;
+  @if $value != none {
+    $blur: blur($value)
+  }
+  -webkit-filter: $blur;
+  -moz-filter: $blur;
+  -o-filter: $blur;
+  -ms-filter: $blur;
+  filter: $blur;
 }
