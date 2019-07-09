@@ -1,10 +1,79 @@
 .row {
-  @include row-flex();
+    @include row-flex();
 }
 
 .col {
-  @include col();
-  @include size(1);
-  height: 150px;
-  background-color: #00ffff;
+    @include col();
+    @include size(1);
+    height: 150px;
+    background-color: #00ffff;
+}
+
+button {
+    cursor: pointer;
+}
+
+.button-green {
+    display: inline-block;
+    padding: 13px 26px;
+    background: rgb(185, 207, 27);
+    box-shadow: 0px 4px 10px 0px rgba(185, 207, 27, 0.4);
+    text-decoration: none;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 20px;
+
+    &:hover {
+        background: rgba(185, 207, 27, 0.8);
+        box-shadow: 0px 2px 5px 0px rgba(185, 207, 27, 0.4);
+    }
+
+    &:active {
+        background: rgb(229, 229, 229);
+    }
+}
+
+rounded-button {
+    cursor: pointer;
+}
+
+.rounded-green {
+    display: inline-block;
+    position: relative;
+    padding: 12px;
+    border-radius: 50%;
+    background: rgb(185, 207, 27);
+    box-shadow: 0px 4px 10px 0px rgba(185, 207, 27, 0.4);
+    color: rgb(255, 255, 255);
+
+    &:hover {
+        background: rgba(185, 207, 27, 0.8);
+        box-shadow: 0px 2px 5px 0px rgba(185, 207, 27, 0.4);
+    }
+
+    &:active {
+        background: rgb(229, 229, 229);
+    }
+
+    &:before {
+        position: absolute;
+        content: "1";
+        width: 10px;
+        height: 10px;
+        // background-image: url(/src/img/round-arrow.png);
+        background-repeat: no-repeat;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 0;
+        bottom: 0;
+        text-align: center;
+    }
+}
+
+.h1 {
+    font-size: 31px;
+    color: rgb(60, 65, 76);
+    font-weight: bold;
 }
