@@ -20,8 +20,6 @@ h1, h2, h3, h4, h5, h6, ul {
 	@include xl(max-width, 1200px);
 }
 
-.img-responsive {
-	max-width: 500px;
-	width: 100%;
-	height: auto;
+.inner-page {
+	@include m-top(-2);
 }

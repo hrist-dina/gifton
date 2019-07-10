@@ -26,3 +26,11 @@ $col-height: 30px;
   -ms-filter: $blur;
   filter: $blur;
 }
+
+@mixin transition($time: .3s, $type: ease-in-out, $prop: all) {
+  -webkit-transition: $time $type $prop;
+  -moz-transition: $time $type $prop;
+  -ms-transition: $time $type $prop;
+  -o-transition: $time $type $prop;
+  transition: $time $type $prop;
+}

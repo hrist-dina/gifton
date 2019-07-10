@@ -1,5 +1,4 @@
 .catalog-category {
-  @include m-top(-2);
   @include m-bottom(4);
   display: flex;
   flex-wrap: wrap;
@@ -15,6 +14,7 @@
     margin-bottom: 16px;
     overflow: hidden;
     z-index: 1;
+    @include transition(0.2s);
 
     &:after {
       content: '';
@@ -45,7 +45,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    @include blur()
+    @include blur();
+    @include transition(0.2s);
 
   }
 

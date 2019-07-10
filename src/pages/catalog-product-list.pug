@@ -3,10 +3,9 @@ include ../blocks/components/catalog-category/catalog-category
 include ../blocks/components/type-application/type-application
 
 block variables
-	- var title = "Каталог";
+	- var title = "Каталог - список товаров";
 	// Данные для миксинов Pug
-	include ../data/catalog
+	include ../data/catalog-product-list
 
 block content
-	+catalog-category(catalogCategory)
-	+type-application(typeApplication.title, typeApplication.list)
+	include ../blocks/modules/content-with-sidebar/content-with-sidebar

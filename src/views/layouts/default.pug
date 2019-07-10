@@ -1,6 +1,7 @@
 include ../utils/mixins
 
 block variables
+	include ../utils/variables
 
 doctype html
 html(lang="ru")
@@ -9,7 +10,7 @@ html(lang="ru")
 	body
 		include ../../blocks/modules/header/header
 
-		main
+		main(class=isMain?'':'inner-page')
 			block content
 
 		include ../../blocks/modules/footer/footer

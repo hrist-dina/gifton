@@ -1,0 +1,31 @@
+.content-with-sidebar {
+
+  &__flex {
+    @include row-flex();
+  }
+
+  & .sidebar {
+    @include col();
+    @include size(4);
+    background: purple;
+    height: 500px;
+  }
+
+  & .content {
+    @include col();
+    @include size(12);
+    background: green;
+    height: 500px;
+  }
+}
+
+.content {
+  &__top-block {
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(1,1,1,0.05);
+    background-color: #fff;
+    padding: 30px 25px 35px;
+    margin-bottom: 16px;
+  }
+}
+

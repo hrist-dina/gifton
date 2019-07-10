@@ -1,0 +1,74 @@
+-
+    var bg = 'img/bg/catalog.jpg'
+
+-
+    var breadcrumbs = [
+        {
+            name: 'Главная',
+            link: '#'
+        },
+        {
+            name: 'Категория',
+            link: '#'
+        },
+        {
+            name: 'Каталог',
+            link: ''
+        }
+    ];
+
+-
+    var filter = {
+        blocks: [
+            {
+                name: 'Бренды:',
+                type: 'checkbox',
+                list: [
+                    {
+                    	name: 'brands[]',
+                        value: 'sols',
+                        text: "Sol's",
+                        active: true
+                    },
+                    {
+                        name: 'brands[]',
+                        value: 'apple',
+                        text: 'Apple'
+                    },
+                    {
+                        name: 'brands[]',
+                        value: 'ogio',
+                        text: 'Ogio',
+                        active: true
+                    },
+                    {
+                        name: 'brands[]',
+                        value: '4all',
+                        text: '4All',
+                        active: true
+                    },
+                    {
+                        name: 'brands[]',
+                        value: 'prodir',
+                        text: 'Prodir'
+                    },
+                    {
+                        name: 'brands[]',
+                        value: 'senator',
+                        text: 'Senator',
+                        disabled: true
+                    },
+                    {
+                        name: 'brands[]',
+                        value: 'portabello',
+                        text: 'Portabello',
+                        disabled: true
+                    }
+                ]
+            },
+            {
+            	name: 'Цена:',
+                type: 'price'
+            }
+        ]
+    };

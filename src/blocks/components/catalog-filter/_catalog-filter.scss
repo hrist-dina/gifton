@@ -1,0 +1,137 @@
+@mixin filter-container {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.catalog-filter {
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(1,1,1,0.05);
+  background-color: #fff;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ecf1f5;
+    height: 60px;
+
+    &-half {
+      @include filter-container();
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      &:first-child {
+        border-right: 1px solid #ecf1f5;
+      }
+
+      &:last-child {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 20px;
+    color: #32394d;
+    font-weight: 600;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__clean {
+    display: block;
+    position: relative;
+    font-size: 12px;
+    line-height: 20px;
+    color: #b4bfc7;
+    font-weight: 500;
+    text-decoration: none;
+    padding-right: 20px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background-image: url(icon-basket());
+      width: 12px;
+      height: 12px;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: auto;
+      margin: auto;
+
+    }
+  }
+
+  &__block {
+    @include filter-container();
+    border-bottom: 1px solid #ecf1f5;
+  }
+
+  &__name {
+    font-size: 12px;
+    line-height: 24px;
+    color: #32394d;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  &__checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &-text {
+      display: block;
+      position: relative;
+      padding: 4px 26px 4px 12px ;
+      box-sizing: border-box;
+      font-size: 12px;
+      line-height: 20px;
+      color: #7a7c81;
+      font-weight: 500;
+      border: 1px solid transparent;
+    }
+
+    & input {
+      display: none;
+    }
+
+    & input:checked + &-text {
+      color: #0b91d6;
+      border-radius: 15px;
+      border: 1px solid #e7ebee;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url(icon-close-mini());
+        width: 8px;
+        height: 8px;
+        top: 0;
+        bottom: 0;
+        right: 10px;
+        left: auto;
+        margin: auto;
+      }
+    }
+
+    & input:disabled + &-text {
+      color: #c8c9cb;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+    }
+  }
+}
+
