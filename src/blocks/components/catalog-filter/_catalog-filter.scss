@@ -133,5 +133,33 @@
       box-sizing: border-box;
     }
   }
+
+  &__price {
+
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      & input {
+        position: relative;
+        width: 100px;
+
+        &:first-child {
+
+          &:after {
+            content: '-';
+            right: 20px;
+            position: relative;
+            font-size: 18px;
+            line-height: 31px;
+            color: #7a7c81;
+            font-weight: 500;
+          }
+        }
+      }
+
+    }
+  }
 }
 

@@ -1,0 +1,42 @@
+@mixin filter-container {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.price-slider {
+  margin-bottom: 10px;
+  &__name {
+    font-size: 12px;
+    line-height: 24px;
+    color: #32394d;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 7px;
+      height: 1px;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      background-color: #7a7c81;
+    }
+
+    & input {
+      width: 100px;
+    }
+
+  }
+}
+

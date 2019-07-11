@@ -1,0 +1,10 @@
+mixin price-slider(item, customClass)
+    .price-slider
+        .price-slider__name(class=customClass?`${customClass}__name`:'')=item.name
+        if item.jsClass
+            .price-slider__list(class=customClass?`${customClass}__list`:'')
+                label
+                    input(class=`${item.jsClass}-min` type='text' name='min' value=item.price.filtered.min data-price-min=item.price.default.min)
+                label
+                    input(class=`${item.jsClass}-max` type='text' name='max' value=item.price.filtered.max data-price-max=item.price.default.max)
+            div(class=item.jsClass data-step=item.step)

@@ -1,5 +1,7 @@
+include ../price-slider/price-slider
+
 mixin catalog-filter(filter)
-    form.catalog-filter
+    form.catalog-filter.js-catalog-filter
         .catalog-filter__inner
             .catalog-filter__top
                 .catalog-filter__top-half
@@ -7,15 +9,31 @@ mixin catalog-filter(filter)
                 .catalog-filter__top-half
                     a(href='javascript:void(0)').catalog-filter__clean Очистить
             for item in filter.blocks
-                .catalog-filter__block
-                    .catalog-filter__name=item.name
-                    case item.type
-                        when 'checkbox'
+                case item.type
+                    when 'checkbox'
+                        .catalog-filter__block
+                            .catalog-filter__name=item.name
                             if item.list
                                 .catalog-filter__checkbox-list
                                     for checkbox in item.list
                                         label.catalog-filter__checkbox
                                             input(name=checkbox.name type="checkbox" value=checkbox.value checked=checkbox.active disabled=checkbox.disabled)
                                             span.catalog-filter__checkbox-text=checkbox.text
+                    when 'price'
+                        .catalog-filter__block
+                            +price-slider(item, 'catalog-filter')
+                    when 'dropdown'
+                        .catalog-filter__block.catalog-filter__dropdown.js-catalog-filter-dropdown
+                            .catalog-filter__name(data-dropdown-name)=item.name
+                            if item.input
+                              input(type='text', name=item.input)
+                            if item.list
+                                .catalog-filter__checkbox-list(data-dropdown-list)
+                                    for checkbox in item.list
+                                        label.catalog-filter__checkbox
+                                            input(name=checkbox.name type="checkbox" value=checkbox.value checked=checkbox.active disabled=checkbox.disabled)
+                                            span.catalog-filter__checkbox-text=checkbox.text
+
+
 
 

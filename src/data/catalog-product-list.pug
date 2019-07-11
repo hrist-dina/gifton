@@ -68,7 +68,70 @@
             },
             {
             	name: 'Цена:',
-                type: 'price'
-            }
+                type: 'price',
+                jsClass: 'js-price-slider',
+                step: 100,
+                price: {
+            		default: {
+                        min: 100,
+                        max: 10000,
+                    },
+                    filtered: {
+                        min: 1500,
+                        max: 4900,
+                    }
+                }
+            },
+            {
+                name: 'Количество',
+                type: 'dropdown',
+                input: 'count'
+            },
+            {
+                name: 'Другие',
+                type: 'dropdown',
+                list: [
+                    {
+                        name: 'other[]',
+                        value: 'sols',
+                        text: "Sol's",
+                        active: true
+                    },
+                    {
+                        name: 'other[]',
+                        value: 'apple',
+                        text: 'Apple'
+                    },
+                    {
+                        name: 'other[]',
+                        value: 'ogio',
+                        text: 'Ogio',
+                        active: true
+                    },
+                    {
+                        name: 'other[]',
+                        value: '4all',
+                        text: '4All',
+                        active: true
+                    },
+                        {
+                        name: 'other[]',
+                        value: 'prodir',
+                        text: 'Prodir'
+                    },
+                    {
+                        name: 'other[]',
+                        value: 'senator',
+                        text: 'Senator',
+                        disabled: true
+                    },
+                    {
+                        name: 'other[]',
+                        value: 'portabello',
+                        text: 'Portabello',
+                        disabled: true
+                    }
+                ]
+            },
         ]
     };
