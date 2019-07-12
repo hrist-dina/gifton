@@ -7,15 +7,12 @@
   & .sidebar {
     @include col();
     @include size(4);
-    background: purple;
-    height: 500px;
   }
 
   & .content {
     @include col();
     @include size(12);
     background: green;
-    height: 500px;
   }
 }
 

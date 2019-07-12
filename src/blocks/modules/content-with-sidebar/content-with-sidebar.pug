@@ -1,10 +1,12 @@
 include ../../components/catalog-filter/catalog-filter
+include ../../components/catalog-accordion/catalog-accordion
 
 section.content-with-sidebar
     .container
         .content-with-sidebar__flex
             .sidebar
                 +catalog-filter(filter)
+                +catalog-accordion(categories)
 
             .content
                 .content__top-block

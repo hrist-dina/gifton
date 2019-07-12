@@ -94,6 +94,24 @@
             font-weight: 500;
         }
     }
+
+    &-check-mark {
+        position: relative;
+        padding-left: 45px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            background-image: url(icon-check-mark());
+            width: 11px;
+            height: 8px;
+            top: 0;
+            bottom: 0;
+            right: auto;
+            left: 20px;
+            margin: auto;
+        }
+    }
 }
 
 .h1 {
