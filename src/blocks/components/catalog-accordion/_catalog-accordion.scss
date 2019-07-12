@@ -1,0 +1,119 @@
+@mixin filter-container {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.catalog-accordion {
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(1,1,1,0.05);
+  background-color: #fff;
+  margin-bottom: 16px;
+
+  &__top {
+    @include filter-container();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ecf1f5;
+    height: 60px;
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 20px;
+    color: #32394d;
+    font-weight: 600;
+  }
+
+  &__block {
+    @include filter-container();
+    border-bottom: 1px solid #ecf1f5;
+  }
+
+  &__name {
+    font-size: 14px;
+    line-height: 24px;
+    color: #32394d;
+    font-weight: 600;
+  }
+
+  &__dropdown {
+    @include transition(.5s);
+    &.active {
+      background-color: #f9fafb;
+    }
+
+    &-block {
+      display: none;
+      margin-top: 12px
+    }
+  }
+
+  &__dropdown &__name {
+    display: block;
+    position: relative;
+    padding-right: 10px;
+    cursor: pointer;
+    margin-bottom: 0;
+
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      bottom: auto;
+      right: 0;
+      left: auto;
+      width: 9px;
+      height: 6px;
+      margin-top: -3px;
+      background-image: url(icon-arrow-v());
+      background-position: center;
+      background-repeat: no-repeat;
+      @include transition(.5s);
+    }
+  }
+
+  &__dropdown.active &__dropdown-block {
+    display: block;
+  }
+  &__dropdown.active &__name {
+    &:after {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+
+  &__item {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & a {
+      width: 82px;
+      height: 159px;
+      font-size: 12px;
+      line-height: 20px;
+      color: #32394d;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    &.active {
+      & a {
+        color: #0b91d6;
+      }
+    }
+  }
+}
+
