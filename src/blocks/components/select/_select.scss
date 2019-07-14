@@ -1,0 +1,136 @@
+.select {
+  width: 100%;
+}
+
+.selection,
+.select2-selection,
+.select2-container {
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.select2-container--gifton,
+.select2-container--gifton-no-border {
+
+  & .select2-selection--single {
+    border-radius: 6px;
+    background-color: #fff;
+    border: 2px solid #ecf1f5;
+    height: 40px;
+    width: 100%;
+    padding: 9px 14px 12px 12px;
+    box-sizing: border-box;
+
+    & .select2-selection__rendered {
+      font-size: 12px;
+      color: #32394d;
+      font-weight: 500;
+    }
+
+    & .select2-selection__arrow {
+      height: 42px;
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      width: 30px;
+
+      & b {
+        background-image: url(icon-arrow-v());
+        width: 9px;
+        height: 6px;
+        left: 50%;
+        margin-top: -4px;
+        margin-left: -6px;
+        position: absolute;
+        top: 50%;
+      }
+    }
+  }
+
+  &.select2-container--below {
+    & .select2-selection__rendered {
+      color: black;
+    }
+  }
+
+  &.select2-container--open {
+    &  .select2-selection--single {
+      box-sizing: border-box;
+      border-radius: 6px 6px 0 0;
+
+      & .select2-selection__arrow b {
+        @include rotate();
+      }
+    }
+  }
+
+  & .select2-dropdown {
+    border-radius: 0 0 6px 6px;
+    top: -2px;
+    background-color: #ffffff;
+    border: 2px solid #ecf1f5;
+    width: 100%;
+  }
+
+  & .select2-results__option {
+    font-size: 12px;
+    color: #32394d;
+    font-weight: 500;
+    box-sizing: border-box;
+    padding: 14px 16px;
+
+    &[aria-disabled=true] {
+      display: none;
+    }
+
+    &:hover {
+      background-color: #ecf1f5;
+    }
+  }
+}
+
+.select2-container--gifton-no-border {
+  & .select2-dropdown {
+    top: 3px;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 2px solid #ecf1f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  & .select2-selection__rendered {
+    font-size: 12px;
+    line-height: 26px;
+    color: #32394d;
+    font-weight: 600;
+  }
+
+  & .select2-selection--single {
+    height: auto;
+    padding: 0;
+    border: none !important;
+
+    & .select2-selection__arrow {
+      height: 100%;;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      margin: auto;
+      width: 15px;
+
+    }
+  }
+
+  &.select2-container--open {
+    &  .select2-selection--single {
+      border-radius: 6px;
+    }
+  }
+}
+
+
+

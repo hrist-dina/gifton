@@ -1,166 +1,139 @@
 .row {
-    @include row-flex();
+  @include row-flex();
 }
 
 .col {
-    @include col();
-    @include size(1);
-    height: 150px;
-    background-color: #00ffff;
+  @include col();
+  @include size(1);
+  height: 150px;
+  background-color: #00ffff;
 }
 
 .btn {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 13px 25px;
-    background: rgb(185, 207, 27);
-    box-shadow: 0 4px 10px 0 rgba(185, 207, 27, 0.4);
-    text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 13px 25px;
+  background: rgb(185, 207, 27);
+  box-shadow: 0 4px 10px 0 rgba(185, 207, 27, 0.4);
+  text-decoration: none;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(185, 207, 27, 0.8);
+    box-shadow: 0 2px 5px 0 rgba(185, 207, 27, 0.4);
+  }
+
+  &:active {
+    background: rgb(229, 229, 229);
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &-fix {
+    max-width: 136px;
+  }
+
+  &-rounded {
+    border-radius: 50%;
+
+    &_large {
+      padding: 18px;
+    }
+
+    &_medium {
+      padding: 12px;
+      width: 30px;
+      height: 30px;
+    }
+
+    &_small {
+      padding: 8px;
+    }
+  }
+
+  &-arrow-right {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 13px;
+      background-image: url(../img/icon-arrow-right.png);
+      background-repeat: no-repeat;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      text-align: center;
+    }
+  }
+
+  &-number {
+    position: relative;
+
+    &:before {
+      content: attr(data-number);
+      position: absolute;
+      height: 14px;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      font-weight: 500;
+    }
+  }
+
+  &-check-mark {
+    position: relative;
+    padding-left: 45px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background-image: url(icon-check-mark());
+      width: 11px;
+      height: 8px;
+      top: 0;
+      bottom: 0;
+      right: auto;
+      left: 20px;
+      margin: auto;
+    }
+  }
+
+  &-blue {
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(10, 149, 221, 0.4);
+    background-color: rgb(10, 149, 221);
+    padding: 4px 27px;
     font-size: 14px;
-    color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 20px;
-    box-sizing: border-box;
-    cursor: pointer;
+    line-height: 26px;
+    color: #ffffff;
+    font-weight: 500;
 
     &:hover {
-        background: rgba(185, 207, 27, 0.8);
-        box-shadow: 0 2px 5px 0 rgba(185, 207, 27, 0.4);
+      background-color: rgba(10, 149, 221, .8);
+      box-shadow: 0 2px 5px 0 rgba(10, 149, 221, 0.4);
     }
-
-    &:active {
-        background: rgb(229, 229, 229);
-    }
-
-    &:focus,
-    &:active {
-        outline: none;
-    }
-
-    &-fix {
-        max-width: 136px;
-    }
-
-    &-rounded {
-        border-radius: 50%;
-
-        &_large {
-            padding: 18px;
-        }
-
-        &_medium {
-            padding: 12px;
-            width: 30px;
-            height: 30px;
-        }
-
-        &_small {
-            padding: 8px;
-        }
-    }
-
-    &-arrow-right {
-        position: relative;
-        &:before {
-            content: "";
-            position: absolute;
-            width: 8px;
-            height: 13px;
-            background-image: url(../img/icon-arrow-right.png);
-            background-repeat: no-repeat;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            text-align: center;
-        }
-    }
-
-    &-number {
-        position: relative;
-        &:before {
-            content: attr(data-number);
-            position: absolute;
-            height: 14px;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            text-align: center;
-            font-size: 14px;
-            color: #fff;
-            font-weight: 500;
-        }
-    }
-
-    &-check-mark {
-        position: relative;
-        padding-left: 45px;
-
-        &:before {
-            content: '';
-            position: absolute;
-            background-image: url(icon-check-mark());
-            width: 11px;
-            height: 8px;
-            top: 0;
-            bottom: 0;
-            right: auto;
-            left: 20px;
-            margin: auto;
-        }
-    }
+  }
 }
 
 .h1 {
-    font-size: 31px;
-    color: rgb(60, 65, 76);
-    font-weight: bold;
-}
-
-.product {
-    margin-top: 15px;
-    margin-bottom: 75px;
-}
-.card {
-    margin-right: 10px;
-    border-radius: 6px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 4px 20px 0px rgba(1, 1, 1, 0.15);
-
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        list-style-type: none;
-    }
-
-    &__inner {
-        width: calc(100% / 4);
-        box-sizing: border-box;
-    }
-
-    &__description {
-        font-size: 14px;
-        color: rgb(50, 57, 77);
-        font-weight: bold;
-        text-decoration: none;
-    }
-
-    &__text {
-        font-size: 9px;
-        color: rgba(60, 65, 76, 0.6);
-    }
-
-    &__price {
-        border-top: 2px solid rgb(236, 241, 245);
-        font-size: 14px;
-        color: rgb(185, 207, 27);
-        font-weight: bold;
-    }
-}
-
-.btn-basket {
-    border-radius: 0;
+  font-size: 31px;
+  color: rgb(60, 65, 76);
+  font-weight: bold;
 }

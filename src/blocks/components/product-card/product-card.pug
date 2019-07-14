@@ -1,0 +1,27 @@
+include ../select/select
+include ../select-quantity/select-quantity
+
+mixin product-card(productCard)
+    .product-card
+        .product-card__inner
+            .product-card__marker-list
+                if productCard.quantity
+                    .product-card__marker=`${productCard.quantity} шт.`
+            .product-card__img
+                img(src=productCard.img alt=productCard.title)
+            .product-card__info
+                .product-card__price=`${productCard.price} ₽`
+                a(href="#").product-card__title=productCard.title
+                .product-card__article=productCard.article
+            .product-card__actions
+                .product-card__size
+                    +select(productCard.size, 'size')
+                .product-card__quantity
+                    +select-quantity(productCard.quantityCurrent, productCard.quantity)
+
+            button.btn.btn-fix.btn-basket В корзину
+
+
+.product-card__list(class=productCards.type)
+    for productCard in productCards.list
+     +product-card(productCard)

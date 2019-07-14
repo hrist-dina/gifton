@@ -1,5 +1,7 @@
 include ../../components/catalog-filter/catalog-filter
 include ../../components/catalog-accordion/catalog-accordion
+include ../../components/catalog-view-mode/catalog-view-mode
+include ../../components/catalog-sort/catalog-sort
 
 section.content-with-sidebar
     .container
@@ -10,3 +12,9 @@ section.content-with-sidebar
 
             .content
                 .content__top-block
+                    .content__top-action
+                        +catalog-view-mode(modes)
+                        +catalog-sort(sort)
+                    include ../../components/catalog-search/catalog-search
+                .content__main-block
+                    include ../../components/product-card/product-card

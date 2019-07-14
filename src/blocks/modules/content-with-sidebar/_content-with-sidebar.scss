@@ -12,17 +12,27 @@
   & .content {
     @include col();
     @include size(12);
-    background: green;
   }
 }
 
 .content {
-  &__top-block {
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(1,1,1,0.05);
-    background-color: #fff;
-    padding: 30px 25px 35px;
-    margin-bottom: 16px;
+  &__top {
+   &-action {
+     display: flex;
+     align-items: center;
+     justify-content: flex-start;
+   }
+
+   &-block {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     border-radius: 6px;
+     box-shadow: 0 4px 10px rgba(1, 1, 1, 0.05);
+     background-color: #fff;
+     padding: 25px 35px 25px 30px;
+     margin-bottom: 16px;
+   }
   }
 }
 
