@@ -1,0 +1,61 @@
+include ../select/select
+include ../select-quantity/select-quantity
+
+mixin product-pic(productPic)
+    .product-pic
+        .product-pic__top
+            if productPic.markerList
+                .product-pic__marker-list
+                    for marker in productPic.markerList
+                        .product-pic__marker(class=marker.type)=marker.text
+            .product-pic__slider-main.js-product-slider-main
+                for slide in productPic.mainSlider
+                    a(href=slide.img).slide
+                        img(src=slide.img alt='')
+        .product-pic__bottom
+            .product-pic__slider-nav.js-product-slider-nav
+                for slide in productPic.miniSlider
+                    .slide
+                        img(src=slide.img alt='')
+
+
+
+
+mixin product-top(productOption)
+    .product-top
+        .product-top__inner
+            .product-top__option-list
+                for option in productOption
+                    .product-top__option(class=option.active?'active':'')
+                        a(href='#')
+                            img(src=option.img)
+
+
+mixin product-box(productBox)
+    .product-box
+        .product-box__inner
+            .product-box__top
+                .product-box__title=productBox.title
+                .product-box__top-right
+                    .product-card__article=productBox.article
+                    +raiting(productBox.rating)
+        .product-box__commercial
+            .product-box__price=`${productBox.price} ₽`
+            .product-card__balance
+                .product-card__balance-value=`${productBox.balance} шт`
+                .product-card__balance-text на складе
+
+        if productBox.props
+            ul.product-box__info
+                for prop in productBox.props
+                    li.product-box__prop
+                        .product-box__prop-name=prop.name
+                        .product-box__prop-value=prop.value
+        .product-box__actions
+            .product-box__size
+                +select(productCard.size, 'size')
+            .product-box__quantity
+                +select-quantity(productCard.quantityCurrent, productCard.quantity)
+        .product-box__bottom
+            .product-box__sum
+            button.btn.btn-fix.btn-basket В корзину

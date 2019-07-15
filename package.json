@@ -54,6 +54,7 @@
 		"jquery": "^3.4.1",
 		"nouislider": "^14.0.2",
 		"select2": "^4.0.7",
+		"slick-carousel": "^1.8.1",
 		"smart-grid": "^2.1.2",
 		"wnumb": "^1.1.0"
 	}
