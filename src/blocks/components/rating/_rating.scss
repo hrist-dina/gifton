@@ -1,0 +1,17 @@
+.rating {
+  display: flex;
+
+  &__item {
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    background-image: url(icon-rating());
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &.active {
+      background-image: url(icon-rating(true));
+    }
+  }
+}

@@ -1,0 +1,9 @@
+mixin rating(count)
+    .rating
+        - for (let i = 0; i < 5; i++) {
+            - if (i < count) {
+                .rating__item.active
+            - } else {
+                .rating__item
+            - }
+        - }

@@ -1,5 +1,6 @@
 include ../select/select
 include ../select-quantity/select-quantity
+include ../rating/rating
 
 mixin product-pic(productPic)
     .product-pic
@@ -33,29 +34,31 @@ mixin product-top(productOption)
 
 mixin product-box(productBox)
     .product-box
-        .product-box__inner
-            .product-box__top
+        .product-box__top
+            .product-box__inner
                 .product-box__title=productBox.title
-                .product-box__top-right
-                    .product-card__article=productBox.article
-                    +raiting(productBox.rating)
-        .product-box__commercial
-            .product-box__price=`${productBox.price} ₽`
-            .product-card__balance
-                .product-card__balance-value=`${productBox.balance} шт`
-                .product-card__balance-text на складе
+                .product-box__inner-right
+                    .product-box__article=productBox.article
+                    +rating(productBox.rating)
+            .product-box__commercial
+                .product-box__price=`${productBox.price} ₽`
+                .product-box__balance
+                    .product-box__balance-value=`${productBox.balance} шт`
+                    .product-box__balance-text на складе
 
-        if productBox.props
-            ul.product-box__info
-                for prop in productBox.props
-                    li.product-box__prop
-                        .product-box__prop-name=prop.name
-                        .product-box__prop-value=prop.value
+            if productBox.props
+                ul.product-box__info
+                    for prop in productBox.props
+                        li.product-box__prop
+                            .product-box__prop-name=`${prop.name}:`
+                            .product-box__prop-value=prop.value
         .product-box__actions
             .product-box__size
-                +select(productCard.size, 'size')
+                +select(productBox.size, 'size')
             .product-box__quantity
-                +select-quantity(productCard.quantityCurrent, productCard.quantity)
+                +select-quantity(productBox.quantityCurrent, productBox.quantity)
         .product-box__bottom
-            .product-box__sum
-            button.btn.btn-fix.btn-basket В корзину
+            .product-box__bottom-half
+                .product-box__sum.js-product-detail-sum=`${productBox.quantityCurrent*productBox.price} ₽`
+            .product-box__bottom-half
+                button.btn.btn-basket В корзину

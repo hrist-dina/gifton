@@ -19,13 +19,17 @@ export class ProductDetail {
             slidesToScroll: 1,
             arrows: false,
             fade: true,
+            asNavFor: this.sliderNav
         });
         $(this.sliderNav).slick({
+            nextArrow: '<div class="slider-round-button next"></div>',
+            prevArrow: '<div class="slider-round-button prev"></div>',
             slidesToShow: 4,
             slidesToScroll: 1,
             asNavFor: this.sliderMain,
+            arrows: true,
             dots: false,
-            centerMode: true,
+            variableWidth: true,
             focusOnSelect: true,
             rows: 0
         });
