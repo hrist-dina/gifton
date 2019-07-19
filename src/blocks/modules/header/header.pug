@@ -3,10 +3,23 @@
 include ../../components/breadcrumbs/breadcrumbs
 
 header.header
-    .header__top
-        |jkdlnfnkk
+    .container
+        .header__top
+            .header__top-left
+                .header__top-contact
+                    .contact__tel(href="tel:+74952252528")
+                    span.contact__number +7&nbsp;(495)&nbsp;225-25-28
+                        span.contact__hours (пн-пт 10-18)
+                    span.contact__address г. Москва, Профсоюзная ул., 23
+                    .contact__mail(href="mailto:info@gifton.ru") info@gifton.ru
+            .header__top-right
+                .important-text 25 000 ₽ - мин. сумма заказа
     .header__main
     .header__bottom(style={"background-image": `url(${bg})`})
         .container
             h1=title
             +breadcrumbs(breadcrumbs)
+
+
+
+
