@@ -137,3 +137,49 @@
   color: rgb(60, 65, 76);
   font-weight: bold;
 }
+
+
+.souvenir {
+
+
+
+  &__inner {
+    background: red;
+    padding: 60px 80px;
+    border-radius: 6px;
+  }
+
+  &__title {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &__text  {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.2;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+  }
+
+  &__item {
+    margin-right: 60px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+}
