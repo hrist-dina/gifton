@@ -120,3 +120,32 @@ input:focus + .slider {
     font-style: normal;
     font-weight: 300;
 }
+
+
+.header__main {
+     &-right {
+         text-align: right;
+
+     }
+
+}
+
+.header-menu {
+        display: flex;
+
+    &__item {
+        margin-right: 30px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        font-size: 15px;
+        font-family: "Montserrat";
+        color: rgb(29, 157, 223);
+        line-height: 1.2;
+        text-decoration: none;
+    }
+
+}

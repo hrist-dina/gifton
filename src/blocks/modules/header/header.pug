@@ -15,11 +15,23 @@ header.header
             .header__top-right
                 .important-text 25 000 ₽ - мин. сумма заказа
     .header__main
+        .header__main-right
+            .header-menu
+                .header-menu__item
+                    a.header-menu__link(href="") Главная
+                .header-menu__item
+                    a.header-menu__link(href="") О нас
+                .header-menu__item
+                    a.header-menu__link(href="") Портфолио
+                .header-menu__item
+                    a.header-menu__link(href="") Каталог
+                .header-menu__item
+                    a.header-menu__link(href="") Услуги
+
+        .header__main-left
+
     .header__bottom(style={"background-image": `url(${bg})`})
         .container
             h1=title
             +breadcrumbs(breadcrumbs)
-
-
-
 
