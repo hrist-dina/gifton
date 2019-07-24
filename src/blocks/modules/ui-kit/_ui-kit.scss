@@ -140,6 +140,60 @@
 
 
 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 31px;
+
+  & input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(229, 229, 229);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    border-radius: 4px;
+    width: 24px;
+    height: 25px;
+    left: 4px;
+    bottom: 4px;
+    background: rgb(255, 255, 255);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
+
+input:checked + .slider {
+  background-color: rgb(185, 207, 27);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(25px);
+  -ms-transform: translateX(25px);
+  transform: translateX(25px);
+}
+
+input:focus + .slider {
+  box-shadow: rgb(229, 229, 229);
+}
+
+
 .description {
   &__inner {
     background: red;

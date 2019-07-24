@@ -3,32 +3,55 @@
 include ../../components/breadcrumbs/breadcrumbs
 
 header.header
-    .container
-        .header__top
-            .header__top-left
-                .header__top-contact
-                    .contact__tel(href="tel:+74952252528")
-                    span.contact__number +7&nbsp;(495)&nbsp;225-25-28
-                        span.contact__hours (пн-пт 10-18)
-                    span.contact__address г. Москва, Профсоюзная ул., 23
-                    .contact__mail(href="mailto:info@gifton.ru") info@gifton.ru
-            .header__top-right
-                .important-text 25 000 ₽ - мин. сумма заказа
+    .header__top
+        .container
+            .header__top-inner
+                .header__top-left
+                    ul.header__contact-list
+                        li.header__contact
+                            a.header__contact_phone(href="tel:+74952252528") +7&nbsp;(495)&nbsp;225-25-28
+                            |&nbsp;
+                            span (пн-пт 10-18)
+                        li.header__contact.header__contact_address г. Москва, Профсоюзная ул., 23
+                        li.header__contact
+                            a.header__contact_mail(href="mailto:info@gifton.ru") info@gifton.ru
+                .header__top-right
+                    .header__attention 25 000 ₽ - мин. сумма заказа
     .header__main
-        .header__main-right
-            .header-menu
-                .header-menu__item
-                    a.header-menu__link(href="") Главная
-                .header-menu__item
-                    a.header-menu__link(href="") О нас
-                .header-menu__item
-                    a.header-menu__link(href="") Портфолио
-                .header-menu__item
-                    a.header-menu__link(href="") Каталог
-                .header-menu__item
-                    a.header-menu__link(href="") Услуги
+        .container
+            .header__main-inner
+                .header__main-left
+                    a(href="/").haeder__logo
+                        img(src='img/header/header-logo.png')
+                .header__main-right
+                    ul.header-menu
+                        li.header-menu__item.active
+                            a.header-menu__link(href="#") Главная
+                        li.header-menu__item
+                            a.header-menu__link(href="#") О нас
+                        li.header-menu__item
+                            a.header-menu__link(href="#") Портфолио
+                        li.header-menu__item
+                            a.header-menu__link(href="#") Каталог
+                        li.header-menu__item
+                            a.header-menu__link(href="#") Услуги
+                    // Если нужно убрать иконку количества товаров в корзине, то нужно добавить класс "is-empty"
+                    .header-basket(data-basket-count="3").active
+    .header__line
+        .container
+            .header__line-inner
+                .header__line-item.bg-light-blue
+                .header__line-item.bg-green
+                .header__line-item.bg-yellow
+                .header__line-item.bg-red
+                .header__line-item.bg-blue
+                .header__line-item.bg-yellow
+                .header__line-item.bg-orange
+                .header__line-item.bg-light-green
 
-        .header__main-left
+
+
+
 
     .header__bottom(style={"background-image": `url(${bg})`})
         .container
