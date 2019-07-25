@@ -186,20 +186,6 @@
 
     }
 
-    &__line {
-        @extend .bg-blue;
-
-        &-inner {
-            @include row-flex();
-            height: 3px;
-        }
-
-        &-item {
-            @include col-padding();
-            @include size(2);
-        }
-    }
-
     &-basket {
         position: relative;
         display: inline-block;
