@@ -130,6 +130,53 @@
       box-shadow: 0 2px 5px 0 rgba(10, 149, 221, 0.4);
     }
   }
+
+  &-search {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      background: url(icon-search('fff')) no-repeat center;
+      background-size: 12px 14px;
+      width: 12px;
+      height: 14px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+
+  &-remove {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: 2px solid #ecf1f5;
+    cursor: pointer;
+
+    &:before {
+      content: '+';
+      position: absolute;
+      text-align: center;
+      width: 14px;
+      height: 14px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      font-size: 21px;
+      color: #b4bfc7;
+      font-weight: 500;
+
+      @include rotate(45deg);
+
+    }
+  }
 }
 
 .h1 {

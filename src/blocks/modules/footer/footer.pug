@@ -2,8 +2,11 @@ footer.footer
     include ../../components/color-line/color-line
     .container
         .footer-main
-            a(href="/").footer__logo
-                img(src='img/footer/footer-logo.png')
+            .footer__logo(style='background-image: url("img/footer/")')
+                a(href="/")
+                    img(src='img/footer/footer-logo.png')
+                .footer__copyright
+                    | 2004 - 2019 © GIFTON
             .footer-menu
                 .footer-menu__item
                     a.footer-menu__link(href="#") 

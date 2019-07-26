@@ -23,7 +23,7 @@ header.header
                 .header__main-left
                     a(href="/").haeder__logo
                         img(src='img/header/header-logo.png')
-                .header__main-right
+                .header__main-right.search__wrap.js-search-activate
                     ul.header-menu
                         li.header-menu__item.active
                             a.header-menu__link(href="#") Главная
@@ -37,6 +37,7 @@ header.header
                             a.header-menu__link(href="#") Услуги
                     // Если нужно убрать иконку количества товаров в корзине, то нужно добавить класс "is-empty"
                     .header-basket(data-basket-count="3").active
+                    include ../../components/search/search
     include ../../components/color-line/color-line
 
 

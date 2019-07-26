@@ -199,7 +199,7 @@
         background-position: center;
         box-sizing: border-box;
         cursor: pointer;
-        box-shadow: 0px 4px 20px 0px rgba(10, 149, 221, 0.4);
+        box-shadow: 0 4px 20px 0 rgba(10, 149, 221, 0.4);
 
         &:before {
             content: attr(data-basket-count);
@@ -228,4 +228,9 @@
         }
 
     }
+
+    & .search {
+        margin-left: 16px;
+    }
+
 }
