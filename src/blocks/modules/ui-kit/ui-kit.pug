@@ -85,3 +85,48 @@
                     .descripton__block-text
                         |Сувенирной продукции покрывают расходы доходом       
                         
+
+    section.contacts-info
+        .container
+            .contacts-info__inner
+                .contacts-info__row
+                    span.contacts-info__img
+                    img(src='img/contacts/location-contacts__icon')
+                    span.contacts-info__content Москва, ул. Профсоюзная, д. 23
+                .contacts-info__row
+                    span.contacts-info__img
+                    img(src='img/contacts/phone-contacts__icon')
+                    span.contacts-info__content +7 (495) 225-25-28 (пн-пт 10-18)
+                .contacts-info__row
+                    span.contacts-info__img
+                    img(src='img/contacts/mail-contacts__icon')
+                    span.contacts-info__content info@gifton.ru
+
+
+    section.contacts-form
+        .container
+            .contacts-form__description Отправить запрос
+            form.contacts-form(action="", method="POST")
+                label.contacts-form__label
+                    input.contacts-form__input-text(name="name",type="text" placeholder="Имя Фамилия")
+                label.contacts-form__label
+                    input.contacts-form__input-text(name="email",type="text", placeholder="Email")
+                label.contacts-form__label
+                    input.contacts-form__input-text(name="name",type="text" placeholder="Компания")
+                label.contacts-form__label
+                    input.contacts-form__input-text(name="name",type="text" placeholder="Сайт")
+                label.contacts-form__label
+                    textarea.contacts-form__textarea(name="message", placeholder="Сообщение")
+
+.box4 {
+  border-width: 2px;
+  border-color: rgb(236, 241, 245);
+  border-style: solid;
+  border-radius: 6px;
+  position: absolute;
+  left: 740px;
+  top: 862px; 
+  width: 391px;
+  height: 73px;
+  z-index: 49;
+}

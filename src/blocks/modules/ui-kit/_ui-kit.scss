@@ -261,14 +261,45 @@ input:focus + .slider {
     }
 
 
+    .contacts-info {
+      width: 516px;
+      height: 100%;
+      margin-top: 30px;
+      padding-bottom: 15px;
+      background: rgb(255, 255, 255);
+      border-radius: 6px;
+      box-shadow: 0px 4px 20px 0px rgba(1, 1, 1, 0.15);
 
+      &__inner {
+        padding: 30px;
+      }
 
+      &__content {
+        font-size: 14px;
+        color: rgb(50, 57, 77);
+        line-height: 2.143;
+        font-style: normal;
+        font-weight: 500;
+        text-align: left;
+        margin-left: 15px;
 
+      }
 
+    }
 
+    
+    
+    .contacts-form {
+      margin-top: 15px;
+      margin-bottom: 30px;
 
+      &__description  {
+        font-size: 19px;
+        color: rgb(60, 65, 76);
+        line-height: 1.2;
+        font-style: normal;
+        font-weight: 500;
 
+      }
 
-
-
-
+    }
