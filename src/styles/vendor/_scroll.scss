@@ -47,10 +47,14 @@
   }
 }
 
-.baron:hover .scroller__bar-wrapper {
-  opacity: 1;
-}
+.baron {
+  position: relative;
 
-.baron:hover .scroller__bar {
-  opacity: 1;
+  &:hover .scroller__bar-wrapper {
+    opacity: 1;
+  }
+
+  &:hover .scroller__bar {
+    opacity: 1;
+  }
 }

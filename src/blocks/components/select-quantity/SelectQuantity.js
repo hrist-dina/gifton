@@ -1,12 +1,21 @@
 import $ from "jquery";
+import {FormatPrice} from "../../../js/classes/FormatPrice";
 
 export class SelectQuantity {
-    constructor() {
-        this.minus = ".js-quantity-minus";
-        this.plus = ".js-quantity-plus";
-        this.input = ".js-quantity-input";
+    constructor(select = '.js-quantity') {
+        this.parent = `${select}-parent`;
+        this.minus = `${select}-minus`;
+        this.plus = `${select}-plus`;
+        this.input = `${select}-input`;
+        this.sumSelector = `${select}-sum`;
+        this.totalSumSelector = `${select}-total-sum`;
+        this.productId = 'product-id';
 
         this.init();
+    }
+
+    static ruble(value) {
+        return new FormatPrice(value).ruble();
     }
 
     init() {
@@ -62,5 +71,38 @@ export class SelectQuantity {
             newVal = max;
         }
         input.val(newVal);
+        this.sum(input, this.price(input), newVal);
+        this.total(input);
+        // TODO:: тут можно добавить ajax для отправки значений на сервер (известен id продукта и количество)
+    }
+
+    product(input) {
+        return $(document).find(`#${$(input).data(this.productId)}`);
+    }
+
+    price(input) {
+        return this.product(input).data('price');
+    }
+
+    sum(input, price, count) {
+        let sum = price * count;
+        this.product(input).find(this.sumSelector).text(this.constructor.ruble(sum));
+        return sum;
+    }
+
+    total(currentInput) {
+        let inputList = $(this.product(currentInput)).siblings().find(this.input);
+
+        let total = this.sum(currentInput, this.price(currentInput), currentInput.val());
+        inputList.map((key, item) => {
+            let input = $(item);
+            total += this.sum(input, this.price(input), input.val());
+        });
+
+        $(currentInput)
+            .parents(this.parent)
+            .find(this.totalSumSelector)
+            .html(this.constructor.ruble(total));
+
     }
 }

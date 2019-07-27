@@ -1,5 +1,5 @@
 import $ from "jquery";
-import {BaronScroll} from "../../../js/classes/BaronSсroll";
+import {BaronScroll} from "../../../js/classes/BaronScroll";
 
 export class HeaderBasket {
     constructor(selector = '.js-header-basket') {
@@ -16,7 +16,10 @@ export class HeaderBasket {
 
     onClick() {
         let self = this;
-        this.active.on('click', function () {
+        this.active.on('click', function (e) {
+            if (e.target !== this) {
+                return;
+            }
             $(this).toggleClass('active');
             new BaronScroll({
                 root: self.scrollSelector

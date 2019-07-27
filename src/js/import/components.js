@@ -5,7 +5,7 @@ import {Select} from "%components%/select/Select";
 import {SelectQuantity} from "%components%/select-quantity/SelectQuantity";
 import {ProductDetail} from "%components%/product-detail/ProductDetail";
 import {Search} from "%components%/search/Search";
-import {BaronScroll} from "../classes/BaronSсroll";
+import {BaronScroll} from "../classes/BaronScroll";
 import {HeaderBasket} from "%components%/header-basket/HeaderBasket";
 
 $(document).ready(function () {

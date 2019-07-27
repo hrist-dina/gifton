@@ -1,24 +1,31 @@
+- const ruble = (value) => `${value} ₽`;
+- const id = (key) => `header-basket-product-${key}`;
 include header-basket.data.pug
 
 mixin header-basket-products(products)
     if products
-        .header-basket__product-wrap
+        .header-basket__product-wrap.js-quantity-parent
             .header-basket__product-inner
                 .header-basket__product-list.js-header-basket-scroll
-                    for product in products
-                        .header-basket__product
+                    - var totalSum = 0;
+                    for product, key in products
+                        .header-basket__product(id=id(key) data-price=product.price data-quantity=product.quantityCurrent)
                             .header-basket__product-img
                                 img(src=product.img)
                             .header-basket__product-center
                                 a(href='#').header-basket__product-name=product.name
-                                .header-basket__product-price=`${product.price} ₽`
+                                .header-basket__product-price=ruble(product.price)
                             .header-basket__product-quantity
-                                +select-quantity-mini(product.quantityCurrent, product.quantity)
-                            .header-basket__product-sum=`${product.price * product.quantityCurrent} ₽`
+                                +select-quantity-mini(id(key), product.quantityCurrent, product.quantity)
+                            .header-basket__product-sum.js-quantity-sum=ruble(product.price * product.quantityCurrent)
                             .header-basket__product-remove
                                 .btn-remove.js-header-basket-remove
+                        - totalSum += product.price * product.quantityCurrent;
+            .header-basket__bottom
+                .header-basket__attention 25 000 ₽ - Минимальная сумма заказа!
+                .header-basket__total-sum.js-quantity-total-sum=ruble(totalSum)
 
 
 // Если нужно убрать иконку количества товаров в корзине, то нужно добавить класс "is-empty"
-.header-basket(data-basket-count="3").js-header-basket-active
+.header-basket(data-basket-count=products.length).js-header-basket-active
     +header-basket-products(products)
