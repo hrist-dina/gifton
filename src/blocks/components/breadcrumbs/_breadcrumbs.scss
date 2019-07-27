@@ -1,33 +1,33 @@
 .breadcrumbs {
-    list-style-type: none;
-    @include md-block {
-        padding-top: 14px;
-        margin-bottom: 14px;
-    }
+  list-style-type: none;
+  @include md-block {
+    padding-top: 14px;
+    margin-bottom: 14px;
+  }
 
 
-    &__link {
-        text-decoration: none;
-    }
+  &__link {
+    text-decoration: none;
+  }
 
-    &__item,
-    &__item &__link {
-        display: inline-block;
-        position: relative;
-        font-size: 14px;
-        line-height: 36px;
-        color: #c5c5c5;
-        font-weight: 400;
-    }
+  &__item,
+  &__item &__link {
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+    line-height: 36px;
+    color: #c5c5c5;
+    font-weight: 400;
+  }
 
-    &__item:not(:last-child):after {
-        content: "/";
-        padding: 0 4px;
-    }
+  &__item:not(:last-child):after {
+    content: "/";
+    padding: 0 4px;
+  }
 
-    &__item:last-child span,
-    &__item:last-child &__link,
-    &__item:nth-last-child(-n + 2):after {
-        color: #fff;
-    }
+  &__item:last-child span,
+  &__item:last-child &__link,
+  &__item:nth-last-child(-n + 2):after {
+    color: #fff;
+  }
 }

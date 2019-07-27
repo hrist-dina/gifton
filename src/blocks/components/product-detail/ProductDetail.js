@@ -1,10 +1,11 @@
 import $ from "jquery";
+// eslint-disable-next-line no-unused-vars
 import slick from "slick-carousel";
 
 export class ProductDetail {
     constructor() {
-        this.sliderMain = '.js-product-slider-main';
-        this.sliderNav = '.js-product-slider-nav';
+        this.sliderMain = ".js-product-slider-main";
+        this.sliderNav = ".js-product-slider-nav";
 
         this.init();
     }
@@ -22,8 +23,8 @@ export class ProductDetail {
             asNavFor: this.sliderNav
         });
         $(this.sliderNav).slick({
-            nextArrow: '<div class="slider-round-button next"></div>',
-            prevArrow: '<div class="slider-round-button prev"></div>',
+            nextArrow: "<div class=\"slider-round-button next\"></div>",
+            prevArrow: "<div class=\"slider-round-button prev\"></div>",
             slidesToShow: 4,
             slidesToScroll: 1,
             asNavFor: this.sliderMain,
@@ -34,6 +35,4 @@ export class ProductDetail {
             rows: 0
         });
     }
-
-
 }

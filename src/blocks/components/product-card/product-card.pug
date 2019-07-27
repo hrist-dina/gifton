@@ -23,5 +23,5 @@ mixin product-card(productCard)
 
 
 .product-card__list(class=productCards.type)
-    for productCard in productCards.list
-     +product-card(productCard)
+    for card in productCards.list
+        +product-card(card)

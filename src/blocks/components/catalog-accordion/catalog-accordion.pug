@@ -4,11 +4,11 @@ mixin catalog-accordion(categories)
             .catalog-accordion__top
                 .catalog-accordion__title=categories.title
             for item in categories.blocks
-                nav.catalog-accordion__block.catalog-accordion__dropdown.js-dropdown(class=item.active?'active':'')
+                nav.catalog-accordion__block.catalog-accordion__dropdown.js-dropdown(class=item.active ? 'active' : '')
                     .catalog-accordion__name.js-dropdown-name=item.name
                     .catalog-accordion__dropdown-block.js-dropdown-block
                         if item.list
                             ul.catalog-accordion__list
                                 for link in item.list
-                                    li.catalog-accordion__item(class=link.active?'active':'')
+                                    li.catalog-accordion__item(class=link.active ? 'active' : '')
                                         a(href="#")=link.name

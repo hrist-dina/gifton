@@ -4,6 +4,7 @@ import {PriceSlider} from "%components%/price-slider/PriceSlider";
 import {Select} from "%components%/select/Select";
 import {SelectQuantity} from "%components%/select-quantity/SelectQuantity";
 import {ProductDetail} from "%components%/product-detail/ProductDetail";
+import {Search} from "%components%/search/Search";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -15,4 +16,5 @@ $(document).ready(function () {
     });
     new SelectQuantity();
     new ProductDetail();
+    new Search();
 });

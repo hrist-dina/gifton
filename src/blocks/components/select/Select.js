@@ -1,10 +1,11 @@
 import $ from "jquery";
+// eslint-disable-next-line no-unused-vars
 import select2 from "select2";
 // Initialise imported function as jQuery function
 $.fn.select2.defaults.set("width", "100%");
 
 export class Select {
-    constructor(selector = '.js-select', theme = 'gifton', options = {}){
+    constructor(selector = ".js-select", theme = "gifton", options = {}) {
         this.selector = selector;
         this.theme = theme;
 
@@ -21,5 +22,4 @@ export class Select {
     init() {
         $(this.selector).select2(this.options);
     }
-
 }

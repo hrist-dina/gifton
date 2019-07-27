@@ -38,12 +38,12 @@ export class SelectQuantity {
 
     count(elem, type) {
         let input = $(elem);
-        if (!input.is('input')) {
+        if (!input.is("input")) {
             input = $(elem).siblings(this.input);
         }
 
         let number = input.val().replace(/[^\d]/, "");
-        if (number === '') {
+        if (number === "") {
             number = 1;
         }
         number = parseInt(number);

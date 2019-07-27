@@ -1,7 +1,5 @@
-
-form.search(action='', method="GET")
-    input(type="text" name="q" placeholder="поиск...")
-    button.btn.btn-rounded.btn-rounded_medium.btn-search
-    //.search__block.show
-    //   .btn-remove
-    //   include ../catalog-search/catalog-search
+.search__block
+    .btn-remove.js-search-close
+    form.search.js-search(action='', method="GET")
+        input(type="text" name="q" placeholder="поиск...")
+        button.btn.btn-rounded.btn-rounded_medium.btn-search Поиск

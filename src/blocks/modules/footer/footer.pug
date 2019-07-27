@@ -9,49 +9,45 @@ footer.footer
                     | 2004 - 2019 © GIFTON
             .footer-menu
                 .footer-menu__item
-                    a.footer-menu__link(href="#") 
-                        |О нас
+                    a.footer-menu__link(href="#")
+                        | О нас
                 .footer-menu__item
-                    a.footer-menu__link(href="#") 
-                        |Каталог
+                    a.footer-menu__link(href="#")
+                        | Каталог
                 .footer-menu__item
-                    a.footer-menu__link(href="#") 
-                        |Новинки
+                    a.footer-menu__link(href="#")
+                        | Новинки
                 .footer-menu__item
-                    a.footer-menu__link(href="#") 
-                        |Карта сайта
+                    a.footer-menu__link(href="#")
+                        | Карта сайта
                 .footer-menu__item
-                    a.footer-menu__link(href="#") 
-                        |Портфолио
+                    a.footer-menu__link(href="#")
+                        | Портфолио
                 .footer-menu__item
-                    a.footer-menu__link(href="#") 
-                        |Контакты
+                    a.footer-menu__link(href="#")
+                        | Контакты
             .footer-social
                 .footer-social__text
-                    |Наши сети
-                a(href="#").footer-social__item
-                    img(src='img/footer/footer-vk.png')
-                a(href="#").footer-social__item
-                    img(src='img/footer/footer-fb.png')
-                a(href="#").footer-social__item
-                    img(src='img/footer/footer-twitter.png')
-                a(href="#").footer-social__item 
-                    img(src='img/footer/footer-in.png')
-                a(href="#").footer-social__item 
-                    img(src='img/footer/footer-inst.png') 
+                    | Наши сети
+                .footer-social__list
+                    a(href="#").footer-social__item.icon-vk
+                    a(href="#").footer-social__item.icon-fb
+                    a(href="#").footer-social__item.icon-twitter
+                    a(href="#").footer-social__item.icon-in
+                    a(href="#").footer-social__item.icon-inst
+
             .footer-mailing
-                .footer-mailing__text 
-                    |Новостная расылка
-                input.footer-mailing__input(type="search" name="q" placeholder="Ваш Email")
-                button.footer-mailing__submit(type="submit")     
-            .footer-contact__list
-                .footer-contact__item
-                    a.footer__contact_address г. Москва, Профсоюзная ул., 23
-                .footer-contact__item
+                .footer-mailing__text
+                    | Новостная расылка
+                form.footer-mailing__form
+                    input.footer-mailing__input(type="text" name="email" placeholder="Ваш Email")
+                    button.footer-mailing__submit(type="submit")
+
+            ul.footer__contact-list
+                li.footer__contact.footer__contact_address г. Москва, Профсоюзная ул., 23
+                li.footer__contact
                     a.footer__contact_phone(href="tel:+74952252528") +7&nbsp;(495)&nbsp;225-25-28
-                        |&nbsp;
-                        span (пн-пт 10-18)
-                .footer-contact__item
+                    | &nbsp;
+                    span (пн-пт 10-18)
+                li.footer__contact
                     a.footer__contact_mail(href="mailto:info@gifton.ru") info@gifton.ru
-
-
