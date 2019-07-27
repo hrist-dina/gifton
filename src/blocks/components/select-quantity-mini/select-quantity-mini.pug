@@ -1,0 +1,6 @@
+mixin select-quantity-mini(value, max)
+    .select-quantity-mini
+        .select-quantity-mini__inner
+            span.select-quantity-mini__minus.js-quantity-minus -
+            input.js-quantity-input(type="text" value=value data-quantity-max=max)
+            span.select-quantity-mini__plus.js-quantity-plus +

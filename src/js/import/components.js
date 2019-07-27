@@ -5,6 +5,8 @@ import {Select} from "%components%/select/Select";
 import {SelectQuantity} from "%components%/select-quantity/SelectQuantity";
 import {ProductDetail} from "%components%/product-detail/ProductDetail";
 import {Search} from "%components%/search/Search";
+import {BaronScroll} from "../classes/BaronSсroll";
+import {HeaderBasket} from "%components%/header-basket/HeaderBasket";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -17,4 +19,8 @@ $(document).ready(function () {
     new SelectQuantity();
     new ProductDetail();
     new Search();
+    new BaronScroll({
+        root: '.js-scroll'
+    });
+    new HeaderBasket();
 });

@@ -1,6 +1,7 @@
 // Компоненты Pug
 // Если это миксин подключается в шапке файла, а вызов идет через "+" (плюс), например: +breadcrumbs(breadcrumbs)
 include ../../components/breadcrumbs/breadcrumbs
+include ../../components/select-quantity-mini/select-quantity-mini
 
 header.header
     .header__top
@@ -35,14 +36,10 @@ header.header
                             a.header-menu__link(href="#") Каталог
                         li.header-menu__item
                             a.header-menu__link(href="#") Услуги
-                    // Если нужно убрать иконку количества товаров в корзине, то нужно добавить класс "is-empty"
-                    .header-basket(data-basket-count="3").active
+                    include ../../components/header-basket/header-basket
+
                     include ../../components/search/search
     include ../../components/color-line/color-line
-
-
-
-
 
     .header__bottom(style={"background-image": `url(${bg})`})
         .container

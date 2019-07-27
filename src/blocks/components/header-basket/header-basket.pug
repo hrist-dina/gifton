@@ -1,0 +1,24 @@
+include header-basket.data.pug
+
+mixin header-basket-products(products)
+    if products
+        .header-basket__product-wrap
+            .header-basket__product-inner
+                .header-basket__product-list.js-header-basket-scroll
+                    for product in products
+                        .header-basket__product
+                            .header-basket__product-img
+                                img(src=product.img)
+                            .header-basket__product-center
+                                a(href='#').header-basket__product-name=product.name
+                                .header-basket__product-price=`${product.price} ₽`
+                            .header-basket__product-quantity
+                                +select-quantity-mini(product.quantityCurrent, product.quantity)
+                            .header-basket__product-sum=`${product.price * product.quantityCurrent} ₽`
+                            .header-basket__product-remove
+                                .btn-remove.js-header-basket-remove
+
+
+// Если нужно убрать иконку количества товаров в корзине, то нужно добавить класс "is-empty"
+.header-basket(data-basket-count="3").js-header-basket-active
+    +header-basket-products(products)

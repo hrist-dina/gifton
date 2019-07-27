@@ -84,6 +84,10 @@
         box-shadow: none;
         margin-right: 150px;
         @include transition(.2s);
+
+        &__product-wrap {
+          display: none;
+        }
       }
     }
   }
@@ -97,6 +101,7 @@
     font-size: 11px;
     color: #b4bfc7;
     font-weight: 300;
+    padding: 8px 10px;
     @include transition(.2s);
   }
 
