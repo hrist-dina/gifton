@@ -222,6 +222,10 @@
   }
 
   & .btn-basket {
+    max-height: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
     .blocks & {
       width: 50%;
       height: 100%;
@@ -229,11 +233,7 @@
       font-size: 12px;
       font-weight: 600;
       text-align: center;
-      padding: 15px 0 13px 0;
+      padding: 12px 0;
     }
   }
-}
-
-.btn-basket {
-  border-radius: 0;
 }

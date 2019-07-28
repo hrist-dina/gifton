@@ -56,7 +56,7 @@
     &:after {
       content: '';
       position: absolute;
-      background-image: url(icon-basket());
+      background-image: url(icon-basket-clean());
       width: 12px;
       height: 12px;
       top: 0;
@@ -73,6 +73,12 @@
 
     &-center {
       text-align: center;
+    }
+
+    &_scroll {
+      max-height: 210px;
+      min-height: 100%;
+      //box-sizing: initial;
     }
   }
 

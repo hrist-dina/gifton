@@ -11,7 +11,7 @@ mixin catalog-filter(filter)
             for item in filter.blocks
                 case item.type
                     when 'checkbox'
-                        .catalog-filter__block
+                        .catalog-filter__block.catalog-filter__block_scroll.js-scroll
                             .catalog-filter__name=item.name
                             if item.list
                                 .catalog-filter__checkbox-list
