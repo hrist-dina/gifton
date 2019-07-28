@@ -178,6 +178,19 @@
 
     }
   }
+
+  &-gray {
+    font-size: 12px;
+    color: #848793;
+    font-weight: 600;
+    background-color: #ecf1f5;
+    box-shadow: none;
+
+    &:hover {
+      background-color: #ecf1f5;
+      opacity: .8;
+    }
+  }
 }
 
 .icon {

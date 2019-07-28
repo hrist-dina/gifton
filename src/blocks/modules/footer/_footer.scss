@@ -140,10 +140,11 @@
       }
     }
 
-    &__submit {
+    body &__submit {
       position: relative;
       width: 40px;
       height: 28px;
+      padding: 0;
       border: none;
       border-radius: 20px;
       background-color: rgb(185, 207, 27);

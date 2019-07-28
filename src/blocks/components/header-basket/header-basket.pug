@@ -1,5 +1,4 @@
-- const ruble = (value) => `${value} ₽`;
-- const id = (key) => `header-basket-product-${key}`;
+- const idHeaderBasketProduct = (key) => `header-basket-product-${key}`;
 include header-basket.data.pug
 
 mixin header-basket-products(products)
@@ -9,14 +8,14 @@ mixin header-basket-products(products)
                 .header-basket__product-list.js-header-basket-scroll
                     - var totalSum = 0;
                     for product, key in products
-                        .header-basket__product(id=id(key) data-price=product.price data-quantity=product.quantityCurrent)
+                        .header-basket__product(id=idHeaderBasketProduct(key) data-price=product.price data-quantity=product.quantityCurrent)
                             .header-basket__product-img
                                 img(src=product.img)
                             .header-basket__product-center
                                 a(href='#').header-basket__product-name=product.name
                                 .header-basket__product-price=ruble(product.price)
                             .header-basket__product-quantity
-                                +select-quantity-mini(id(key), product.quantityCurrent, product.quantity)
+                                +select-quantity-mini(idHeaderBasketProduct(key), product.quantityCurrent, product.quantity)
                             .header-basket__product-sum.js-quantity-sum=ruble(product.price * product.quantityCurrent)
                             .header-basket__product-remove
                                 .btn-remove.js-header-basket-remove

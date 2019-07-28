@@ -7,6 +7,7 @@ import {ProductDetail} from "%components%/product-detail/ProductDetail";
 import {Search} from "%components%/search/Search";
 import {BaronScroll} from "../classes/BaronScroll";
 import {HeaderBasket} from "%components%/header-basket/HeaderBasket";
+import {ChangeViewMode} from "%components%/catalog-view-mode/ChangeViewMode";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -23,4 +24,5 @@ $(document).ready(function () {
         root: '.js-scroll'
     });
     new HeaderBasket();
+    new ChangeViewMode();
 });

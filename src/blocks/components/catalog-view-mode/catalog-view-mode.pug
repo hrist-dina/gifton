@@ -1,7 +1,7 @@
 mixin catalog-view-mode(modes)
     .catalog-view-mode
         form
-            .catalog-view-mode__list
+            .catalog-view-mode__list.js-change-view-mode
                 for item in modes
                     input(id=`mode-${item.value}` type='radio' name=item.name value=item.value checked=item.active)
                     label.catalog-view-mode__item(class=item.className for=`mode-${item.value}`)
