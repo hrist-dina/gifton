@@ -1,0 +1,21 @@
+.content-right-sidebar {
+
+  &_cut-bottom {
+    margin-bottom: -50px;
+  }
+
+  &__flex {
+    @include row-flex();
+  }
+
+  & .sidebar {
+    @include col();
+    @include size(4);
+  }
+
+  & .content {
+    @include col();
+    @include size(12);
+  }
+}
+

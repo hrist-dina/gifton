@@ -1,4 +1,5 @@
 @import "breadcrumbs/breadcrumbs";
+@import "attention/attention";
 @import "catalog-category/catalog-category";
 @import "catalog-filter/catalog-filter";
 @import "catalog-sort/catalog-sort";
@@ -12,8 +13,11 @@
 @import "select-quantity/select-quantity";
 @import "select-quantity-mini/select-quantity-mini";
 @import "product-card/product-card";
+@import "product-card-basket/product-card-basket";
 @import "product-detail/product-detail";
 @import "product-recommended/product-recommended";
 @import "rating/rating";
 @import "color-line/color-line";
 @import "search/search";
+@import "switch/switch";
+@import "order-price/order-price";

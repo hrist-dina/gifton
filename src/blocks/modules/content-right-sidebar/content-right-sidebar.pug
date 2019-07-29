@@ -1,0 +1,15 @@
+include ../../components/product-card-basket/product-card-basket
+include ../../components/product-recommended/product-recommended
+include ../../components/attention/attention
+
+section.content-right-sidebar.content-right-sidebar_cut-bottom
+    .container
+        .content-right-sidebar__flex
+            .content
+                +product-card-basket-list(productCards)
+
+            .sidebar
+                include ../../components/order-price/order-price
+                +attention(true)
++product-recommended(productRecommended, true)
+

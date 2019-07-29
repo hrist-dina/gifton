@@ -1,0 +1,39 @@
+- const idBasketProduct = (id) => `basket-product-${id}`;
+- let isBasketEmpty = (product) => product.quantity !== 0;
+- let isBasketEmptyForMarks = (product) => product.quantity === 0 ? 'product-card-basket__marker_empty' : '';
+- let isBasketLittle = (product) => product.quantity < 5 ? 'product-card-basket__marker_little' : '';
+include ../select/select
+include ../select-quantity/select-quantity
+
+mixin product-card-basket(productId, productCard)
+    .product-card-basket(id=productId data-price=productCard.price data-quantity=productCard.quantityCurrent)
+        .product-card-basket__inner
+            .product-card-basket__marker-list
+                .product-card-basket__marker(class=[isBasketEmptyForMarks(productCard), isBasketLittle(productCard)])=`${productCard.quantity} шт.`
+                if (productCard.isNew)
+                    .product-card-basket__marker.product-card-basket__marker_new new
+            .product-card-basket__img
+                img(src=productCard.img alt=productCard.title)
+            .product-card-basket__info
+                .product-card-basket__price=ruble(productCard.price)
+                .product-card-basket__article
+                    | Aкрикул
+                    |
+                    span=productCard.article
+                a(href="#").product-card-basket__title=productCard.title
+            .product-card-basket__actions
+                .product-card-basket__size
+                    +select(productCard.size, 'size')
+                .product-card-basket__quantity
+
+                    +select-quantity(productId, productCard.quantityCurrent, productCard.quantity, isBasketEmpty(productCard))
+
+            .product-card-basket__total-sum.js-quantity-sum=ruble(productCard.price * productCard.quantityCurrent)
+            a(href='javascript:void(0)').btn-remove
+
+
+
+mixin product-card-basket-list(productCards)
+    .product-card-basket__list.js-quantity-parent.js-change-view-mode-block(class=productCards.type)
+        for card, keyCard in productCards.list
+            +product-card-basket(idBasketProduct(keyCard), card)

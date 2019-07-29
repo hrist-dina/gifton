@@ -3,6 +3,10 @@
   @include p-bottom(3);
   background-color: #f9f9f9;
 
+  &_big-top {
+    @include p-top(3);
+  }
+
   &__title {
     font-size: 25px;
     line-height: 25px;
@@ -10,7 +14,6 @@
     font-weight: 500;
     @include m-bottom(2);
   }
-
 
   &__list {
     @include row-flex();
@@ -44,7 +47,6 @@
       z-index: -1;
     }
 
-
     &-inner {
       padding: 30px 60px 30px 30px;
       box-sizing: border-box;
@@ -55,18 +57,12 @@
       align-items: flex-start;
     }
 
-
     &-title {
       font-size: 25px;
       line-height: 28px;
       color: #ffffff;
       font-weight: 500;
       text-decoration: none;
-    }
-
-
-    &-arrow {
-
     }
   }
 }

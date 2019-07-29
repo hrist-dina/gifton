@@ -1,0 +1,16 @@
+include ../switch/switch
+
+section.order-price
+    .order-price__top
+        .order-price__title Сумма заказа:
+        .order-price__number 579 327 ₽
+        .order-price__delivery
+            .order-price__delivery-title 3 недели поставка
+            .order-price__delivery-desc присутствуют позиции с Европейского склада
+    .order-price__bottom
+        +switch('Нанесение', 'drawing')
+        +switch('Упаковка', 'packaging')
+        +switch('Макетирование', 'layout')
+        +switch('Доставка', 'delivery')
+    .order-price__checkout
+        button.btn.order-price__checkout-btn Оформить

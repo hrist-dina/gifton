@@ -1,7 +1,7 @@
 include ../product-card/product-card
 
-mixin product-recommended(productRecommended)
-    section.product-recommended
+mixin product-recommended(productRecommended, isPigTop = false)
+    section.product-recommended(class=isPigTop?'product-recommended_big-top':'')
         .container
             .product-recommended__title=productRecommended.title
             .product-recommended__list.blocks
