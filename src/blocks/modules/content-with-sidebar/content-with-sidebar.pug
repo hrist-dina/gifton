@@ -2,6 +2,7 @@ include ../../components/catalog-filter/catalog-filter
 include ../../components/catalog-accordion/catalog-accordion
 include ../../components/catalog-view-mode/catalog-view-mode
 include ../../components/catalog-sort/catalog-sort
+include ../../components/product-card/product-card
 
 section.content-with-sidebar
     .container
@@ -17,4 +18,4 @@ section.content-with-sidebar
                         +catalog-sort(sort)
                     include ../../components/catalog-search/catalog-search
                 .content__main-block
-                    include ../../components/product-card/product-card
+                    +product-card-list(productCards)

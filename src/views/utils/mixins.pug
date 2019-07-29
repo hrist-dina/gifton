@@ -1,2 +1,3 @@
 - const ruble = (value) => `${formatThousand(value)} ₽`;
+- const id = (prefix, value) => `${prefix}-${value}`;
 - const formatThousand = (number) => String(number).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 ');

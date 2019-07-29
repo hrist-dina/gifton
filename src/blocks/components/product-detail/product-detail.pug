@@ -37,7 +37,7 @@ mixin product-box(productBox)
                     .product-box__article=productBox.article
                     +rating(productBox.rating)
             .product-box__commercial
-                .product-box__price=`${productBox.price} ₽`
+                .product-box__price=ruble(productBox.price)
                 .product-box__balance
                     .product-box__balance-value=`${productBox.balance} шт`
                     .product-box__balance-text на складе
@@ -55,6 +55,23 @@ mixin product-box(productBox)
                 +select-quantity(productBox.quantityCurrent, productBox.quantity)
         .product-box__bottom
             .product-box__bottom-half
-                .product-box__sum.js-product-detail-sum=`${productBox.quantityCurrent * productBox.price} ₽`
+                .product-box__sum.js-product-detail-sum=ruble(productBox.quantityCurrent * productBox.price)
             .product-box__bottom-half
                 button.btn.btn-basket В корзину
+
+mixin product-attention
+    .product-attention 25 000 ₽ - Минимальная сумма заказа!
+
+mixin product-desc
+    .product-desc
+        .product-desc__title Описание
+        .product-desc__content
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, omnis, tempore! Accusamus aperiam consequatur deleniti enim est fuga fugit id laudantium, provident repellendus. Amet asperiores magnam nihil repellendus unde voluptates.
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias asperiores blanditiis consectetur dignissimos dolor, dolore ea et eveniet excepturi laboriosam laborum maxime officiis quasi sit temporibus totam unde velit!
+        .product-desc__media
+            .product-desc__media-video
+                img(src="img/product-detail/product-media-video.png")
+            .product-desc__media-container
+                img(src="img/product-detail/product-media-container.png")
+            .product-desc__media-container
+                img(src="img/product-detail/product-media-container.png")

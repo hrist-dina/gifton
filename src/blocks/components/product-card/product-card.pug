@@ -36,6 +36,8 @@ mixin product-card(productId, productCard)
                 .product-card__total-sum.js-quantity-sum=ruble(productCard.price * productCard.quantityCurrent)
 
 
-.product-card__list.js-quantity-parent.js-change-view-mode-block(class=productCards.type)
-    for card, keyCard in productCards.list
-        +product-card(idProduct(keyCard), card)
+
+mixin product-card-list(productCards)
+    .product-card__list.js-quantity-parent.js-change-view-mode-block(class=productCards.type)
+        for card, keyCard in productCards.list
+            +product-card(idProduct(keyCard), card)

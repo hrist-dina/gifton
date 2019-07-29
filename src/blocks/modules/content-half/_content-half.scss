@@ -1,4 +1,5 @@
 .content-half {
+  padding-bottom: 84px;
 
   &__flex {
     @include row-flex();
