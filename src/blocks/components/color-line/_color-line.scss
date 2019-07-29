@@ -1,13 +1,13 @@
 .color-line {
-    @extend .bg-blue;
+  @extend .bg-blue;
 
-    &__inner {
-        @include row-flex();
-        height: 3px;
-    }
+  &__inner {
+    @include row-flex();
+    height: 3px;
+  }
 
-    &__item {
-        @include col-padding();
-        @include size(2);
-    }
+  &__item {
+    @include col-padding();
+    @include size(2);
+  }
 }

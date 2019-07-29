@@ -11,7 +11,7 @@ mixin catalog-filter(filter)
             for item in filter.blocks
                 case item.type
                     when 'checkbox'
-                        .catalog-filter__block
+                        .catalog-filter__block.catalog-filter__block_scroll.js-scroll
                             .catalog-filter__name=item.name
                             if item.list
                                 .catalog-filter__checkbox-list
@@ -27,7 +27,7 @@ mixin catalog-filter(filter)
                             .catalog-filter__name.js-dropdown-name=item.name
                             .catalog-filter__dropdown-block.js-dropdown-block
                                 if item.input
-                                  input(type='text', name=item.input)
+                                    input(type='text', name=item.input)
                                 if item.list
                                     .catalog-filter__checkbox-list(data-dropdown-list)
                                         for checkbox in item.list

@@ -42,3 +42,20 @@ $col-height: 30px;
   -o-transform: rotate($deg);
   transform: rotate($deg);
 }
+
+@mixin placeholder() {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  /* Firefox 19+ */
+  &:-moz-placeholder {
+    @content;
+  }
+  /* Firefox 18- */
+  &:-ms-input-placeholder {
+    @content;
+  }
+}

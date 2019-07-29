@@ -3,7 +3,7 @@ mixin catalog-category(list)
         .container
             .catalog-category
                 for item in list
-                    a.catalog-category__item(href='#' class=[item.type?item.type:'', item.color?item.color:''])
+                    a.catalog-category__item(href='#' class=[item.type ? item.type : '', item.color ? item.color : ''])
                         .catalog-category__bg(style={"background-image": `url(${item.bg})`})
                         .catalog-category__content
                             if item.icon

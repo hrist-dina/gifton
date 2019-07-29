@@ -3,14 +3,10 @@ mixin select(options, nameSelect, jsSelector = "js-select", data = false)
         var dataAttr = {};
         if (data) {
             for (var item in data) {
-                dataAttr[`data-${item}`]=data[item];
+                 dataAttr[`data-${item}`]=data[item];
             }
-
         }
-
-    select(name=nameSelect class=['select', jsSelector])&attributes(dataAttr)
-        for option, key in options
-            // - var attributes = {};
-            // if key === 0
-            //     - var attributes = {'disabled': true, 'selected': true, 'hidden': true};
-            option(value=option.value)&attributes(attributes)=option.name
+    if options
+        select(name=nameSelect class=['select', jsSelector])&attributes(dataAttr)
+            for option in options
+                option(value=option.value)=option.name

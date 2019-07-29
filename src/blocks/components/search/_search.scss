@@ -1,0 +1,123 @@
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px 3px;
+  max-width: 135px;
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid rgba(161, 161, 175, .1);
+  box-sizing: border-box;
+  @include transition(.3s, ease, max-width);
+
+  & .btn-search {
+    & span {
+      font-size: 0;
+      @include transition(.7s, ease-in-out, opacity);
+      opacity: 0;
+    }
+  }
+
+  &__wrap {
+    position: relative;
+    @include transition(.2s);
+    &:after {
+      @include transition(.2s);
+    }
+
+    &.active {
+      height: 100%;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 0;
+      }
+
+      & .search {
+        @extend .catalog-search;
+        max-width: 592px;
+        width: 100%;
+        border: none;
+        z-index: 1;
+
+        &:after {
+          content: '';
+          @extend .btn-remove;
+        }
+
+        &__block {
+          position: absolute;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          z-index: 1;
+        }
+      }
+
+      & .btn-search {
+        @extend .btn-blue;
+        max-width: inherit;
+        width: 20%;
+        height: 100%;
+        & span {
+          opacity: 1;
+          font-size: 14px;
+        }
+
+
+        &:before {
+          position: relative;
+          background-image: none;
+          width: auto;
+        }
+      }
+
+      & .btn-remove {
+        display: block;
+        margin-right: 16px;
+      }
+
+      & .header-basket {
+        box-shadow: none;
+        margin-right: 150px;
+        @include transition(.2s);
+
+        &__product-wrap {
+          display: none;
+        }
+      }
+    }
+  }
+
+  & input {
+    border: none;
+    width: #{calc(100% - 30px)};
+    height: 34px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 11px;
+    color: #b4bfc7;
+    font-weight: 300;
+    padding: 8px 10px;
+    @include transition(.2s);
+  }
+
+  &__block {
+
+    & .btn-remove {
+      display: none;
+    }
+  }
+}

@@ -5,7 +5,7 @@
 
 .catalog-accordion {
   border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(1,1,1,0.05);
+  box-shadow: 0 4px 10px rgba(1, 1, 1, 0.05);
   background-color: #fff;
   margin-bottom: 16px;
 
@@ -39,6 +39,7 @@
 
   &__dropdown {
     @include transition(.5s);
+
     &.active {
       background-color: #f9fafb;
     }
@@ -77,6 +78,7 @@
   &__dropdown.active &__dropdown-block {
     display: block;
   }
+
   &__dropdown.active &__name {
     &:after {
       @include rotate();

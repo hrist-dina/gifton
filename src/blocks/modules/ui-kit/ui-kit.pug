@@ -44,39 +44,46 @@
     h5.h5 Head 5
     h6.h6 Head 6
 
+    .btn-remove
+    .icon-list
+        .icon-vk
+        .icon-fb
+        .icon-twitter
+        .icon-in
+        .icon-inst
 
 
-    label.switch 
+    label.switch
         input(type="checkbox")
         span.slider
 
     section.description
-         .description__inner
+        .description__inner
             .description__title
-                |Бизнес сувениры GIFTON
+                | Бизнес сувениры GIFTON
             .description__text
-                |Прогрессивный рекламный инструмент
+                | Прогрессивный рекламный инструмент
             .description__block-list
                 .descripton__block-item
                     .descripton__block-top
                         .descripton__block-img
                         .descripton__block-title 78%
                     .descripton__block-text
-                        |Сувениров повышают узнаваемость бренда
+                        | Сувениров повышают узнаваемость бренда
 
                 .descripton__block-item
                     .descripton__block-top
                         .descripton__block-img
                         .descripton__block-title 55%
                     .descripton__block-text
-                        |Сувениров увеличивают целевую аудиторию
+                        | Сувениров увеличивают целевую аудиторию
 
                 .descripton__block-item
                     .descripton__block-top
                         .descripton__block-img
                         .descripton__block-title 67%
                     .descripton__block-text
-                        |Корпоративных подарков поддерживают партнерские отношения
+                        | Корпоративных подарков поддерживают партнерские отношения
 
                 .descripton__block-item
                     .descripton__block-top
@@ -118,15 +125,43 @@
                 label.contacts-form__label
                     textarea.contacts-form__textarea(name="message", placeholder="Сообщение")
 
-.box4 {
-  border-width: 2px;
-  border-color: rgb(236, 241, 245);
-  border-style: solid;
-  border-radius: 6px;
-  position: absolute;
-  left: 740px;
-  top: 862px; 
-  width: 391px;
-  height: 73px;
-  z-index: 49;
-}
+
+
+
+    section.registration
+        .container
+            .registration__inner
+                .registration-left
+                    .contacts-form__description Оформление:
+                    img(src='img/registration/registration.png')
+                .registration-right
+                    .registration-form
+                    form.registration-form(action="", method="POST")
+                        label.registration-form__label
+                            input.registration-form__input-text(name="name",type="text" placeholder="Имя Фамилия")
+                        label.registration-form__label
+                            input.registration-form__input-text(name="email",type="text", placeholder="Email")
+                        label.registration-form__label
+                            input.registration-form__input-text(name="name",type="text" placeholder="Телефон")
+                        label.registration-form__label
+                            input.registration-form__input-text.registration-form__input-text_active(name="name",type="text" placeholder="Advantage Media")
+                        label.registration-form__label
+                            input.registration-form__input-text(name="name",type="text" placeholder="Сайт")
+                        label.registration-form__label
+                            textarea.registration-form__textarea(name="message", placeholder="Комментарий")
+                    .registration-block
+                        .form__label.form__label_checkbox
+                            input.form__input-checkbox(type="checkbox" name="agree")
+                            span.form__input-checkbox-custom
+                        span.form__label-text Даю согласие на обработку персональных данных      
+                        button.btn.btn-fix.btn-registration Отправить   
+
+
+
+    section.order-price
+        .order-price__inner
+            .order-price__title Сумма заказа:
+            .order-price__number 579 327 ₽
+            img.order-price__img(src='img/order-price/delivery-icon.png')
+            .order-price__description 3 недели поставка
+                .order-price__text присутствуют позиции с Европейского склада

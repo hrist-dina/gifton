@@ -124,6 +124,7 @@
   & .quarter &__name {
     width: 60%;
   }
+
   & .quarter &__icon {
     width: 40%;
 
@@ -131,7 +132,6 @@
       max-width: 50px;
     }
   }
-
 
   & .half {
     @include size(2);
@@ -154,6 +154,7 @@
   & .quarter &__name {
     width: 60%;
   }
+
   & .quarter &__icon {
     width: 40%;
 

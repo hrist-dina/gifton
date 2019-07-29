@@ -1,27 +1,41 @@
+- const idProduct = (id) => `product-${id}`;
+- let isEmpty = (product) => product.quantity !== 0;
+- let isEmptyForMarks = (product) => product.quantity === 0 ? 'product-card__marker_empty' : '';
+- let isLittle = (product) => product.quantity < 5 ? 'product-card__marker_little' : '';
 include ../select/select
 include ../select-quantity/select-quantity
 
-mixin product-card(productCard)
-    .product-card
+mixin product-card(productId, productCard)
+    .product-card(class=!isEmpty(productCard) ? 'empty' : '' id=productId data-price=productCard.price data-quantity=productCard.quantityCurrent)
         .product-card__inner
             .product-card__marker-list
-                if productCard.quantity
-                    .product-card__marker=`${productCard.quantity} шт.`
+                .product-card__marker(class=[isEmptyForMarks(productCard), isLittle(productCard)])=`${productCard.quantity} шт.`
+                if (productCard.isNew)
+                    .product-card__marker.product-card__marker_new new
             .product-card__img
                 img(src=productCard.img alt=productCard.title)
             .product-card__info
-                .product-card__price=`${productCard.price} ₽`
+                .product-card__price=ruble(productCard.price)
                 a(href="#").product-card__title=productCard.title
                 .product-card__article=productCard.article
             .product-card__actions
                 .product-card__size
                     +select(productCard.size, 'size')
                 .product-card__quantity
-                    +select-quantity(productCard.quantityCurrent, productCard.quantity)
+                    if isEmpty(productCard)
+                        +select-quantity(productId, productCard.quantityCurrent, productCard.quantity)
 
-            button.btn.btn-fix.btn-basket В корзину
+        .product-card__order
+            .product-card__blocks-price=ruble(productCard.price)
+            if isEmpty(productCard)
+                a(href='#').btn.btn-fix.btn-basket В корзину
+            else
+                a(href='#').btn.btn-fix.btn-basket.btn-gray Заказать
+
+            if isEmpty(productCard)
+                .product-card__total-sum.js-quantity-sum=ruble(productCard.price * productCard.quantityCurrent)
 
 
-.product-card__list(class=productCards.type)
-    for productCard in productCards.list
-     +product-card(productCard)
+.product-card__list.js-quantity-parent.js-change-view-mode-block(class=productCards.type)
+    for card, keyCard in productCards.list
+        +product-card(idProduct(keyCard), card)
