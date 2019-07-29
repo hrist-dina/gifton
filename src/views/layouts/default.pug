@@ -8,11 +8,13 @@ html(lang="ru")
 	head
 		include ../includes/head
 	body
-		include ../../blocks/modules/header/header
+		.wrapper
+			.main-content
+				include ../../blocks/modules/header/header
 
-		main(class=isMain?'':'inner-page')
-			block content
+				main(class=isMain?'':'inner-page')
+					block content
 
-		include ../../blocks/modules/footer/footer
+			include ../../blocks/modules/footer/footer
 
 		include ../includes/scripts
