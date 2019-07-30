@@ -14,6 +14,10 @@ html(lang="ru")
 
 				main(class=isMain?'':'inner-page')
 					block content
+						if leftSidebar && !rightSidebar
+							include ../../blocks/modules/content-left-sidebar/content-left-sidebar
+						if rightSidebar && !leftSidebar
+							include ../../blocks/modules/content-right-sidebar/content-right-sidebar
 
 			include ../../blocks/modules/footer/footer
 

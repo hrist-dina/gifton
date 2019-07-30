@@ -1,0 +1,32 @@
+.order-header-info {
+
+  &__number {
+    font-size: 25px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  &__upload {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &-title {
+      font-size: 14px;
+      color: #fefefe;
+      font-weight: 500;
+      margin-right: 25px;
+    }
+    &-action {
+      display: inline-block;
+      margin-right: 20px;
+      width: 33px;
+      height: 33px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
-mixin attention(isMin = false)
-    .attention
+mixin attention(isMin = false, isDisabled = false)
+    .attention(class=isDisabled ? 'disabled' : '')
         if !isMin
             | 25 000 ₽ - Минимальная сумма заказа!
         else

@@ -12,6 +12,16 @@
   margin-top: 16px;
   text-align: left;
 
+  &.disabled {
+    background-color: #ffffff;
+    border-color: #e5e5e5;
+    color: #e5e5e5;
+    &:before {
+      filter: grayscale(100%);
+      opacity: .2;
+    }
+  }
+
   &:before {
     content: '';
     position: absolute;

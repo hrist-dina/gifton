@@ -1,0 +1,22 @@
+extends ../views/layouts/default
+
+block variables
+	- var title = "Корзина";
+	- var leftSidebar = true;
+	//- Данные для миксинов Pug
+	include ../data/basket
+
+block header-bottom-right
+	include ../blocks/components/order-header-info/order-header-info
+	+order-header-info()
+
+block sidebar
+	include ../blocks/components/order-price/order-price
+	include ../blocks/components/attention/attention
+	+order-price(true)
+	+attention(true, true)
+
+block content-left
+	include ../blocks/components/checkout/checkout
+
+

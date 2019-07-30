@@ -41,6 +41,10 @@
     &:focus + .switch-slider {
       box-shadow: rgb(229, 229, 229);
     }
+
+    &:disabled + .switch-slider {
+      background-color: #e5e5e5;
+    }
   }
 
   &-slider {
@@ -77,7 +81,6 @@
       width: 14px;
       height: 9px;
       background: url(icon-switch-on()) no-repeat center;
-
     }
   }
 

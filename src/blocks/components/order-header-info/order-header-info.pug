@@ -1,0 +1,9 @@
+mixin order-header-info(needUpload = false)
+    .order-header-info1
+        .order-header-info__number Заказ № 300423
+        if needUpload
+            .order-header-info__upload
+                .order-header-info__upload-title Выгрузка:
+                .order-header-info__upload-action-list
+                    a(href="#").order-header-info__upload-action.icon-pseudo-ms-word-white
+                    a(href="#").order-header-info__upload-action.icon-pseudo-pdf-white

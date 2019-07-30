@@ -1,16 +1,20 @@
 include ../switch/switch
 
-section.order-price
-    .order-price__top
-        .order-price__title Сумма заказа:
-        .order-price__number 579 327 ₽
-        .order-price__delivery
-            .order-price__delivery-title 3 недели поставка
-            .order-price__delivery-desc присутствуют позиции с Европейского склада
-    .order-price__bottom
-        +switch('Нанесение', 'drawing')
-        +switch('Упаковка', 'packaging')
-        +switch('Макетирование', 'layout')
-        +switch('Доставка', 'delivery')
-    .order-price__checkout
-        button.btn.order-price__checkout-btn Оформить
+mixin order-price(isDisabled = false)
+    section.order-price(class=isDisabled ? 'disabled' : '')
+        .order-price__top
+            .order-price__title Сумма заказа:
+            .order-price__number 579 327 ₽
+            .order-price__delivery
+                .order-price__delivery-title 3 недели поставка
+                .order-price__delivery-desc присутствуют позиции с Европейского склада
+        .order-price__bottom
+            +switch('Нанесение', 'drawing', true, isDisabled)
+            +switch('Упаковка', 'packaging',false, isDisabled)
+            +switch('Макетирование', 'layout', true, isDisabled)
+            +switch('Доставка', 'delivery', false, isDisabled)
+        .order-price__checkout
+            if isDisabled
+                a(href="#").btn.order-price__checkout-btn.order-price__checkout-disabled Вернуться
+            else
+                button.btn.order-price__checkout-btn Оформить

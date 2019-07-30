@@ -1,6 +1,7 @@
 include ../../components/product-card-basket/product-card-basket
 include ../../components/product-recommended/product-recommended
 include ../../components/attention/attention
+include ../../components/order-price/order-price
 
 section.content-right-sidebar.content-right-sidebar_cut-bottom
     .container
@@ -9,7 +10,7 @@ section.content-right-sidebar.content-right-sidebar_cut-bottom
                 +product-card-basket-list(productCards)
 
             .sidebar
-                include ../../components/order-price/order-price
+                +order-price()
                 +attention(true)
 +product-recommended(productRecommended, true)
 

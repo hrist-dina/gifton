@@ -1,11 +1,29 @@
 extends ../views/layouts/default
+
 include ../blocks/components/catalog-category/catalog-category
 include ../blocks/components/type-application/type-application
+include ../blocks/components/catalog-filter/catalog-filter
+include ../blocks/components/catalog-accordion/catalog-accordion
+include ../blocks/components/catalog-view-mode/catalog-view-mode
+include ../blocks/components/catalog-sort/catalog-sort
+
 
 block variables
 	- var title = "Каталог - список товаров";
+	- var leftSidebar = true;
 	//- Данные для миксинов Pug
 	include ../data/catalog-product-list
 
-block content
-	include ../blocks/modules/content-left-sidebar/content-left-sidebar
+block sidebar
+	+catalog-filter(filter)
+	+catalog-accordion(categories)
+
+block content-left
+	include ../blocks/components/product-card/product-card
+	.content__top-block
+		.content__top-action
+			+catalog-view-mode(modes)
+			+catalog-sort(sort)
+		include ../blocks/components/catalog-search/catalog-search
+	.content__main-block
+		+product-card-list(productCards)

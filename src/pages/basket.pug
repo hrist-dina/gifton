@@ -6,7 +6,11 @@ block variables
 	include ../data/basket
 
 block content
-	include   ../blocks/modules/content-right-sidebar/content-right-sidebar
+	include ../blocks/modules/content-right-sidebar/content-right-sidebar
+
+block header-bottom-right
+	include ../blocks/components/order-header-info/order-header-info
+	+order-header-info(true)
 
 
 

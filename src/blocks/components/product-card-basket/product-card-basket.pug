@@ -1,5 +1,5 @@
 - const idBasketProduct = (id) => `basket-product-${id}`;
-- let isBasketEmpty = (product) => product.quantity !== 0;
+- let isBasketEmpty = (product) => product.quantity === 0;
 - let isBasketEmptyForMarks = (product) => product.quantity === 0 ? 'product-card-basket__marker_empty' : '';
 - let isBasketLittle = (product) => product.quantity < 5 ? 'product-card-basket__marker_little' : '';
 include ../select/select

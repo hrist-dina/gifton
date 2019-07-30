@@ -23,6 +23,10 @@
     line-height: 1.2;
     font-style: normal;
     font-weight: 300;
+
+    .disabled & {
+      color: #e5e5e5;
+    }
   }
 
   &__delivery {
@@ -49,6 +53,10 @@
         margin: auto;
         background: url(icon-delivery('36a9e3')) no-repeat center;
         background-size: cover;
+
+        .disabled & {
+          background-image: url(icon-delivery('e5e5e5'));
+        }
       }
     }
 
@@ -78,9 +86,17 @@
       color: #fff;
       font-weight: 500;
       text-align: center;
+      padding: 22px 25px;
+    }
+
+    .order-price &-disabled {
+      background-color: #e5e5e5;
+      box-shadow: none;
+
+      &:hover {
+        background-color: #e5e5e5;
+        box-shadow: none;
+      }
     }
   }
-
-
-
 }

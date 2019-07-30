@@ -1,6 +1,7 @@
 .header {
   & h1 {
     font-size: 39px;
+    line-height: 1;
     color: #ffffff;
     font-weight: 500;
   }
@@ -10,6 +11,20 @@
     @include p-bottom(4);
     background-position: top center;
     background-size: cover;
+
+    &-flex {
+      @include row-flex();
+    }
+
+    &-left,
+    &-right {
+      @include col();
+      @include size(8);
+    }
+
+    &-right {
+      text-align: right;
+    }
   }
 
   &__top {

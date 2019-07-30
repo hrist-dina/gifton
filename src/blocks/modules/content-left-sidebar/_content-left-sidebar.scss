@@ -1,4 +1,5 @@
 .content-left-sidebar {
+  @include p-bottom(3);
 
   &__flex {
     @include row-flex();
