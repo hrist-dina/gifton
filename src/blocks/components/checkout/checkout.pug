@@ -1,35 +1,41 @@
 include ../switch/switch
 
-section.checkout
-    form(action='' method='POST')
-        .checkout__inner
-            .checkout-left
-                .checkout__title Оформление:
-                .checkout__alternative(style='background-image: url(img/bg/checkout-bg.png)')
-                    .checkout__alternative-top
-                        +switch(false, 'alternative', true)
-                        .checkout__alternative-desc
-                            | Предложите альтернативы
-                    .checkout__alternative-bottom
-                        | Даже если товар отсутствует на складе, мы всегда сможем подобрать альтернативу или уточнить дату поставки конкретного артикула
+mixin checkout(isSuccess = false)
+    section.checkout
+        form(action='' method='POST')
+            .checkout__inner(class=isSuccess ? 'hide' : '')
+                .checkout-left
+                    .checkout__title Оформление:
+                    .checkout__alternative(style='background-image: url(img/bg/checkout-bg.png)')
+                        .checkout__alternative-top
+                            +switch(false, 'alternative', true)
+                            .checkout__alternative-desc
+                                | Предложите альтернативы
+                        .checkout__alternative-bottom
+                            | Даже если товар отсутствует на складе, мы всегда сможем подобрать альтернативу или уточнить дату поставки конкретного артикула
 
-            .checkout-right
-                .checkout-form
-                    label.checkout-form__label
-                        input.checkout-form__input(name="name" type="text" placeholder="Имя Фамилия")
-                    label.checkout-form__label
-                        input.checkout-form__input(name="email" type="text"  placeholder="Email")
-                    label.checkout-form__label
-                        input.checkout-form__input(name="name" type="text" placeholder="Телефон")
-                    label.checkout-form__label.active
-                        input.checkout-form__input(name="name" type="text" placeholder="Организация" value="Advantage Media")
-                    label.checkout-form__label
-                        input.checkout-form__input(name="name" type="text" placeholder="Сайт")
-                    label.checkout-form__label
-                        textarea.checkout-form__textarea(name="message", placeholder="Комментарий")
-                .checkout-block
-                    label.form__label.form__label_checkbox
-                        input.form__input-checkbox(type="checkbox" name="agree")
-                        span.form__input-checkbox-custom
-                        span.form__label-text Даю согласие на обработку персональных данных
-                    button.btn.btn-fix.btn-registration Отправить
+                .checkout-right
+                    .checkout-form
+                        label.checkout-form__label
+                            input.checkout-form__input(name="name" type="text" placeholder="Имя Фамилия")
+                        label.checkout-form__label
+                            input.checkout-form__input(name="email" type="text"  placeholder="Email")
+                        label.checkout-form__label
+                            input.checkout-form__input(name="name" type="text" placeholder="Телефон")
+                        label.checkout-form__label.active
+                            input.checkout-form__input(name="name" type="text" placeholder="Организация" value="Advantage Media")
+                        label.checkout-form__label
+                            input.checkout-form__input(name="name" type="text" placeholder="Сайт")
+                        label.checkout-form__label
+                            textarea.checkout-form__textarea(name="message", placeholder="Комментарий")
+                    .checkout-block
+                        label.form__label.form__label_checkbox
+                            input.form__input-checkbox(type="checkbox" name="agree")
+                            span.form__input-checkbox-custom
+                            span.form__label-text Даю согласие на обработку персональных данных
+                        button.btn.btn-fix.btn-registration Отправить
+            .checkout-done(class=!isSuccess ? 'hide' : '' style='background-image: url(img/bg/checkout-done-bg.png)')
+                .checkout-done__inner
+                    .checkout-done__icon
+                    .checkout-done__title Ваш запрос принят
+                    .checkout-done__desc Наши специалисты свяжутся с Вами в ближайшее время!
