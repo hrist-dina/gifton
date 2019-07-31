@@ -1,0 +1,13 @@
+extends ../views/layouts/default
+
+include ../blocks/components/news-detail/news-detail
+
+block variables
+	- var title = "Новости";
+	- var titleBalloon = "news-title-balloon"; //- Цвет маркера на заголовке
+	//- Данные для миксинов Pug
+	include ../data/news
+
+block content
+	+news-detail()
+

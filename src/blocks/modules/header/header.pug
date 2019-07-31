@@ -45,7 +45,10 @@ header.header
         .container
             .header__bottom-flex
                 .header__bottom-left
-                    h1=title
+                    if titleBalloon
+                        h1.title-balloon(class=titleBalloon)=title
+                    else
+                        h1=title
                     +breadcrumbs(breadcrumbs)
                 .header__bottom-right
                     block header-bottom-right

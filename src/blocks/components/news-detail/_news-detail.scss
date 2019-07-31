@@ -1,0 +1,19 @@
+.news-detail {
+  @include p-bottom(3);
+
+  &__inner {
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(1,1,1,0.15);
+    background-color: #ffffff;
+    padding: 60px 75px;
+    box-sizing: border-box;
+  }
+
+  &__content {
+
+    & h4 {
+      font-size: 20px;
+      line-height: 21px;
+    }
+  }
+}
