@@ -1,12 +1,25 @@
 extends ../views/layouts/default
 
+
 block variables
 	- var title = "Каталог - карточка товара";
+	- var contentHalf = true;
 	//- Данные для миксинов Pug
 	include ../data/catalog-product
 
-block content
-	include   ../blocks/modules/content-half/content-half
+block content-half-left
+	include ../blocks/components/product-detail/product-detail
+	+product-pic(productPic)
 
+block content-half-right
+	include ../blocks/components/product-detail/product-detail
+	include ../blocks/components/attention/attention
+	+product-top(productOption)
+	+product-box(productBox)
+	+attention()
+	+product-desc()
 
+block content-half-bottom
+	include ../blocks/components/product-recommended/product-recommended
+	+product-recommended(productRecommended)
 

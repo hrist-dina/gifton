@@ -5,7 +5,7 @@ mixin news-card(newsCard)
             .news-card__inner
                 .news-card__row
                     a(href='#').news-card__title=newsCard.title
-                    .news-card__date=newsCard.date
+                    .news-card__date(class=newsCard.dateColor ? newsCard.dateColor : '')=newsCard.date
                 .news-card__block
                     .news-card__text=newsCard.text
 

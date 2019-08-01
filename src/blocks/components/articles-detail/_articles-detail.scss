@@ -1,0 +1,27 @@
+.articles-detail {
+
+  &-pic {
+    & img {
+      border-radius: 6px;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
+    }
+  }
+
+  &-content {
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
+    background-color: #fff;
+    padding: 60px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 21px;
+    color: #3c414c;
+    font-weight: 500;
+
+    & > p {
+      margin-bottom: 16px;
+    }
+  }
+}

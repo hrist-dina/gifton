@@ -1,15 +1,8 @@
-include ../../components/product-detail/product-detail
-include ../../components/product-recommended/product-recommended
-include ../../components/attention/attention
-
 section.content-half
     .container
         .content-half__flex
             .content-half__part
-                +product-pic(productPic)
+                block content-half-left
             .content-half__part
-                +product-top(productOption)
-                +product-box(productBox)
-                +attention()
-                +product-desc()
-+product-recommended(productRecommended)
+                block content-half-right
+block content-half-bottom

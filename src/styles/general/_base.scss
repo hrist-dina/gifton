@@ -55,6 +55,7 @@ body .hide {
 
 .inner-page {
 	@include m-top(-2);
+	position: relative;
 }
 
 input {
@@ -94,6 +95,12 @@ input[type=number] {
 		border-radius: 50%;
 		background-color: #f08340;
 	}
+
+	&-articles {
+		&:before {
+			background-color: #0a95dd;
+		}
+	}
 }
 
 .title-date {
@@ -116,7 +123,6 @@ input[type=number] {
 		border-radius: 11px;
 		box-sizing: border-box;
 		box-shadow: 0 4px 10px rgba(10,149,221,0.1);
-		background-color: #f08340;
 		font-size: 10px;
 		color: #fff;
 		font-weight: 400;
@@ -139,8 +145,8 @@ h2,
 
 h3,
 .h3 {
-	font-size: 25px;
-	line-height: 45px;
+	font-size: 19px;
+	line-height: 36px;
 }
 
 h4,

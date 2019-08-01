@@ -1,0 +1,19 @@
+extends ../views/layouts/default
+
+include ../blocks/components/articles-detail/articles-detail
+
+block variables
+	- var title = "Название статьи";
+	- var titleBalloon = "title-balloon-articles"; //- Цвет маркера на заголовке
+	- var titleDate = '12.03.19'
+	- var contentHalf = true;
+	//- Данные для миксинов Pug
+	include ../data/articles-detail
+
+block content-half-left
+	+articles-detail-pic()
+block content-half-right
+	+articles-detail-content()
+
+block content-half-bottom
+

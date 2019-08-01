@@ -1,0 +1,14 @@
+extends ../views/layouts/default
+
+include ../blocks/components/news/news
+
+block variables
+	- var title = "Статьи";
+	- var titleBalloon = "title-balloon-articles"; //- Цвет маркера на заголовке
+	- var dateColor = "articles"; //- Цвет маркера на заголовке
+	//- Данные для миксинов Pug
+	include ../data/articles
+
+block content
+	+news(newsList)
+
