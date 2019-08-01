@@ -10,10 +10,63 @@
   }
 
   &__content {
+    text-align: left;
+    font-size: 14px;
+    line-height: 21px;
+    color: #3c414c;
+    font-weight: 500;
+
+    & p {
+      margin-bottom: 20px;
+    }
 
     & h4 {
       font-size: 20px;
       line-height: 21px;
+      margin-bottom: 30px;
     }
+
+    &  img {
+      border-radius: 6px;
+      width: 100%;
+      display: inline-block;
+    }
+
+    & > img {
+      float:left;
+      margin: 0 30px 30px 0;
+    }
+
+    & .half {
+      width: 50%;
+      display: inline-block;
+      float:left;
+      margin: 0 30px 30px 0;
+    }
+
+    & .row {
+      @include row-flex();
+      clear: both;
+      margin-bottom: 30px;
+    }
+
+    & .col-1 {
+      @include col();
+      @include u-size(4, 14, $offset);
+    }
+
+    & .col-3 {
+      @include col();
+      @include u-size(10, 14, $offset);
+      padding-left: 16px;
+    }
+
+    & .col-mini {
+      @include col();
+      @include u-size(2, 14, $offset);
+    }
+
+
+
   }
 }

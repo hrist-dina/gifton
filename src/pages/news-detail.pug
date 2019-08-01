@@ -3,10 +3,11 @@ extends ../views/layouts/default
 include ../blocks/components/news-detail/news-detail
 
 block variables
-	- var title = "Новости";
+	- var title = "Название новости";
 	- var titleBalloon = "news-title-balloon"; //- Цвет маркера на заголовке
+	- var titleDate = '12.03.19'
 	//- Данные для миксинов Pug
-	include ../data/news
+	include ../data/news-detail
 
 block content
 	+news-detail()

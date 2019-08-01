@@ -50,7 +50,8 @@
     }
 
     &__row {
-
+      display: flex;
+      align-items: center;
     }
 
     &__title {
@@ -64,7 +65,6 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      width: #{calc(100% - 80px)};
     }
 
     &__date {
@@ -79,7 +79,7 @@
       height: 21px;
       border-radius: 11px;
       box-sizing: border-box;
-      margin-left: 20px;
+      margin-left: 30px;
     }
 
     &__block {

@@ -25,6 +25,11 @@
     &-right {
       text-align: right;
     }
+
+    &-full {
+      @include col();
+      @include size($columns);
+    }
   }
 
   &__top {
