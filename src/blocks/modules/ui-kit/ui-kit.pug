@@ -106,21 +106,25 @@
                     span.contacts-info__content info@gifton.ru
 
 
-    section.contacts-form
-        .container
-            .contacts-form__description Отправить запрос
-            form.contacts-form(action="", method="POST")
-                label.contacts-form__label
-                    input.contacts-form__input-text(name="name",type="text" placeholder="Имя Фамилия")
-                label.contacts-form__label
-                    input.contacts-form__input-text(name="email",type="text", placeholder="Email")
-                label.contacts-form__label
-                    input.contacts-form__input-text(name="name",type="text" placeholder="Компания")
-                label.contacts-form__label
-                    input.contacts-form__input-text(name="name",type="text" placeholder="Сайт")
-                label.contacts-form__label
-                    textarea.contacts-form__textarea(name="message", placeholder="Сообщение")
 
-    section.articles
-        .container
-            .articles__top
+    section.contacts-form
+        .contacts-form__title Отправить запрос
+            label.contacts-form__label
+                input.contacts-form__input(name="name" type="text" placeholder="Имя Фамилия")
+            label.contacts-form__label
+                input.contacts-form__input(name="email" type="text"  placeholder="Email")
+            label.contacts-form__label
+                input.contacts-form__input(name="name" type="text"  placeholder="Компания")
+            label.contacts-form__label
+                input.contacts-form__input(name="name" type="text"  placeholder="Сайт")
+            label.contacts-form__label
+                textarea.contacts-form__textarea(name="message", placeholder="Комментарий")
+            .contacts-block
+                label.form__label.form__label_checkbox
+                    input.form__input-checkbox(type="checkbox" name="agree")
+                    span.form__input-checkbox-custom
+                    span.form__label-text Даю согласие на обработку персональных данных
+                button.btn.btn-fix.btn-registration Отправить
+
+
+     
