@@ -39,8 +39,8 @@
 
     &-inner {
       position: relative;
-      @include p-top(3);
-      @include p-bottom(4);
+      padding-top: 75px;
+      margin-bottom: 110px;
     }
 
     &-flex {

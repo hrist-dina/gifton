@@ -1,0 +1,12 @@
+extends ../views/layouts/default
+
+include ../blocks/components/news/news
+
+block variables
+	- var title = "Портфолио";
+	//- Данные для миксинов Pug
+	include ../data/portfolio
+
+block content
+	include ../blocks/components/portfolio/portfolio
+

@@ -1,0 +1,19 @@
+mixin portfolio-card(portfolioCard)
+    a.portfolio-card(href="#" class=portfolioCard.type ? portfolioCard.type : '' style=`background-image: url(${portfolioCard.img})`)
+        .portfolio-card__inner
+            .portfolio-card__marker-list
+                for marker in  portfolioCard.markers
+                    .portfolio-card__marker=marker
+            .portfolio-card__title=portfolioCard.title
+
+
+
+mixin portfolio-list(portfolioCards)
+    .portfolio-card__list
+        for card in portfolioCards
+            +portfolio-card(card)
+
+
+section.portfolio
+    .container
+        +portfolio-list(portfolioCards)
