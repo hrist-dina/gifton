@@ -32,5 +32,27 @@
         }
       }
     }
+
+    &-arrow {
+
+      &-left {
+        &-black {
+          @include icon-pseudo();
+          background: url(icon-arrow-left-black()) no-repeat center;
+          width: 6px;
+          height: 11px;
+        }
+      }
+
+      &-right {
+        &-black {
+          @include icon-pseudo();
+          background: url(icon-arrow-left-black()) no-repeat center;
+          width: 6px;
+          height: 11px;
+          @include rotate();
+        }
+      }
+    }
   }
 }

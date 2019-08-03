@@ -1,0 +1,113 @@
+
+.pagination {
+  margin-top: 70px;
+
+  &__wrap {
+    text-align: center;
+  }
+
+  &__list {
+    font-size: 0;
+    display: inline-block;
+    vertical-align: middle;
+
+  }
+
+  &__item {
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(1, 1, 1, 0.15);
+    background-color: #fff;
+    min-width: 28px;
+    max-height: 28px;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 20px;
+    color: #32394d;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    padding: 6px;
+    box-sizing: border-box;
+    margin-right: 16px;
+
+    &.first,
+    &.last {
+      border: 2px solid rgb(236, 241, 245);
+      box-shadow: none;
+    }
+
+    &.last {
+      margin-right: 0;
+    }
+
+    &.active {
+      min-width: 40px;
+      min-height: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(10, 149, 221, 0.4);
+      background-color: #0a95dd;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 20px;
+      color: #fff;
+      font-weight: 500;
+    }
+  }
+
+  &__points {
+    @mixin point() {
+      display: inline-block;
+      vertical-align: middle;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      background-color: #ecf1f5;
+    }
+    @include point();
+    position: relative;
+    margin-left: 10px;
+    margin-right: 26px;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      @include point();
+    }
+
+    &:before {
+      left: 8px;
+      right: auto;
+    }
+
+    &:after {
+      right: 8px;
+      left: auto;
+    }
+  }
+
+  &__prev,
+  &__next {
+    display: inline-block;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+  }
+
+  &__prev {
+    margin-right: 5px;
+  }
+  &__next {
+    margin-left: 5px;
+  }
+
+
+}
