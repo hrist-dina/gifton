@@ -14,6 +14,11 @@ mixin product-card(productId, productCard)
                     .product-card__marker.product-card__marker_new new
             .product-card__img
                 img(src=productCard.img alt=productCard.title)
+            if productCard.selectColors
+                .product-card__select-color-list
+                    for color in productCard.selectColors
+                        a(href='#').product-card__select-color
+                            img(src=color)
             .product-card__info
                 .product-card__price=ruble(productCard.price)
                 a(href="#").product-card__title=productCard.title
