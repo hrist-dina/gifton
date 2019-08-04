@@ -1,0 +1,20 @@
+extends ../views/layouts/default
+
+include ../blocks/components/printing/printing
+
+block variables
+	- var title = "Термопечать";
+	- var contentHalf = true;
+	//- Данные для миксинов Pug
+	include ../data/printing
+
+block content-half-left
+	+printing-pic()
+
+block content-half-right
+	+printing-content()
+
+block header-bottom-right
+	.printing-header__logo.invert
+		img(src='img/printing/printing-logo.png')
+
