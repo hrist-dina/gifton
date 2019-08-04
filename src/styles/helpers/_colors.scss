@@ -1,8 +1,6 @@
 // color
 $default-text-color: #3c414c;
 
-
-
 .bg-light-blue {
   background-color: #7cc3e6;
 }
@@ -29,4 +27,14 @@ $default-text-color: #3c414c;
 
 .bg-blue {
   background-color: #249cd8;
+}
+
+body .shadow-red {
+  box-shadow: 0 4px 20px rgba(239,117,93,0.4);
+
+  &_img {
+    & img {
+      @extend .shadow-red;
+    }
+  }
 }

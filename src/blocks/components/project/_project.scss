@@ -1,0 +1,122 @@
+.project {
+
+  &-pic {
+    & img {
+      border-radius: 6px;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
+    }
+
+    & > img {
+      margin-bottom: 10px;
+    }
+
+    &__half {
+      @include row-flex();
+      justify-content: space-between;
+      margin-bottom: 16px;
+
+      & img {
+        @include col();
+        @include u-size(4, 8, $offset)
+      }
+    }
+  }
+
+  &-content {
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
+    background-color: #fff;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 21px;
+    color: #3c414c;
+    font-weight: 500;
+
+    &__bottom {
+      padding: 60px;
+      box-sizing: border-box;
+
+      & > p {
+        margin-bottom: 16px;
+      }
+    }
+
+    &__top {
+      box-sizing: border-box;
+      padding: 60px;
+      border-bottom: 1px solid #ecf1f5;
+      @include row-flex();
+    }
+
+    &__option {
+      display: flex;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &-name {
+        font-size: 12px;
+        line-height: 1.2;
+        color: #32394d;
+        font-weight: 600;
+        max-width: 115px;
+        width: 100%;
+      }
+
+      &-value {
+        font-size: 12px;
+        line-height: 1.2;
+        color: #32394d;
+        font-weight: 400;
+
+        & a {
+          font-size: 12px;
+          line-height: 1.2;
+          color: #32394d;
+          font-weight: 400;
+          text-decoration: none;
+        }
+      }
+
+      &-markers {
+        margin-bottom: -6px;
+
+        & span {
+          display: inline-block;
+          line-height: 1;
+          padding: 7px 9px ;
+          height: 21px;
+          box-sizing: border-box;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(1,1,1,0.1);
+          background-color: #0a95dd;
+          font-size: 9px;
+          color: #fff;
+          font-weight: 500;
+          margin-right: 6px;
+          margin-bottom: 6px;
+        }
+      }
+
+      &-list {
+        @include col();
+        @include u-size(4, 6, $offset);
+      }
+    }
+
+    &__logo {
+      @include col();
+      @include u-size(2, 6, $offset);
+      text-align: right;
+
+      & img {
+        max-width: 111px;
+        width: 100%;
+      }
+    }
+  }
+}

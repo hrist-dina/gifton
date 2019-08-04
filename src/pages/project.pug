@@ -1,0 +1,16 @@
+extends ../views/layouts/default
+
+include ../blocks/components/project/project
+
+block variables
+	- var title = "Название проекта";
+	- var contentHalf = true;
+	//- Данные для миксинов Pug
+	include ../data/project
+
+block content-half-left
+	+project-content()
+
+block content-half-right
+	+project-pic()
+
