@@ -22,8 +22,13 @@ header.header
         .container
             .header__main-inner
                 .header__main-left
-                    a(href="/").haeder__logo
-                        img(src='img/header/header-logo.png')
+                    .header__mobile-menu-icon
+                        button.hamburger.hamburger--collapse.js-mobile-menu-icon(type="button" aria-label="Меню" aria-controls="navigation")
+                            span.hamburger-box
+                                span.hamburger-inner
+                    a(href="/").header__logo
+                        img.header__logo-desktop(src='img/header/header-logo.png')
+                        img.header__logo-mobile(src='img/header/header-logo-mobile.png')
                 .header__main-right.search__wrap.js-search-activate
                     ul.header-menu
                         li.header-menu__item.active

@@ -21,9 +21,11 @@
 
   &__wrap {
     position: relative;
-    @include transition(.2s);
-    &:after {
+    @include lg-block {
       @include transition(.2s);
+      &:after {
+        @include transition(.2s);
+      }
     }
 
     &.active {
@@ -69,7 +71,7 @@
       & .btn-search {
         @extend .btn-blue;
         max-width: inherit;
-        width: 20%;
+        width: auto;
         height: 100%;
         & span {
           opacity: 1;
@@ -115,9 +117,48 @@
   }
 
   &__block {
+    box-sizing: border-box;
 
     & .btn-remove {
       display: none;
+    }
+  }
+
+  @include to($break_md) {
+    border: none;
+
+    & input {
+      display: none;
+    }
+
+    &__wrap.active {
+      position: absolute;
+      width: 100%;
+      margin: auto;
+
+      & .search {
+        width: #{calc(100% - 46px)};
+
+        &__block {
+          margin-right: 0;
+          padding: 0 15px;
+        }
+
+        & input {
+          display: block;
+        }
+
+      }
+    }
+
+
+    & .btn-search {
+      background-color: transparent;
+      box-shadow: none;
+
+      &:before {
+        background-image: url(icon-search('b4bfc7'));
+      }
     }
   }
 }

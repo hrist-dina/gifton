@@ -18,6 +18,13 @@ export class Search {
             this.seletorActivate.addClass('active');
         });
 
+        this.selector.find('button').on('click', (event) => {
+            if (!this.seletorActivate.hasClass('active')) {
+                event.preventDefault();
+                this.seletorActivate.addClass('active');
+            }
+        });
+
         this.seletorClose.on('click', () => {
             this.seletorActivate.removeClass('active');
         });

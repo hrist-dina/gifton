@@ -4,9 +4,14 @@
   margin-top: 40px;
 
   &__section {
-    @include p-top(4);
-    @include p-bottom(2);
+    @include p-top(2);
+    @include p-bottom(1);
     background-color: #f9f9f9;
+
+    @include lg-block {
+      @include p-top(4);
+      @include p-bottom(2);
+    }
   }
 
   &__title {
@@ -22,7 +27,9 @@
   }
 
   &__item {
-    @include size(4);
+    @include size-xl(4);
+    @include size-md(8);
+    @include size(16);
     @include row-flex;
     @include col();
     position: relative;
@@ -34,13 +41,17 @@
     box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
     z-index: 1;
 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     &:after {
       content: '';
       position: absolute;
       width: 100%;
-      height: calc(100% - 4px);
+      height: 100%;
       left: 0;
-      top: -4px;
+      top: 0;
       bottom: 0;
       right: 0;
       margin: auto;
@@ -61,12 +72,15 @@
     position: absolute;
     left: 0;
     top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     border-radius: 6px;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: center;
 
   }

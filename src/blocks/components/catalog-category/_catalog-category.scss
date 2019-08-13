@@ -1,7 +1,11 @@
 .catalog-category {
-  @include m-bottom(4);
+  @include m-bottom(2);
   display: flex;
   flex-wrap: wrap;
+
+  @include lg-block {
+    @include m-bottom(4);
+  }
 
   &__item {
     @include size(16);
@@ -61,11 +65,16 @@
     width: 100%;
     box-sizing: border-box;
     z-index: 1;
+    flex-wrap: wrap;
+    @include md-block {
+      flex-wrap: nowrap;
+    }
   }
 
   &__name {
     color: #fff;
     font-weight: 500;
+    line-height: 1.2;
   }
 
   &__arrow {
@@ -93,10 +102,14 @@
 
   & .full &__content {
     border-radius: 6px;
-    @include p-top(4);
-    @include p-bottom(4);
-    padding-left: 76px;
-    padding-right: 125px;
+    padding: 40px 30px 40px 40px;
+
+    @include md-block {
+      padding-left: 76px;
+      padding-right: 125px;
+      @include p-top(4);
+      @include p-bottom(4);
+    }
   }
 
   & .full &__bg {
@@ -106,10 +119,17 @@
   & .full &__name {
     font-size: 31px;
 
+    @include to($break_md) {
+      font-size: 26px;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
   }
 
   & .quarter {
-    @include size(4);
+    @include size-xl(4);
+    @include size-md(8);
     position: relative;
     display: flex;
     align-items: center;
@@ -118,7 +138,6 @@
     font-weight: 500;
     padding: 40px 30px 40px 40px;
     max-height: 136px;
-
   }
 
   & .quarter &__name {
@@ -134,7 +153,9 @@
   }
 
   & .half {
-    @include size(2);
+    @include size-xl(2);
+    @include size-md(4);
+    @include size(8);
     position: relative;
   }
 

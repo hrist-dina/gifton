@@ -6,8 +6,7 @@ mixin type-application(title, list)
                     span=title
             .type-application
                 for item in list
-                    a.type-application__item(href='#')
-                        .type-application__bg(style={"background-image": `url(${item.bg})`})
+                    a.type-application__item(href='#' style={"background-image": `url(${item.bg})`})
                         .type-application__content
                             .type-application__icon
                                 img(src=item.icon, alt=item.name)
