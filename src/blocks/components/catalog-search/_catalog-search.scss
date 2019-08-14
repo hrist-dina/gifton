@@ -11,6 +11,14 @@
   justify-content: space-between;
   padding: 3px 5px 3px 44px;
 
+  @include to($break_sm) {
+    padding-left: 7px;
+
+    &:before {
+      content: none;
+    }
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -33,5 +41,6 @@
     color: #b4bfc7;
     font-weight: 500;
     height: 40px;
+    text-overflow: ellipsis;
   }
 }

@@ -27,4 +27,5 @@ mixin header-basket-products(products)
 
 // Если нужно убрать иконку количества товаров в корзине, то нужно добавить класс "is-empty"
 .header-basket(data-basket-count=products.length).js-header-basket-active
+    a.header-basket__link(href='basket.html')
     +header-basket-products(products)

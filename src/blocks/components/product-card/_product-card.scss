@@ -9,13 +9,25 @@
   .rows & {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    height: 180px;
+    justify-content: space-between;
+    height: 160px;
+
+    @include xl-block {
+      height: 180px;
+    }
+
+    @include to($break_md) {
+      position: relative;
+      flex-wrap: wrap;
+      height: auto;
+    }
   }
 
   .blocks & {
     @include col();
-    @include size(4); // Ставим 4, так как не считаем сайдбар
+    @include size-xl(4); // Ставим 4, так как не считаем сайдбар
+    @include size-sm(8);
+    @include size(16);
     max-height: 270px;
     min-height: 100%;
     display: flex;
@@ -46,18 +58,40 @@
     }
 
     .rows & {
-      padding: 40px 25px 40px 60px;
+      padding: 20px 5px 20px 25px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 75%;
+      width: 77%;
       height: 100%;
+
+      @include xl-block {
+        width: 75%;
+        padding: 40px 25px 40px 60px;
+      }
+
+      @include to($break_md) {
+        width: 71%;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 20px 30px;
+        align-self: flex-start;
+      }
+
+      @include to($break_sm) {
+        width: 100%;
+      }
     }
   }
   
   &__img {
     width: 88px;
     height: 88px;
+
+    @include to($break_md) {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
 
     & img {
       height: 100%;
@@ -74,11 +108,16 @@
 
   &__title {
     display: block;
-    font-size: 14px;
+    font-size: 13px;
     color: rgb(50, 57, 77);
     font-weight: bold;
     text-decoration: none;
     margin-bottom: 10px;
+
+    @include xl-block {
+      font-size: 14px;
+    }
+
 
     .blocks & {
       margin-bottom: 0;
@@ -87,8 +126,19 @@
   }
 
   &__info {
-    max-width: 136px;
+    max-width: 116px;
     width: 100%;
+
+    @include xl-block {
+      max-width: 136px;
+    }
+
+    @include to($break_md) {
+      max-width: 65%;
+    }
+    @include to($break_sm) {
+      max-width: 100%;
+    }
 
     .blocks & {
       max-width: 100%;
@@ -135,11 +185,16 @@
 
     &-list {
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 15px;
+      left: 15px;
       display: flex;
       flex-direction: column;
       align-self: flex-start;
+
+      @include lg-block {
+        top: 20px;
+        left: 20px;
+      }
     }
 
     &_new {
@@ -162,6 +217,14 @@
     display: flex;
     align-items: center;
     min-width: 280px;
+
+    @include to($break_md) {
+      margin-top: 20px;
+      min-width: auto;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
     .blocks & {
       display: none;
     }
@@ -170,6 +233,18 @@
   &__size {
     margin-right: 16px;
     width: 136px;
+
+    @include to($break_md) {
+      margin-right: 10px;
+      width: auto;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__quantity {
+    @include to($break_md) {
+      margin-bottom: 10px;
+    }
   }
 
   &__total-sum {
@@ -191,9 +266,26 @@
       align-items: center;
       flex-direction: column;
       justify-content: center;
-      width: 25%;
+      width: 23%;
       min-height: 100%;
-      padding: 40px 60px 40px 25px;
+      padding: 10px 25px 10px 0;
+
+      @include xl-block {
+        width: 25%;
+        padding: 40px 60px 40px 25px;
+      }
+
+      @include to($break_md) {
+        position: absolute;
+        right: 0;
+        width: auto;
+      }
+
+      @include to($break_sm) {
+        width: 100%;
+        position: relative;
+        padding: 0 30px 20px;
+      }
     }
 
     .blocks & {

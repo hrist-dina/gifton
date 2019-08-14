@@ -3,16 +3,25 @@
 
   &__flex {
     @include row-flex();
+    margin: auto;
   }
 
   & .sidebar {
     @include col();
-    @include size(4);
+    @include size-xl(4);
+    @include size-lg(4.5);
+    @include size(16);
+
+    @include to($break_lg) {
+      order: 2;
+    }
   }
 
   & .content {
     @include col();
-    @include size(12);
+    @include size-xl(12);
+    @include size-lg(11.5);
+    @include size(16);
   }
 }
 
@@ -22,17 +31,32 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      @include to($break_md) {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
     }
 
     &-block {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       border-radius: 6px;
       box-shadow: 0 4px 10px rgba(1, 1, 1, 0.05);
       background-color: #fff;
       padding: 25px 35px 25px 30px;
       margin-bottom: 16px;
+
+      @include to($break_md) {
+        padding: 15px 25px 15px 20px;
+      }
+    }
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include to($break_md) {
+        flex-wrap: wrap;
+      }
     }
   }
 }

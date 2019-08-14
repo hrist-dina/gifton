@@ -27,6 +27,7 @@
 
     @include lg-block {
       position: relative;
+      margin: inherit;
     }
 
     &-desktop {
@@ -71,11 +72,7 @@
   &__bottom {
     position: relative;
     overflow: hidden;
-    height: 200px;
-
-    @include md-block {
-      height: 270px;
-    }
+    height: auto;
 
     &-inner {
       position: relative;
@@ -329,16 +326,19 @@
       -webkit-order: 2;
       -ms-flex-order: 2;
       order: 2;
-      margin-right: -12px;
+      margin-right: -8px;
+      border-right: 0;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       background-position-x: 12px;
+      overflow: hidden;
 
       &:before {
+        position: absolute;
         top: 0;
         bottom: 0;
         left: auto;
-        right: 0;
+        right: -3px;
         margin: auto;
       }
     }

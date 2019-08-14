@@ -218,5 +218,13 @@
       transform: rotate(180deg);
     }
   }
+
+  &-buttons-mobile {
+    width: 100%;
+
+    @include lg-block {
+      display: none;
+    }
+  }
 }
 

@@ -33,9 +33,9 @@ mixin product-card(productId, productCard)
         .product-card__order
             .product-card__blocks-price=ruble(productCard.price)
             if isEmpty(productCard)
-                a(href='#').btn.btn-fix.btn-basket В корзину
+                a(href='#').btn.btn-basket В корзину
             else
-                a(href='#').btn.btn-fix.btn-basket.btn-gray Заказать
+                a(href='#').btn.btn-basket.btn-gray Заказать
 
             if isEmpty(productCard)
                 .product-card__total-sum.js-quantity-sum=ruble(productCard.price * productCard.quantityCurrent)

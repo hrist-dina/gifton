@@ -21,9 +21,14 @@ block sidebar
 block content-left
 	include ../blocks/components/product-card/product-card
 	.content__top-block
-		.content__top-action
-			+catalog-view-mode(modes)
-			+catalog-sort(sort)
-		include ../blocks/components/catalog-search/catalog-search
+		.content__top-inner
+			.content__top-action
+				+catalog-view-mode(modes)
+				+catalog-sort(sort)
+			include ../blocks/components/catalog-search/catalog-search
+		.catalog-filter-buttons-mobile
+			a(href='javascript:void(0)') Фильтры
+			a(href='javascript:void(0)') Категории
+
 	.content__main-block
 		+product-card-list(productCards)
