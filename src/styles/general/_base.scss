@@ -56,9 +56,14 @@ body .hide {
 .inner-page {
 	@include m-top(-2);
 	position: relative;
+	overflow: hidden;
 	@include to($break_md) {
 		@include m-top(-1);
 	}
+}
+
+.o-hidden {
+	overflow: hidden;
 }
 
 input {

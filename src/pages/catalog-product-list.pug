@@ -27,8 +27,8 @@ block content-left
 				+catalog-sort(sort)
 			include ../blocks/components/catalog-search/catalog-search
 		.catalog-filter-buttons-mobile
-			a(href='javascript:void(0)') Фильтры
-			a(href='javascript:void(0)') Категории
+			a(href='javascript:void(0)').js-catalog-filter-open Фильтры
+			a(href='javascript:void(0)').js-catalog-accordion-open Категории
 
 	.content__main-block
 		+product-card-list(productCards)

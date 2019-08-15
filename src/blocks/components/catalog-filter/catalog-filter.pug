@@ -1,41 +1,46 @@
 include ../price-slider/price-slider
 
 mixin catalog-filter(filter)
-    form.catalog-filter.js-catalog-filter
-        .catalog-filter__inner
-            .catalog-filter__top
-                .catalog-filter__top-half
-                    .catalog-filter__title Фильтры
-                .catalog-filter__top-half
-                    a(href='javascript:void(0)').catalog-filter__clean Очистить
-            for item in filter.blocks
-                case item.type
-                    when 'checkbox'
-                        .catalog-filter__block.catalog-filter__block_scroll.js-scroll
-                            .catalog-filter__name=item.name
-                            if item.list
-                                .catalog-filter__checkbox-list
-                                    for checkbox in item.list
-                                        label.catalog-filter__checkbox
-                                            input(name=checkbox.name type="checkbox" value=checkbox.value checked=checkbox.active disabled=checkbox.disabled)
-                                            span.catalog-filter__checkbox-text=checkbox.text
-                    when 'price'
-                        .catalog-filter__block
-                            +price-slider(item, 'catalog-filter')
-                    when 'dropdown'
-                        .catalog-filter__block.catalog-filter__dropdown.js-dropdown
-                            .catalog-filter__name.js-dropdown-name=item.name
-                            .catalog-filter__dropdown-block.js-dropdown-block
-                                if item.input
-                                    input(type='text', name=item.input)
+    .catalog-filter__wrap.js-catalog-filter
+        form.catalog-filter
+            .catalog-filter__close
+                button.hamburger.hamburger--collapse.js-catalog-filter-close.is-active
+                    span.hamburger-box
+                        span.hamburger-inner
+            .catalog-filter__inner
+                .catalog-filter__top
+                    .catalog-filter__top-half
+                        .catalog-filter__title Фильтры
+                    .catalog-filter__top-half
+                        a(href='javascript:void(0)').catalog-filter__clean Очистить
+                for item in filter.blocks
+                    case item.type
+                        when 'checkbox'
+                            .catalog-filter__block.catalog-filter__block_scroll.js-scroll
+                                .catalog-filter__name=item.name
                                 if item.list
-                                    .catalog-filter__checkbox-list(data-dropdown-list)
+                                    .catalog-filter__checkbox-list
                                         for checkbox in item.list
                                             label.catalog-filter__checkbox
                                                 input(name=checkbox.name type="checkbox" value=checkbox.value checked=checkbox.active disabled=checkbox.disabled)
                                                 span.catalog-filter__checkbox-text=checkbox.text
+                        when 'price'
+                            .catalog-filter__block
+                                +price-slider(item, 'catalog-filter')
+                        when 'dropdown'
+                            .catalog-filter__block.catalog-filter__dropdown.js-dropdown
+                                .catalog-filter__name.js-dropdown-name=item.name
+                                .catalog-filter__dropdown-block.js-dropdown-block
+                                    if item.input
+                                        input(type='text', name=item.input)
+                                    if item.list
+                                        .catalog-filter__checkbox-list(data-dropdown-list)
+                                            for checkbox in item.list
+                                                label.catalog-filter__checkbox
+                                                    input(name=checkbox.name type="checkbox" value=checkbox.value checked=checkbox.active disabled=checkbox.disabled)
+                                                    span.catalog-filter__checkbox-text=checkbox.text
 
 
-            .catalog-filter__block.catalog-filter__block-center
-                button(type='submit').btn.btn-check-mark Применить
+                .catalog-filter__block.catalog-filter__block-center
+                    button(type='submit').btn.btn-check-mark Применить
 

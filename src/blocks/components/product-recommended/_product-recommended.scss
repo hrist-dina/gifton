@@ -24,6 +24,9 @@
   }
 
   &__more {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     @include col();
     @include size(4);

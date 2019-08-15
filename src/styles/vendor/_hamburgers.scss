@@ -32,5 +32,13 @@ $hamburger-types: (
   &.is-active &-inner {
     width: $hamburger-layer-width;
   }
+  &-box {
+    height: 20px;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
 
 }

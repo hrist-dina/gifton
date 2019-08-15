@@ -1,3 +1,9 @@
 .catalog-sort {
   margin-right: 10px;
+
+  & select,
+  & .select2 {
+    min-width: 140px;
+    text-align: right;
+  }
 }

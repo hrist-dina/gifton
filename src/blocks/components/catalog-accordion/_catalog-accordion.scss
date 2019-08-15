@@ -4,10 +4,7 @@
 }
 
 .catalog-accordion {
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(1, 1, 1, 0.05);
-  background-color: #fff;
-  margin-bottom: 16px;
+  @include filter-modal-block();
 
   &__top {
     @include filter-container();
@@ -28,6 +25,10 @@
   &__block {
     @include filter-container();
     border-bottom: 1px solid #ecf1f5;
+
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 
   &__name {

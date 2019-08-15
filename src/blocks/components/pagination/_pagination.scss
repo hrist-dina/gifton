@@ -1,6 +1,8 @@
-
 .pagination {
-  margin-top: 70px;
+  margin-top: 50px;
+  @include md-block {
+    margin-top: 70px;
+  }
 
   &__wrap {
     text-align: center;
@@ -10,7 +12,6 @@
     font-size: 0;
     display: inline-block;
     vertical-align: middle;
-
   }
 
   &__item {
@@ -34,6 +35,14 @@
     box-sizing: border-box;
     margin-right: 16px;
 
+    @include to($break_sm) {
+      margin-right: 10px;
+      min-width: 25px;
+      max-height: 25px;
+      line-height: 17px;
+      font-size: 11px;
+    }
+
     &.first,
     &.last {
       border: 2px solid rgb(236, 241, 245);
@@ -55,6 +64,11 @@
       line-height: 20px;
       color: #fff;
       font-weight: 500;
+      @include to($break_sm) {
+        min-width: 30px;
+        min-height: 30px;
+        font-size: 13px;
+      }
     }
   }
 
@@ -67,11 +81,21 @@
       border-radius: 50%;
       box-sizing: border-box;
       background-color: #ecf1f5;
+
+      @include to($break_sm) {
+        width: 3px;
+        height: 3px;
+      }
     }
     @include point();
     position: relative;
     margin-left: 10px;
     margin-right: 26px;
+
+    @include to($break_sm) {
+      margin-left: 4px;
+      margin-right: 14px;
+    }
 
     &:before,
     &:after {
@@ -100,6 +124,11 @@
     vertical-align: middle;
     width: 28px;
     height: 28px;
+
+    @include to($break_sm) {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &__prev {

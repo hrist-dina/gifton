@@ -4,6 +4,9 @@
   &__flex {
     @include row-flex();
     margin: auto;
+    @include to($break_lg) {
+     flex-direction: column;
+    }
   }
 
   & .sidebar {
@@ -12,9 +15,6 @@
     @include size-lg(4.5);
     @include size(16);
 
-    @include to($break_lg) {
-      order: 2;
-    }
   }
 
   & .content {
@@ -22,6 +22,7 @@
     @include size-xl(12);
     @include size-lg(11.5);
     @include size(16);
+
   }
 }
 

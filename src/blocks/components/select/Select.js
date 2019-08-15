@@ -11,7 +11,8 @@ export class Select {
 
         this.baseOptions = {
             minimumResultsForSearch: Infinity,
-            theme: this.theme
+            theme: this.theme,
+            width: 'resolve'
         };
 
         this.options = $.extend(this.baseOptions, options);

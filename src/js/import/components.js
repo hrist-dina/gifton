@@ -8,9 +8,11 @@ import {Search} from "%components%/search/Search";
 import {BaronScroll} from "../classes/BaronScroll";
 import {HeaderBasket} from "%components%/header-basket/HeaderBasket";
 import {ChangeViewMode} from "%components%/catalog-view-mode/ChangeViewMode";
+import {CatalogAccordion} from "%components%/catalog-accordion/CatalogAccordion";
 
 $(document).ready(function () {
     new CatalogFilter();
+    new CatalogAccordion();
     new PriceSlider();
     new Select();
     new Select('.js-select-no-border', 'gifton-no-border', {
