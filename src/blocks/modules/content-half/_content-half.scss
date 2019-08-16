@@ -1,5 +1,9 @@
 .content-half {
-  padding-bottom: 84px;
+  padding-bottom: 60px;
+
+  @include lg-block {
+    padding-bottom: 84px;
+  }
 
   &__flex {
     @include row-flex();
@@ -7,7 +11,8 @@
 
   &__part {
     @include col();
-    @include size(8);
+    @include size-lg(8);
+    @include size(16);
 
     &__top {
       &-action {

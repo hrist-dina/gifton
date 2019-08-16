@@ -1,7 +1,12 @@
 .product-recommended {
-  @include p-top(2);
-  @include p-bottom(3);
+  @include p-top(1);
+  @include p-bottom(2);
   background-color: #f9f9f9;
+
+  @include lg-block {
+    @include p-top(2);
+    @include p-bottom(3);
+  }
 
   &_big-top {
     @include p-top(3);
@@ -12,14 +17,19 @@
     line-height: 25px;
     color: #3c414c;
     font-weight: 500;
-    @include m-bottom(2);
+    @include m-bottom(1);
+
+    @include lg-block {
+      @include m-bottom(2);
+    }
   }
 
   &__list {
     @include row-flex();
 
     & .product-card {
-      @include size(3);
+      @include size-xl(3);
+      @include size(16);
     }
   }
 
@@ -29,7 +39,9 @@
     background-repeat: no-repeat;
     position: relative;
     @include col();
-    @include size(4);
+    @include size-xl(4);
+    @include size-md(8);
+    @include size(16);
     box-sizing: border-box;
     height: 270px;
     border-radius: 6px;

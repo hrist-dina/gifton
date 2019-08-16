@@ -7,12 +7,18 @@
 
   &__top {
     position: relative;
-    padding: 30px;
+    padding: 20px;
+    @include lg-block {
+      padding: 30px;
+    }
   }
 
   &__bottom {
     border-top: 2px solid #ecf1f5;
-    padding: 10px 30px;
+    padding: 5px 30px;
+    @include lg-block {
+      padding: 10px 40px;
+    }
   }
 
   &__marker {
@@ -67,8 +73,11 @@
   &__slider {
 
     &-main {
-      margin: 90px auto;
+      margin: 45px auto;
       text-align: center;
+      @include lg-block {
+        margin: 90px auto;
+      }
 
       & .slide {
         display: inline-block;
@@ -86,7 +95,7 @@
 
     &-nav {
       position: relative;
-      padding: 0 51px;
+      padding: 0 60px;
 
       & .slick-list {
         padding: 0 20px;
@@ -136,18 +145,26 @@
 
   &__inner {
     box-sizing: border-box;
-    padding: 16px;
+    padding: 10px;
+    @include lg-block {
+      padding: 16px;
+    }
   }
 
   &__option {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
+    padding: 7px;
     border-radius: 6px;
     background-color: #fff;
     border: 2px solid transparent;
-    padding: 10px;
     box-sizing: border-box;
     margin-right: 4px;
+    @include lg-block {
+      width: 90px;
+      height: 90px;
+      padding: 10px;
+    }
 
     &:nth-child(6n) {
       margin-right: 0;
@@ -176,26 +193,40 @@
   margin-top: 16px;
 
   &__top {
-    padding: 60px;
+    padding: 30px;
+    @include md-block {
+      padding: 60px;
+    }
   }
 
   &__inner {
-    display: flex;
+    @include md-block {
+      display: flex;
+    }
 
     &-right {
       display: flex;
       flex-direction: column;
-      width: 34%;
-      align-items: flex-end;
+      margin-top: 10px;
+
+      @include md-block {
+        align-items: flex-end;
+        width: 34%;
+        margin-top: 0;
+      }
     }
   }
 
   &__title {
-    font-size: 25px;
+    font-size: 22px;
     line-height: 1.2;
     color: #32394d;
     font-weight: 600;
-    width: 66%;
+
+    @include md-block {
+      width: 66%;
+      font-size: 25px;
+    }
   }
 
   &__article {
@@ -206,43 +237,69 @@
 
   &__commercial {
     margin-top: 20px;
-    display: flex;
-    align-items: center;
+
+    @include sm-block {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__price {
-    font-size: 41px;
+    font-size: 38px;
+    line-height: 1.1;
     color: #b9cf1b;
     font-weight: 300;
+
+    @include sm-block {
+      font-size: 41px;
+    }
   }
 
   &__balance {
-    margin-left: 25px;
     display: flex;
     align-items: center;
+    margin-top: 15px;
+
+    @include sm-block {
+      margin-top: 0;
+      margin-left: 25px;
+    }
 
     &-value {
       display: inline-block;
-      padding: 11px 20px;
       box-sizing: border-box;
       border-radius: 20px;
       background-color: #0a95dd;
-      font-size: 12px;
+      padding: 8px 16px;
+      font-size: 11px;
       color: #fff;
       font-weight: 500;
       text-align: center;
+
+      @include sm-block {
+        padding: 11px 20px;
+        font-size: 12px;
+      }
     }
 
     &-text {
-      font-size: 14px;
+      font-size: 12px;
       color: #b4bfc7;
       font-weight: 500;
-      margin-left: 16px;
+      margin-left: 10px;
+
+      @include sm-block {
+        margin-left: 16px;
+        font-size: 14px;
+      }
     }
   }
 
   &__info {
-    margin-top: 50px;
+    margin-top: 25px;
+    @include sm-block {
+      margin-top: 50px;
+    }
   }
 
   &__prop {
@@ -273,8 +330,15 @@
 
   &__actions {
     border-top: 2px solid #ecf1f5;
-    padding: 60px;
-    display: flex;
+    padding: 30px;
+
+    @include md-block {
+      padding: 60px;
+    }
+
+    @include sm-block {
+      display: flex;
+    }
   }
 
   &__size {
@@ -284,13 +348,24 @@
 
   &__quantity {
     align-self: flex-start;
+    margin-top: 15px;
+    & .select-quantity {
+      justify-content: flex-start;
+    }
+    @include sm-block {
+      margin-top: 0;
+    }
   }
 
   &__bottom {
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 60px;
     box-sizing: border-box;
+
+    @include md-block {
+      height: 80px;
+    }
 
     &-half {
       width: 50%;
@@ -359,7 +434,11 @@
 }
 
 .product-desc {
-  margin-top: 70px;
+  margin-top: 40px;
+
+  @include md-block {
+    margin-top: 70px;
+  }
 
   &__title {
     font-size: 19px;
@@ -383,14 +462,24 @@
   &__media {
     @include row-flex();
 
+    & img {
+      width: 100%;
+    }
+
     &-video {
       @include col();
-      @include size(8)
+      @include size-sm(8);
+      @include size(16);
     }
 
     &-container {
       @include col();
-      @include size(4)
+      @include size-sm(4);
+      @include size(8);
+      margin-top: 10px;
+      @include sm-block {
+        margin-top: 0;
+      }
     }
   }
 
