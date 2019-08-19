@@ -1,9 +1,18 @@
-.slider-main
-    .container
-        ul.slider-main__list
-            li.slider-main__item
-                img.slider-main__img
+section.slider-main
+    ul.slider-main__list.js-slider-main
+        li.slider-main__item(style={'background-image':'url("img/slider-main/slider-main_1.png")'})
+            .container
                 .slider-main__info
-                    .slider-main__text Призыв к действию 
-                    .slider-main__description Дополнительная информация 
-                    a.button.slider-main__link(href="#") Подробнее
+                    .slider-main__text Призыв
+                        br
+                        | к действию
+                    .slider-main__description Дополнительная информация
+                a(href='#').btn.btn-fix.slider-main_btn Подробнее
+        li.slider-main__item(style={'background-image':'url("img/slider-main/slider-main_1.png")'})
+            .container
+                .slider-main__info
+                    .slider-main__text Призыв
+                        br
+                        | к действию 2
+                    .slider-main__description Дополнительная информация2
+                    a(href='#').btn.btn-fix.slider-main_btn Подробнее

@@ -1,0 +1,135 @@
+.choice-block {
+
+  @mixin choice-block-arrow() {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: url("../img/choice-block/arrow.png") no-repeat center;
+    background-size: contain;
+    width: 231px;
+    height: 54px;
+  }
+
+  &__wrap {
+    @include m-top(4);
+    @include p-bottom(4);
+  }
+
+  &__inner {
+  display: flex;
+    justify-content: space-between;
+  }
+
+  &__left,
+  &__right {
+    height: 300px;
+    box-shadow: 0 4px 20px rgba(1,1,1,0.15);
+    background-color: #fff;
+    width: 50%;
+  }
+
+  &__left {
+    position: relative;
+    border-top-right-radius: 300px;
+    border-bottom-right-radius: 300px;
+
+    &-box {
+      position: absolute;
+      right: 76px;
+      top: 0;
+      bottom: 0;
+      left: auto;
+      margin: auto;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__done {
+    background: url("../img/choice-block/done.png") no-repeat center;
+    background-size: contain;
+    margin-left: 30px;
+    width: 153px;
+    height: 153px;
+  }
+
+  &__right {
+    position: relative;
+    border-top-left-radius: 300px;
+    border-bottom-left-radius: 300px;
+
+    &-box {
+      position: absolute;
+      left: 76px;
+      top: 0;
+      bottom: 0;
+      right: auto;
+      margin: auto;
+    display: flex;
+      align-items: center;
+    }
+  }
+
+  &__question {
+    background: url("../img/choice-block/question.png") no-repeat center;
+    background-size: contain;
+    margin-right: 30px;
+    width: 153px;
+    height: 153px;
+  }
+
+  &__btn {
+    width: 136px;
+    height: 40px;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  &__center {
+
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 288px;
+      height: 100%;
+      padding: 0 50px;
+      box-sizing: border-box;
+
+      &:before {
+        @include choice-block-arrow();
+      }
+      &:after {
+        @include choice-block-arrow();
+        top: auto;
+        bottom: 0;
+        @include rotate();
+      }
+    }
+  }
+
+  &__title {
+    font-size: 25px;
+    line-height: 1.2;
+    color: #3c414c;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__desc {
+    font-size: 12px;
+    line-height: 18px;
+    color: #3c414c;
+    font-weight: 400;
+    text-align: center;
+  }
+}
+

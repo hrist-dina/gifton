@@ -46,21 +46,24 @@ header.header
                     include ../../components/search/search
     include ../../components/color-line/color-line
 
-    .header__bottom
-        .header__bg(style={"background-image": `url(${bg})`})
-        .header__bottom-inner
-            .container
-                .header__bottom-flex
-                    if titleDate || titleBalloon
-                        .header__bottom-full
-                            h1.title-balloon(data-title-date=titleDate class=titleDate ? 'title-date' : '' class=titleBalloon ? titleBalloon : '')=title
-                            +breadcrumbs(breadcrumbs)
-                    else
-                        .header__bottom-left
-                            h1=title
-                            +breadcrumbs(breadcrumbs)
-                        .header__bottom-right
-                            block header-bottom-right
+    if isMain
+        include ../../components/slider-main/slider-main
+    else
+        .header__bottom
+            .header__bg(style={"background-image": `url(${bg})`})
+            .header__bottom-inner
+                .container
+                    .header__bottom-flex
+                        if titleDate || titleBalloon
+                            .header__bottom-full
+                                h1.title-balloon(data-title-date=titleDate class=titleDate ? 'title-date' : '' class=titleBalloon ? titleBalloon : '')=title
+                                +breadcrumbs(breadcrumbs)
+                        else
+                            .header__bottom-left
+                                h1=title
+                                +breadcrumbs(breadcrumbs)
+                            .header__bottom-right
+                                block header-bottom-right
 
 
 

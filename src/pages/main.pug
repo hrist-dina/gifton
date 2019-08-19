@@ -1,5 +1,15 @@
 extends ../views/layouts/default
+include ../blocks/components/catalog-category-main/catalog-category-main
+
 block variables
-	- var title = "";
+	- var title = "Главная";
+	- var isMain = true;
+	//- Данные для миксинов Pug
+	include ../data/main
 
 block content
+	section.section-gray
+		include ../blocks/components/banner-main/banner-main
+		include ../blocks/components/choice-block/choice-block
+		+catalog-category-main(catalogCategoryMain)
+

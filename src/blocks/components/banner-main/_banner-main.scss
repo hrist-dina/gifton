@@ -1,0 +1,88 @@
+.banner-main {
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(236,97,90,0.6);
+  background-image: linear-gradient(30deg, #eb6159 0%, #e78555 100%);
+  overflow: hidden;
+
+  &__wrap {
+    @include p-top(3);
+    @include m-bottom(3);
+  }
+
+  &__inner {
+    padding: 60px 78px;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: 44px;
+      top: 0;
+      bottom: 0;
+      left: auto;
+      margin: auto;
+      background: url("../img/banner-main/squares-bg.png") no-repeat center right;
+      background-size: cover;
+      width: 289px;
+      height: 361px;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    color: #fff;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  &__block {
+
+    &-list {
+      margin-top: 20px;
+      @include row-flex();
+      @include shift-right(2);
+    }
+
+    &-item {
+      @include col();
+      @include u-size(3, 12, $offset);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-top {
+      display: flex;
+      margin-bottom: 15px;
+    }
+
+    &-title {
+      margin-top: 5px;
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.2;
+      font-style: normal;
+      font-weight: 500;
+      margin-left: 16px;
+    }
+
+    &-text {
+      max-width: 185px;
+      font-size: 12px;
+      color: #fff;
+      line-height: 1.5;
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+}

@@ -270,5 +270,10 @@ h6,
 		text-align: left;
 		width: 10%;
 	}
+}
 
+.section {
+	&-gray {
+		background-color: #f9f9f9;
+	}
 }

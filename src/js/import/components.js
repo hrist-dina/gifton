@@ -9,6 +9,8 @@ import {BaronScroll} from "../classes/BaronScroll";
 import {HeaderBasket} from "%components%/header-basket/HeaderBasket";
 import {ChangeViewMode} from "%components%/catalog-view-mode/ChangeViewMode";
 import {CatalogAccordion} from "%components%/catalog-accordion/CatalogAccordion";
+import Slider from "../classes/Slider";
+import {SliderMain} from "%components%/slider-main/SliderMain";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -27,4 +29,6 @@ $(document).ready(function () {
     });
     new HeaderBasket();
     new ChangeViewMode();
+    new Slider();
+    new SliderMain('.js-slider-main');
 });
