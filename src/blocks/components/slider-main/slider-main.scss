@@ -1,0 +1,35 @@
+.slider-main {
+    margin-top: 30px;
+    margin-bottom: 90px;
+
+    &__list {
+        list-style-type: none;
+
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__text {
+        font-size: 39px;
+        color: #057897;
+        line-height: 1.2;
+        font-style: normal;
+        font-weight: 500;
+    }
+
+    &__description {
+        font-size: 14px;
+        color: #057897;
+        line-height: 1.2;
+        font-style: normal;
+        font-weight: 400;
+
+    }
+
+    &_btn  {
+        margin-top: 25px;
+    }
+}
+
