@@ -7,14 +7,12 @@
                     name: 'Подарочные наборы',
                     bg:'img/catalog/set_bg.png',
                     icon: 'img/catalog/set_icon.png',
-                    type: 'half',
                     color: 'purple'
                 },
                 {
                     name: 'Электроника',
                     bg:'img/catalog/electronics_bg.png',
                     icon: 'img/catalog/electronics_icon.png',
-                    type: 'half',
                     color: 'pacific-blue'
                 }
             ]
@@ -26,14 +24,12 @@
                     name: 'Для дома',
                     bg:'img/catalog/house_bg.png',
                     icon: 'img/catalog/house_icon.png',
-                    type: 'quarter',
                     color: 'brown'
                 },
                 {
                     name: 'Футболки',
                     bg:'img/catalog/t-shirts_bg.png',
                     icon: 'img/catalog/t-shirt_icon.png',
-                    type: 'half',
                     color: 'green'
                 }
             ]
@@ -45,7 +41,6 @@
                     name: 'Для отдыха',
                     bg:'img/catalog/relaxation_bg.png',
                     icon: 'img/catalog/relaxation_icon.png',
-                    type: 'quarter',
                     color: 'blue'
                 }
             ]
@@ -57,14 +52,12 @@
                     name: 'Посуда и кухонные аксессуары',
                     bg:'img/catalog/dishes_bg.png',
                     icon: 'img/catalog/dishes_icon.png',
-                    type: 'half',
                     color: 'light-grey'
                 },
                 {
                     name: 'Ежедневники и блокноты',
                     bg:'img/catalog/diaries_bg.png',
                     icon: 'img/catalog/diaries_icon.png',
-                    type: 'half',
                     color: 'dark-blue'
                 }
             ]
@@ -76,21 +69,18 @@
                     name: 'Новый год',
                     bg:'img/catalog/new-year_bg.png',
                     icon: 'img/catalog/new-year_icon.png',
-                    type: 'half',
                     color: 'red'
                 },
                 {
                     name: 'Награды',
                     bg:'img/catalog/awards_bg.png',
                     icon: 'img/catalog/awards_icon.png',
-                    type: 'half',
                     color: 'light-green'
                 },
                 {
                     name: 'Упаковка',
                     bg:'img/catalog/packaging_bg.png',
                     icon: 'img/catalog/packaging_icon.png',
-                    type: 'half',
                     color: 'red'
                 },
             ]
@@ -102,14 +92,12 @@
                     name: 'Промо продукция',
                     bg:'img/catalog/promo_bg.png',
                     icon: 'img/catalog/promo_icon.png',
-                    type: 'half',
                     color: 'orange'
                 },
                 {
                     name: 'Сумки и рюкзаки',
                     bg:'img/catalog/bags_bg.png',
                     icon: 'img/catalog/bags_icon.png',
-                    type: 'half',
                     color: 'yellow'
                 }
             ]
@@ -121,21 +109,18 @@
                     name: 'Одежда с нанесением',
                     bg:'img/catalog/clothes_bg.png',
                     icon: 'img/catalog/clothes_icon.png',
-                    type: 'half',
                     color: 'purple'
                 },
                 {
                     name: 'Зонты',
                     bg:'img/catalog/umbrellas_bg.png',
                     icon: 'img/catalog/umbrellas_icon.png',
-                    type: 'half',
                     color: 'pacific-blue'
                 },
                 {
                     name: 'Для офиса',
                     bg:'img/catalog/office_bg.png',
                     icon: 'img/catalog/office_icon.png',
-                    type: 'quarter',
                     color: 'dark-blue'
                 }
             ]
@@ -147,16 +132,82 @@
                     name: 'Ручки',
                     bg:'img/catalog/pens_bg.png',
                     icon: 'img/catalog/pens_icon.png',
-                    type: 'half',
                     color: 'gray'
                 },
                 {
                     name: 'Праздничные подарки',
                     bg:'img/catalog/presents_bg.png',
                     icon: 'img/catalog/presents_icon.png',
-                    type: 'quarter',
                     color: 'light-red'
                 },
             ]
         }
     ];
+
+-
+    var productRecommended = {
+        title: 'Рекомендуемые товары',
+        list: [
+            {
+                img: 'img/catalog/product-card-backpack.png',
+                title: 'Рюкзак Classic Adicolor',
+                article: 'Арт.6802.20',
+                price: 3690,
+                size: [
+                    {
+                    name: 'Размер (S)',
+                    value: 's'
+                    },
+                    {
+                    name: 'Размер (M)',
+                    value: 'm'
+                    },
+                    {
+                    name: 'Размер (L)',
+                    value: 'l'
+                    }
+                ],
+                quantity: 136,
+                quantityCurrent: 1
+            },
+                {
+                    img: 'img/catalog/product-card-umbrella.png',
+                    title: 'Зонт реверсивный MO9002-37',
+                    article: 'Арт. MO9002-37',
+                    price: 1607,
+                    isNew: true,
+                    size: [
+                        {
+                            name: 'Размер (S)',
+                            value: 's'
+                        },
+                        {
+                            name: 'Размер (M)',
+                            value: 'm'
+                        },
+                        {
+                            name: 'Размер (L)',
+                            value: 'l'
+                        }
+            ],
+            quantity: 429,
+            quantityCurrent: 5,
+            },
+            {
+                img: 'img/catalog/product-card-clock.png',
+                title: 'Часы настольные «Статус»',
+                article: 'Арт. 126211',
+                price: 8850,
+                quantity: 0,
+                quantityCurrent: 0,
+            },
+            {
+                img: 'img/catalog/product-card-lamp.png',
+                title: 'Светильник Flexible',
+                article: 'Арт. P513.714',
+                price: 1308,
+                quantity: 1,
+                quantityCurrent: 1,
+            }
+        ]
+    }

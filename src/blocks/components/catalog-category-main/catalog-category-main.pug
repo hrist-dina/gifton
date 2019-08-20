@@ -1,14 +1,20 @@
 mixin catalog-category-main(list)
     section.catalog-category-main__wrap
         .container
+            .catalog-category-main__title
+                | Выберите подходящую
+                br
+                | категорию
             .catalog-category-main
-                for item in list
-                    a.catalog-category-main__item(href='#' class=[item.type ? item.type : '', item.color ? item.color : ''])
-                        .catalog-category-main__bg(style={"background-image": `url(${item.bg})`})
-                        .catalog-category-main__content
-                            if item.icon
-                                .catalog-category-main__icon
-                                    img(src=item.icon, alt=item.name)
-                            .catalog-category-main__name=item.name
-                            if item.arrow
-                                .catalog-category-main__arrow=item.arrow
+                for group in list
+                    .catalog-category-main__group(class=group.type)
+                        for item in group.blocks
+                            a.catalog-category-main__item(href='#' class=[ item.color ? item.color : ''])
+                                .catalog-category-main__bg(style={"background-image": `url(${item.bg})`})
+                                .catalog-category-main__content
+                                    if item.icon
+                                        .catalog-category-main__icon
+                                            img(src=item.icon, alt=item.name)
+                                    .catalog-category-main__name=item.name
+                                    if item.arrow
+                                        .catalog-category-main__arrow=item.arrow

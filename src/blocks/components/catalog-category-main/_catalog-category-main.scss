@@ -1,24 +1,47 @@
 .catalog-category-main {
-  @include m-bottom(2);
-  display: flex;
+  @include m-top(3);
+  @include row-flex();
   flex-wrap: wrap;
 
-  @include lg-block {
-    @include m-bottom(4);
+  &__wrap {
+    background: #fff;
+    @include p-top(3);
+    @include p-bottom(3);
+  }
+
+  &__title {
+    font-size: 31px;
+    line-height: 46px;
+    color: #3c414c;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__group {
+    @include col();
+    @include size(4);
+    height: 514px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
   }
 
   &__item {
-    @include size(16);
-    @include row-flex;
-    @include col();
+    display: flex;
+    flex-direction: column;
     position: relative;
     border-radius: 6px;
     text-decoration: none;
     box-sizing: border-box;
     margin-bottom: 16px;
     overflow: hidden;
+    padding: 30px;
     z-index: 1;
     @include transition(0.2s);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     &:after {
       content: '';
@@ -30,7 +53,6 @@
       border-radius: 6px;
       opacity: .6;
       z-index: 0;
-
     }
 
     &:hover {
@@ -51,7 +73,6 @@
     background-position: center;
     @include blur();
     @include transition(0.2s);
-
   }
 
   &__item:hover &__bg {
@@ -60,9 +81,11 @@
 
   &__content {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
+    height: 100%;
     box-sizing: border-box;
     z-index: 1;
     flex-wrap: wrap;
@@ -72,9 +95,11 @@
   }
 
   &__name {
+    font-size: 19px;
     color: #fff;
     font-weight: 500;
     line-height: 1.2;
+    margin-top: 70px;
   }
 
   &__arrow {
@@ -100,87 +125,85 @@
     }
   }
 
-  & .full &__content {
-    border-radius: 6px;
-    padding: 40px 30px 40px 40px;
+  &__group.big-small &__item {
+    &:first-child {
+      height: 288px;
+    }
 
-    @include md-block {
-      padding-left: 76px;
-      padding-right: 125px;
-      @include p-top(4);
-      @include p-bottom(4);
+    &:last-child {
+      height: 210px;
     }
   }
 
-  & .full &__bg {
-    @include blur(none)
-  }
-
-  & .full &__name {
-    font-size: 31px;
-
-    @include to($break_md) {
-      font-size: 26px;
-      width: 100%;
-      margin-bottom: 15px;
+  &__group.small-big &__item {
+    &:first-child {
+      height: 210px;
     }
 
-  }
-
-  & .quarter {
-    @include size-xl(4);
-    @include size-md(8);
-    position: relative;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    color: #fff;
-    font-weight: 500;
-    padding: 40px 30px 40px 40px;
-    max-height: 136px;
-  }
-
-  & .quarter &__name {
-    width: 60%;
-  }
-
-  & .quarter &__icon {
-    width: 40%;
-
-    & img {
-      max-width: 50px;
+    &:last-child {
+      height: 288px;
     }
   }
 
-  & .half {
-    @include size-xl(2);
-    @include size-md(4);
-    @include size(8);
-    position: relative;
+  &__group.big &__item {
+    height: 436px;
   }
 
-  & .half &__content {
-    display: flex;
-    flex-direction: column;
+  &__group.big-half-small {
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
-    font-size: 14px;
-    color: #fff;
-    font-weight: 500;
-    padding: 15px;
-    height: 136px;
-
   }
-
-  & .quarter &__name {
-    width: 60%;
-  }
-
-  & .quarter &__icon {
-    width: 40%;
-
-    & img {
-      max-width: 50px;
+  &__group.big-half-small &__item {
+    &:first-child,
+    &:nth-child(2) {
+      height: 288px;
+      width: #{calc(50% - 8px)};
     }
+
+    &:last-child {
+      height: 210px;
+      width: 100%;
+    }
+  }
+
+  &__group.big-half-small &__item:first-child &__icon,
+  &__group.big-half-small &__item:nth-child(2) &__icon {
+    margin: 0 auto;
+  }
+  &__group.big-half-small &__item:first-child &__content,
+  &__group.big-half-small &__item:nth-child(2) &__content {
+    text-align: center;
+  }
+
+  &__group.equal-half {
+    position: relative;
+    top: -78px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__group.equal-half &__item {
+    &:first-child {
+      height: 288px;
+      width: 100%;
+    }
+
+    &:nth-child(2),
+    &:last-child {
+      height: 288px;
+      width: #{calc(50% - 8px)};
+      margin-bottom: 0;
+    }
+  }
+
+  &__group.equal-half &__item:nth-child(2) &__icon,
+  &__group.equal-half &__item:last-child &__icon {
+    margin: 0 auto;
+  }
+
+  &__group.equal-half &__item:nth-child(2) &__content,
+  &__group.equal-half &__item:last-child &__content {
+    text-align: center;
   }
 }

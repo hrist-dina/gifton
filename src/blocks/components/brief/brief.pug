@@ -1,39 +1,72 @@
-section.brief
+include ../switch/switch
+
+section.brief__wrap.section-gray
     .container
-        .brief-top
-            .brief-top__title 
-                |Online бриф
-            .brief-top__text 
-                |Техническое задание, займет < 5 минут.
-        .brief-center
-            .card-brief-list
-                .card-brief
-                    .card-brief__inner
-                        .card-brief__title 
-                            |Промо
-                        .card-brief__price 
-                            |до 500 ₽
-                        button.btn.btn-fix.brief__btn 
-                            |Выбрать
+        .brief
+            .brief-top
+                .brief__head
+                    .brief__title
+                        |Online бриф
+                    .brief__desc
+                        |Техническое задание, займет < 5 минут.
+                .brief__status-bar.status-bar
+                    .status-bar__item.active
+                        .status-bar__number 1
+                        .status-bar__desc
+                            .status-bar__text Выберите ценовую категорию сувенира
+                            a(href='javascript:void(0)').btn.btn-blue.status-bar__btn Выбрать все
+                    .status-bar__line
+                    .status-bar__item
+                        .status-bar__number 2
+                    .status-bar__line
+                    .status-bar__item
+                        .status-bar__number 3
 
-                .card-brief.card-brief
-                    .card-brief__inner
-                        .card-brief__title 
-                            |Бизнес
-                        .card-brief__price 
-                            |до 1500 ₽
-                        button.btn.btn-fix.brief__btn 
-                            |Выбрать
+            .brief-center
+                .brief-card__list
+                    .brief-card.promo
+                        .brief-card__inner
+                            .brief-card__title
+                                |Промо
+                            .brief-card__price
+                                |до
+                                |
+                                span 500 ₽
+                            label.btn.btn-fix.brief__btn Выбрать
+                                input.hide(type='radio' name='price' value='promo')
 
-                .card-brief
-                    .card-brief__inner
-                        .card-brief__title 
-                            |VIP
-                        .card-brief__price 
-                            |до 5000 ₽
-                        button.btn.btn-fix.brief__btn 
-                            |Выбрать
-                .brief-bottom            
+                    .brief-card.business.active
+                        .brief-card__inner
+                            .brief-card__title
+                                |Бизнес
+                            .brief-card__price
+                                |до
+                                |
+                                span 1500 ₽
+                            label.btn.btn-fix.brief__btn.active Выбрано
+                                input.hide(type='radio' name='price' value='business' checked=true)
+
+                    .brief-card.vip
+                        .brief-card__inner
+                            .brief-card__title
+                                |VIP
+                            .brief-card__price
+                                |до
+                                |
+                                span 5000 ₽
+                            label.btn.btn-fix.brief__btn Выбрать
+                                input.hide(type='radio' name='price' value='vip')
+            .brief-bottom
+                .brief__title Дополнительные опции
+                .brief-bottom__inner
+                    .brief__options
+                        +switch('Упаковака', 'packaging', true, true)
+                        +switch('Макетирование', 'prototyping', true, false)
+                        +switch('Доставка', 'delivery', true, true)
+                        +switch('Нанесение', 'infliction', true, false)
+                    .brief__step
+                        .brief__step-count 1/3
+                        a(href='javascript:void(0)').btn.btn-rounded.btn-rounded_large.btn-check-mark.brief__btn-step
 
 
 

@@ -1,0 +1,20 @@
+.map {
+  position: relative;
+  margin-top: -60px;
+  &__inner {
+    width: 100%;
+    height: 660px;
+  }
+
+  &__navigator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    margin: auto;
+    width: 331px;
+    height: 179px;
+    z-index: 1;
+  }
+}

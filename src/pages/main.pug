@@ -8,8 +8,13 @@ block variables
 	include ../data/main
 
 block content
+	include ../blocks/components/product-recommended/product-recommended
+
 	section.section-gray
 		include ../blocks/components/banner-main/banner-main
 		include ../blocks/components/choice-block/choice-block
-	include ../blocks/components/brief/brief
 	+catalog-category-main(catalogCategoryMain)
+	+product-recommended(productRecommended)
+	include ../blocks/components/brief/brief
+	include ../blocks/components/map/map
+

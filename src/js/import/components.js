@@ -11,6 +11,7 @@ import {ChangeViewMode} from "%components%/catalog-view-mode/ChangeViewMode";
 import {CatalogAccordion} from "%components%/catalog-accordion/CatalogAccordion";
 import Slider from "../classes/Slider";
 import {SliderMain} from "%components%/slider-main/SliderMain";
+import {Map} from "%components%/map/Map";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -31,4 +32,5 @@ $(document).ready(function () {
     new ChangeViewMode();
     new Slider();
     new SliderMain('.js-slider-main');
+    new Map();
 });

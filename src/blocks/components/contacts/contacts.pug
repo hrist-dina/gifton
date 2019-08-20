@@ -1,0 +1,38 @@
+section.contacts__wrap
+    .container
+        .contacts
+            #map.contacts-map
+            .contacts__box
+                article.contacts-info
+                    .contacts-info__inner
+                        .contacts-info__row
+                            span.contacts-info__img
+                            img(src='img/contacts/location-contacts__icon.png')
+                            span.contacts-info__content Москва, ул. Профсоюзная, д. 23
+                        .contacts-info__row
+                            span.contacts-info__img
+                            img(src='img/contacts/phone-contacts__icon.png')
+                            a(href='tel:+74952252528').contacts-info__content +7 (495) 225-25-28 (пн-пт 10-18)
+                        .contacts-info__row
+                            span.contacts-info__img
+                            img(src='img/contacts/mail-contacts__icon.png')
+                            a(href='mailto:info@gifton.ru').contacts-info__content info@gifton.ru
+
+                article.contacts-form
+                    .contacts-form__title Отправить запрос
+                    label.contacts-form__label
+                        input.contacts-form__input(name="name" type="text" placeholder="Имя Фамилия")
+                    label.contacts-form__label
+                        input.contacts-form__input(name="email" type="text"  placeholder="Email")
+                    label.contacts-form__label
+                        input.contacts-form__input(name="name" type="text"  placeholder="Компания")
+                    label.contacts-form__label
+                        input.contacts-form__input(name="name" type="text"  placeholder="Сайт")
+                    label.contacts-form__label
+                        textarea.contacts-form__textarea(name="message", placeholder="Сообщение")
+                    .contacts-block
+                        label.form__label.form__label_checkbox
+                            input.form__input-checkbox(type="checkbox" name="agree")
+                            span.form__input-checkbox-custom
+                            span.form__label-text Даю согласие на обработку персональных данных
+                        button.btn.btn-fix.contacts__btn Отправить
