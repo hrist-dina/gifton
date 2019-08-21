@@ -12,6 +12,7 @@ import {CatalogAccordion} from "%components%/catalog-accordion/CatalogAccordion"
 import Slider from "../classes/Slider";
 import {SliderMain} from "%components%/slider-main/SliderMain";
 import {Map} from "%components%/map/Map";
+import {ContactMap} from "%components%/contacts/ContactMap";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -33,4 +34,5 @@ $(document).ready(function () {
     new Slider();
     new SliderMain('.js-slider-main');
     new Map();
+    new ContactMap('contact-map');
 });
