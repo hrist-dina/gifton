@@ -236,6 +236,34 @@ h6,
 		@include size(6);
 		margin-bottom: 30px;
 	}
+
+	& ul {
+		list-style-type: none;
+
+		& li {
+			position: relative;
+			font-size: 12px;
+			line-height: 18px;
+			color: #3c414c;
+			font-weight: 400;
+			margin-bottom: 5px;
+			padding-left: 6px;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 10px;
+				bottom: auto;
+				left: 0;
+				right: auto;
+				margin: auto;
+				border-radius: 50%;
+				width: 2px;
+				height: 2px;
+				background-color: #3c414c;
+			}
+		}
+	}
 }
 
 .table {

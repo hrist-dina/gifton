@@ -1,0 +1,95 @@
+-
+    var announceList = [
+        {
+            img: 'img/announce/announce-article-1.jpg',
+            date: '12.03.19',
+            name: 'Название статьи'
+        },
+        {
+            img: 'img/announce/announce-article-2.jpg',
+            date: '12.03.19',
+            name: 'Название статьи 2'
+        }
+    ];
+-
+    var announceNews = [
+        {
+            img: 'img/announce/announce-news-1.jpg',
+            date: '12.03.19',
+            name: 'Название новости'
+        },
+        {
+            img: 'img/announce/announce-news-2.jpg',
+            date: '12.03.19',
+            name: 'Название новости 2'
+        }
+    ];
+
+mixin anonce-item(item)
+    a.announce__item(href='#' style=`background-image: url(${item.img})`)
+        .announce__date=item.date
+        .announce__name=item.name
+
+section.announce
+    .container
+        .announce__inner
+            .announce__col.articles
+                .announce__title Статьи
+                .announce__list
+                    for itemArticle in announceList
+                        +anonce-item(itemArticle)
+                    a.announce__all(href='#')
+                        .announce__all-name Все статьи
+                        .btn.btn-rounded.btn-rounded_medium.btn-arrow-right
+
+            .announce__col.announce__news
+                .announce__title Новости
+                .announce__list
+                    for itemNews in announceNews
+                        +anonce-item(itemNews)
+                    a.announce__all(href='#')
+                        .announce__all-name Все новости
+                        .btn.btn-rounded.btn-rounded_medium.btn-arrow-right
+
+            .announce__content
+                .announce__content-box
+                    .announce__content-title
+                        |Производство корпоративных
+                        br
+                        |сувениров на заказ
+                    .announce__content-text
+                        p
+                            |Желаете оставить приятное впечатление о себе и своей компании? Компания
+                            |«Гифтон» станет вашим надежным помощником. Занимаясь более 10 лет
+                            |поставкой и продажей сувенирной продукции оптом, мы предлагаем
+                            |изготовление промоматериалов с нанесением корпоративной символики и
+                            |оригинальным дизайнерским оформлением.
+
+                        p
+                            |У нас вы можете купить готовые сувениры со склада, заказать изделия по
+                            |европейским каталогам, а также индивидуальное производство сувенирной
+                            |продукции с логотипом.
+
+                        p
+                            |В каталоге вы легко отыщите подходящий товар, отсортировав ассортимент по
+                            |названию, разделу, виду нанесения, бренду, материалу изготовления, цвету и т.д
+
+                .announce__content-box
+                    .announce__content-title
+                        |Преимущества изготовления
+                        br
+                        |сувениров на заказ в «Гифтон»
+                    .announce__content-text
+                        p
+                            |Обратившись за производством корпоративных сувениров с логотипом
+                            |компании к нам, вы  получите:
+
+                        .typography
+                            ul
+                                li единый каталог с удобной системой поиска;
+                                li регулярные спецпредложения и акции;
+                                li максимум внимания и творческих сил при разработке индивидуального дизайна;
+                                li использование современного оборудования;
+                                li оперативную и бережную доставку;
+                                li удобную систему оплаты;
+                                li персональные условия сотрудничества, при которых необычные сувениры и другая рекламная продукция принесут вам еще большую выгоду.

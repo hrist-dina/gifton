@@ -8,6 +8,10 @@
     box-sizing: border-box;
     z-index: 1;
 
+    &__wrap {
+        @include p-top(4);
+    }
+
     &__title {
         line-height: 1.1;
         font-size: 25px;
