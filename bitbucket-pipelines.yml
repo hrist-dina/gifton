@@ -3,3 +3,4 @@ pipelines:
     - step:
         script:
           - ssh -T  gifton@62.109.11.33 "cd ~/www/gifton.test.letsrock.pro/local/assets; git remote set-url origin https://iris_1111:$PASSMASTER@bitbucket.org/letsrockproject/gifton-front.git; git pull; git remote set-url origin https://iris_1111@bitbucket.org/letsrockproject/gifton-front.git"
+          
