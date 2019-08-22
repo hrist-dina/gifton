@@ -9,5 +9,5 @@ mixin switch(title, name, isChecked=false, isDisabled = false)
             input(type="checkbox" name=name)&attributes(attr)
             span.switch-slider
         if title
-            span.switch-title=title
+            span.switch-title !{title}
 

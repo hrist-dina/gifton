@@ -4,7 +4,7 @@ mixin price-slider(item, customClass)
         if item.jsClass
             .price-slider__list(class=customClass ? `${customClass}__list` : '')
                 label
-                    input(class=`${item.jsClass}-min` type='text' name='min' value=item.price.filtered.min data-price-min=item.price.default.min)
+                    input(class=`${item.jsClass}-min` type='text' name='min' value=item.price.filtered.min data-min=item.price.default.min)
                 label
-                    input(class=`${item.jsClass}-max` type='text' name='max' value=item.price.filtered.max data-price-max=item.price.default.max)
+                    input(class=`${item.jsClass}-max` type='text' name='max' value=item.price.filtered.max data-max=item.price.default.max)
             div(class=item.jsClass data-step=item.step)

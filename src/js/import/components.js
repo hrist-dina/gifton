@@ -13,11 +13,18 @@ import Slider from "../classes/Slider";
 import {SliderMain} from "%components%/slider-main/SliderMain";
 import {Map} from "%components%/map/Map";
 import {ContactMap} from "%components%/contacts/ContactMap";
+import {Brief} from "%components%/brief/Brief";
 
 $(document).ready(function () {
     new CatalogFilter();
     new CatalogAccordion();
     new PriceSlider();
+    new PriceSlider('.js-days-slider', {
+        titles: ['день', 'дня', 'дней']
+    });
+    new PriceSlider('.js-count-slider', {
+        suffix: 'шт'
+    });
     new Select();
     new Select('.js-select-no-border', 'gifton-no-border', {
         width: '100%',
@@ -35,4 +42,5 @@ $(document).ready(function () {
     new SliderMain('.js-slider-main');
     new Map();
     new ContactMap('contact-map');
+    new Brief();
 });

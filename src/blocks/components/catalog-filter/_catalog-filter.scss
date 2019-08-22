@@ -10,7 +10,6 @@
   border-radius: 6px;
   box-shadow: 0 4px 10px rgba(1, 1, 1, 0.05);
   background-color: #fff;
-  margin-bottom: 16px;
   z-index: -1;
   @include transition(.5s);
 
@@ -77,6 +76,12 @@
 
 .catalog-filter {
   @include filter-modal-block();
+
+  &__wrap {
+    @include lg-block {
+      margin-bottom: 16px;
+    }
+  }
 
   &__top {
     display: flex;

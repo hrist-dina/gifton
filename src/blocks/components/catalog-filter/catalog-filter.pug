@@ -34,7 +34,7 @@ mixin catalog-filter(filter)
                                     if item.input
                                         input(type='text', name=item.input)
                                     if item.list
-                                        .catalog-filter__checkbox-list(data-dropdown-list)
+                                        .catalog-filter__checkbox-list
                                             for checkbox in item.list
                                                 label.catalog-filter__checkbox
                                                     input(name=checkbox.name type="checkbox" value=checkbox.value checked=checkbox.active disabled=checkbox.disabled)

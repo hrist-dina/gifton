@@ -10,8 +10,8 @@ class Slider {
         this.init();
     }
 
-    bindOptions(...options) {
-        const defaultOptions = {
+    bindOptions(options) {
+        let defaultOptions = {
             dots: true,
             arrows: true,
             infinite: true,
@@ -20,7 +20,7 @@ class Slider {
             rows: 0
         };
 
-        this.options = $.extend(defaultOptions, ...options);
+        this.options = $.extend(defaultOptions, options);
     }
 
     init() {

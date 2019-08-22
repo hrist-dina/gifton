@@ -14,6 +14,13 @@
 }
 .icon {
   &-pseudo {
+    &-fire {
+      @include icon-pseudo {
+        background: url(icon-fire()) no-repeat center;
+        width: 12px;
+        height: 14px;
+      }
+    }
     &-pdf {
       &-white {
         @include icon-pseudo {

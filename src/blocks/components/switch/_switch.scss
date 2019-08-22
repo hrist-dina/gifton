@@ -91,5 +91,14 @@
     color: #3c414c;
     font-weight: 500;
     margin-left: 16px;
+
+    & span {
+      display: block;
+    }
+
+    .selected & .icon-pseudo-fire:before {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
   }
 }
