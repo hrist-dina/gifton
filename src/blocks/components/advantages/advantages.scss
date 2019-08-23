@@ -1,0 +1,60 @@
+.advantages {
+
+    &__wrap {
+        @include p-top(3);
+        @include m-bottom(3)
+    }
+    border-radius: 6px;
+    background-image: -moz-linear-gradient( 60deg, rgb(236,97,90) 0%, rgb(232,134,85) 100%);
+    background-image: -webkit-linear-gradient( 60deg, rgb(236,97,90) 0%, rgb(232,134,85) 100%);
+    background-image: -ms-linear-gradient( 60deg, rgb(236,97,90) 0%, rgb(232,134,85) 100%);
+    box-shadow: 0px 4px 20px 0px rgba(236, 97, 90, 0.6);
+    overflow: hidden;
+
+    &__inner {
+        padding: 60px 78px;
+    }
+
+    &__title {
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        line-height: 1.2;
+        font-weight: 500;
+
+    }
+
+    &__text {
+        font-size: 19px;
+        color: rgb(255, 255, 255);
+        line-height: 1.2;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    &__description {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.5;
+        font-weight: 400;
+    }
+
+    &__list {
+        margin-top: 60px;
+        display: flex;
+        flex-wrap: wrap;
+ 
+      }
+
+    &__item {
+        @include col();
+        @include u-size(4, 12, $offset);
+        margin-bottom: 45px;
+
+    }
+
+    &__img {
+        padding-bottom: 20px;
+    }
+
+}
+

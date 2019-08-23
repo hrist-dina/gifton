@@ -1,0 +1,11 @@
+extends ../views/layouts/default
+
+block variables
+	- var title = "О нас";
+	include ../data/about
+
+block content
+	include ../blocks/components/advantages/advantages
+	include ../blocks/components/system/system
+	include ../blocks/components/slider-about/slider-about
+	include ../blocks/components/description-about/description-about

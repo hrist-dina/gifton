@@ -43,4 +43,5 @@ $(document).ready(function () {
     new Map();
     new ContactMap('contact-map');
     new Brief();
+    new SliderAbout('.js-slider-about');
 });

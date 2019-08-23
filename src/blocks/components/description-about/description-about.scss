@@ -1,0 +1,32 @@
+.description-about {
+    background-image: url(img/description-about/description-about_bg.png);
+
+}
+
+.description__card {
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 20px 0px rgba(1, 1, 1, 0.15);
+
+}
+
+.description-card__inner {
+    padding: 60px 78px;
+
+}
+
+.description-card__left-title {
+    font-size: 25px;
+    color: rgb(60, 65, 76);
+    line-height: 1.2;
+    font-weight: 500;
+
+}
+
+.description-card__left-text {
+    font-size: 12px;
+    color: rgba(53, 53, 66, 0.6);
+    line-height: 1.5;
+    font-weight: 400;
+
+}
