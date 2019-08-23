@@ -264,6 +264,15 @@ h6,
 			}
 		}
 	}
+
+	& ol {
+		list-style-position: inside;
+		padding-left: 0;
+
+		& li {
+			margin-bottom: 5px;
+		}
+	}
 }
 
 .table {

@@ -1,32 +1,73 @@
 .description-about {
-    background-image: url(img/description-about/description-about_bg.png);
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
+  background-color: #fff;
+  padding: 60px 78px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 
-}
+  &:before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    left: -70px;
+    bottom: -110px;
+    background-image: url(../img/description-about/description-about.jpg);
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
 
-.description__card {
-    border-radius: 6px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 4px 20px 0px rgba(1, 1, 1, 0.15);
+  &__wrap {
+    @include p-top(4);
+    @include p-bottom(4);
+    background: url(../img/description-about/description-about_bg.jpg) no-repeat center;
+    background-size: cover;
+  }
 
-}
+  &__inner {
+    position: relative;
+    @include row-flex();
+    z-index: 1;
+  }
 
-.description-card__inner {
-    padding: 60px 78px;
+  &__left {
+    @include col();
+    @include u-size(6, 14, $offset);
+    @include shift-right(1)
+  }
 
-}
+  &__center {
+    @include col();
+    @include u-size(3, 14, $offset);
+    @include shift-right(1);
+    padding-right: 20px;
+  }
 
-.description-card__left-title {
+  &__right {
+    @include col();
+    @include u-size(3, 14, $offset);
+    padding-right: 20px;
+  }
+
+
+  &__title {
     font-size: 25px;
-    color: rgb(60, 65, 76);
+    color: #3c414c;
     line-height: 1.2;
     font-weight: 500;
+    margin-bottom: 20px;
+  }
 
-}
-
-.description-card__left-text {
+  &__text {
     font-size: 12px;
-    color: rgba(53, 53, 66, 0.6);
+    color: #353542;
     line-height: 1.5;
-    font-weight: 400;
+    font-weight: 500;
 
+    & p {
+      margin-bottom: 25px;
+    }
+  }
 }

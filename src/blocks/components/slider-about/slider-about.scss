@@ -1,24 +1,25 @@
 .slider-about {
-    margin-top: 180px;
+    @include p-top(3);
+    @include p-bottom(3);
 
     &__list {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         list-style-type: none;
+        padding: 0 180px;
     }
 
-    &__item {
-        margin-right: 25px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-
+    .slider-about &__item {
+        display: inline-flex;
+        align-items: center;
+        max-width: 120px;
+        height: 75px;
+        margin: 0 35px;
     }
 
     &__img {
-        height: 100%;
-        width: 100%;
+        max-height: 75px;
     }
 
 }

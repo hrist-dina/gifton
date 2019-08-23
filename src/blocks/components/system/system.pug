@@ -1,4 +1,4 @@
-section.system
+section.system.section-gray
     .container
         .system__title
             |Cистема работы с нами
@@ -6,6 +6,7 @@ section.system
             .system__item
                 .system__img
                     img(src="img/system/system_icon1.png")
+                .system__bar
                 .system__text
                     |1. Задача
                 .system__description
@@ -17,6 +18,7 @@ section.system
             .system__item
                 .system__img
                     img(src="img/system/system_icon2.png")
+                .system__bar
                 .system__text
                     |2. Решение
                 .system__description
@@ -28,6 +30,7 @@ section.system
             .system__item
                 .system__img
                     img(src="img/system/system_icon3.png")
+                .system__bar
                 .system__text
                     |3. Оформление заказа
                 .system__description
@@ -38,6 +41,7 @@ section.system
             .system__item
                 .system__img
                     img(src="img/system/system_icon4.png")
+                .system__bar
                 .system__text
                     |4. Разработка
                 .system__description
@@ -48,14 +52,17 @@ section.system
             .system__item
                 .system__img
                     img(src="img/system/system_icon5.png")
+                .system__bar.done
+                    .btn.btn-check-mark.system__btn-done
                 .system__text
                     |5. Выполнение
                 .system__description
                     |В течение 10 дней* мы изготавливаем 
                     |рекламную продукцию и отгружаем ее Вам
 
+
         .system__bottom
-            button.btn.btn-fix.system__bottom-btn Начать
+            a(href='#').btn.btn-fix.system__bottom-btn Начать
             .system__bottom-text
                 |* Изготовление образцов и сроки производства 
                 |могут варьироваться в зависимости от технологий 

@@ -218,6 +218,21 @@
       background-position: center;
     }
   }
+
+  &-up {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(10,149,221,0.4);
+    background-color: #0a95dd;
+    box-sizing: border-box;
+    padding: 0;
+    @extend .btn-arrow-right;
+
+    &:before {
+      @include rotate(-90deg);
+    }
+  }
 }
 
 .icon {

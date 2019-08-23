@@ -310,6 +310,19 @@
       }
     }
   }
+
+  &__line {
+    position: relative;
+  }
+
+  .footer &__up {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 50px;
+    left: auto;
+    margin: auto;
+  }
 }
 
 
