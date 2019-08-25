@@ -1,0 +1,38 @@
+
+.border-error {
+  border: 2px solid #d73124;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 26px;
+  color: #d73124;
+  font-weight: 500;
+
+  @include placeholder {
+    color: #d73124;
+  }
+}
+
+body .validator {
+   &-error {
+    position: relative;
+    @extend .border-error;
+
+
+    &-message {
+      font-size: 12px;
+      color: #d73124;
+      font-weight: 500;
+    }
+  }
+
+  & [type=submit]:disabled {
+    opacity: .3;
+  }
+}
+
+body .validator input.validator-error {
+  @extend .border-error;
+  background: url("../img/icons/icon-cross-red.png") no-repeat  97% center;
+  background-size: 12px 11px;
+  padding-right: 25px;
+}

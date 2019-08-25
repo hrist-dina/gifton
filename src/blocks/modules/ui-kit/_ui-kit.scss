@@ -22,6 +22,7 @@
   border-radius: 20px;
   box-sizing: border-box;
   cursor: pointer;
+  -webkit-appearance: initial;
 
   &:hover {
     background: rgba(185, 207, 27, 0.8);
@@ -30,6 +31,10 @@
 
   &:active {
     background: rgb(229, 229, 229);
+  }
+
+  &:disabled {
+    opacity: .5;
   }
 
   &:focus,

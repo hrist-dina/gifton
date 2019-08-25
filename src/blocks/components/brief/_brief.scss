@@ -391,8 +391,19 @@
     }
 
     &__label {
+      position: relative;
       display: block;
       margin-bottom: 8px;
+
+      & .tooltip {
+        position: absolute;
+        right: -190px;
+        top: 50%;
+        margin: auto;
+        left: auto;
+        transform: translateY(-50%);
+        z-index: 1;
+      }
     }
     &__half  &__label {
       width: #{calc(50% - 4px)};

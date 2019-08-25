@@ -21,20 +21,24 @@ section.contacts__wrap
                             a(href='mailto:info@gifton.ru').contacts-info__content info@gifton.ru
 
                 article.contacts-form
-                    .contacts-form__title Отправить запрос
-                    label.contacts-form__label
-                        input.contacts-form__input(name="name" type="text" placeholder="Имя Фамилия")
-                    label.contacts-form__label
-                        input.contacts-form__input(name="email" type="text"  placeholder="Email")
-                    label.contacts-form__label
-                        input.contacts-form__input(name="name" type="text"  placeholder="Компания")
-                    label.contacts-form__label
-                        input.contacts-form__input(name="name" type="text"  placeholder="Сайт")
-                    label.contacts-form__label
-                        textarea.contacts-form__textarea(name="message", placeholder="Сообщение")
-                    .contacts-block
-                        label.form__label.form__label_checkbox
-                            input.form__input-checkbox(type="checkbox" name="agree")
-                            span.form__input-checkbox-custom
-                            span.form__label-text Даю согласие на обработку персональных данных
-                        button.btn.btn-fix.contacts__btn Отправить
+                    form(enctype="multipart/form-data" action="" method="POST").validator.js-contact-form
+                        .contacts-form__title Отправить запрос
+                        label.contacts-form__label
+                            input.contacts-form__input(name="name" type="text" placeholder="Имя Фамилия" data-validator-require='true')
+                        label.contacts-form__label
+                            input.contacts-form__input(name="email" type="text"  placeholder="Email" data-validator-require='true' data-validator-type='email')
+                        label.contacts-form__label
+                            input.contacts-form__input(name="company" type="text"  placeholder="Компания" data-validator-require='true')
+                        label.contacts-form__label
+                            input.contacts-form__input(name="site" type="text"  placeholder="Сайт" data-validator-require='true')
+                        .contacts-form__file-box
+                            label.contacts-form__label
+                                textarea.contacts-form__textarea(name="message", placeholder="Сообщение" data-validator-require='true')
+                            label.contacts-form__label-file
+                                input.contacts-form__file(name='file' type='file' )
+                        .contacts-block
+                            label.form__label.form__label_checkbox
+                                input.form__input-checkbox.js-validator-agree(type="checkbox" name="agree")
+                                span.form__input-checkbox-custom
+                                span.form__label-text Даю согласие на обработку персональных данных
+                            button.btn.btn-fix.contacts__btn(type='submit' disabled=true) Отправить

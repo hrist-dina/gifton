@@ -37,187 +37,188 @@ include ../price-slider/price-slider
 section.brief__wrap.section-gray
     .container
         .brief.js-brief
-            .brief-inner.js-brief-step(data-brief-step='1')
-                .brief-top
-                    .brief__head
-                        .brief__title
-                            |Online бриф
-                        .brief__desc
-                            |Техническое задание, займет < 5 минут.
-                    .brief__status-bar.status-bar
-                        .status-bar__item.active.js-brief-status(data-brief-status='1')
-                            .status-bar__number 1
-                            .status-bar__desc
-                                .status-bar__text Выберите ценовую категорию сувенира
-                                a(href='javascript:void(0)').btn.btn-blue.status-bar__btn Выбрать все
-                        .status-bar__line
-                        .status-bar__item.js-brief-status(data-brief-status='2')
-                            .status-bar__number 2
-                        .status-bar__line
-                        .status-bar__item.js-brief-status(data-brief-status='3')
-                            .status-bar__number 3
+            form(action='' method='POST').validator.js-brief-form
+                .brief-inner.js-brief-step(data-brief-step='1')
+                    .brief-top
+                        .brief__head
+                            .brief__title
+                                |Online бриф
+                            .brief__desc
+                                |Техническое задание, займет < 5 минут.
+                        .brief__status-bar.status-bar
+                            .status-bar__item.active.js-brief-status(data-brief-status='1')
+                                .status-bar__number 1
+                                .status-bar__desc
+                                    .status-bar__text Выберите ценовую категорию сувенира
+                                    a(href='javascript:void(0)').btn.btn-blue.status-bar__btn Выбрать все
+                            .status-bar__line
+                            .status-bar__item.js-brief-status(data-brief-status='2')
+                                .status-bar__number 2
+                            .status-bar__line
+                            .status-bar__item.js-brief-status(data-brief-status='3')
+                                .status-bar__number 3
 
-                .brief-center
-                    .brief-card__list
-                        .brief-card.promo
-                            .brief-card__inner
-                                .brief-card__title
-                                    |Промо
-                                .brief-card__price
-                                    |до
-                                    |
-                                    span 500 ₽
-                                label.btn.btn-fix.brief__btn Выбрать
-                                    input.hide(type='radio' name='price' value='promo')
+                    .brief-center
+                        .brief-card__list
+                            .brief-card.promo
+                                .brief-card__inner
+                                    .brief-card__title
+                                        |Промо
+                                    .brief-card__price
+                                        |до
+                                        |
+                                        span 500 ₽
+                                    label.btn.btn-fix.brief__btn Выбрать
+                                        input.hide(type='radio' name='price' value='promo')
 
-                        .brief-card.business.active
-                            .brief-card__inner
-                                .brief-card__title
-                                    |Бизнес
-                                .brief-card__price
-                                    |до
-                                    |
-                                    span 1500 ₽
-                                label.btn.btn-fix.brief__btn.active Выбрано
-                                    input.hide(type='radio' name='price' value='business' checked=true)
+                            .brief-card.business.active
+                                .brief-card__inner
+                                    .brief-card__title
+                                        |Бизнес
+                                    .brief-card__price
+                                        |до
+                                        |
+                                        span 1500 ₽
+                                    label.btn.btn-fix.brief__btn.active Выбрано
+                                        input.hide(type='radio' name='price' value='business' checked=true)
 
-                        .brief-card.vip
-                            .brief-card__inner
-                                .brief-card__title
-                                    |VIP
-                                .brief-card__price
-                                    |до
-                                    |
-                                    span 5000 ₽
-                                label.btn.btn-fix.brief__btn Выбрать
-                                    input.hide(type='radio' name='price' value='vip')
-                .brief-bottom
-                    .brief__title Дополнительные опции
-                    .brief-bottom__inner
-                        .brief__options
-                            +switch('Упаковака', 'packaging', true, true)
-                            +switch('Макетирование', 'prototyping', true, false)
-                            +switch('Доставка', 'delivery', true, true)
-                            +switch('Нанесение', 'infliction', true, false)
-                        .brief__step
-                            .brief__step-count 1/3
-                            a(href='javascript:void(0)').btn.btn-rounded.btn-rounded_large.btn-check-mark.brief__btn-step
+                            .brief-card.vip
+                                .brief-card__inner
+                                    .brief-card__title
+                                        |VIP
+                                    .brief-card__price
+                                        |до
+                                        |
+                                        span 5000 ₽
+                                    label.btn.btn-fix.brief__btn Выбрать
+                                        input.hide(type='radio' name='price' value='vip')
+                    .brief-bottom
+                        .brief__title Дополнительные опции
+                        .brief-bottom__inner
+                            .brief__options
+                                +switch('Упаковака', 'packaging', true, true)
+                                +switch('Макетирование', 'prototyping', true, false)
+                                +switch('Доставка', 'delivery', true, true)
+                                +switch('Нанесение', 'infliction', true, false)
+                            .brief__step
+                                .brief__step-count 1/3
+                                a(href='javascript:void(0)').btn.btn-rounded.btn-rounded_large.btn-check-mark.brief__btn-step
 
-            .brief-inner.js-brief-step(data-brief-step='2').hide
-                .brief-top
-                    .brief__head
-                        .brief__title
-                            | Online бриф
-                        .brief__desc
-                            | Техническое задание, займет < 5 минут.
-                    .brief__status-bar.status-bar
-                        .status-bar__item.selected.js-brief-status(data-brief-status='1')
-                            .status-bar__number 1
-                            .status-bar__desc
-                                .status-bar__icon.business
-                                .status-bar__text
-                                    ul
-                                        li + Макетирование
-                                        li + Нанесение
-                        .status-bar__line
-                        .status-bar__item.active.js-brief-status(data-brief-status='2')
-                            .status-bar__number 2
-                            .status-bar__desc.status-bar__desc_center
-                                .status-bar__text Выберите срок и тираж
-                        .status-bar__line
-                        .status-bar__item.js-brief-status(data-brief-status='3')
-                            .status-bar__number 3
-                .brief-center
-                    .brief-row
-                        .brief-card.business.selected
-                            .brief-card__inner
-                                .brief-card__title
-                                    | Бизнес
-                                label.btn.btn-fix.brief__btn.disabled Выбрано
-                                    input.hide(type='radio' name='price' value='business' disabled=true)
-                        .brief-settings
-                            .brief-settings__inner
-                                .brief-options
-                                    +switch('<b>от 15 дней</b><span>Есть время ждать - <br>поставка из Китая</span>', 'from-15-days', true)
-                                    +switch('<b>10-15 дней</b><span>Есть время - <br>склад в Москве</span>', '10-15-days', false)
-                                    +switch('<b class="icon-pseudo-fire">до 15 дней</b><span>Нет времени ни на что!<br> Все уже вот-вот начнется</span>', '10-15-days', false)
-                                .brief-options
-                                    +price-slider(days, 'catalog-filter')
-                                    +price-slider(count, 'catalog-filter')
-                .brief-bottom
-                    .brief-bottom__inner
-                        .brief__back
-                            a(href='javascript:void(0)').btn.btn-back.brief__btn-back
-                            .brief__back-text назад
-                        .brief__step
-                            .brief__step-count 2/3
-                            a(href='javascript:void(0)').btn.btn-rounded.btn-rounded_large.btn-check-mark.brief__btn-step
+                .brief-inner.js-brief-step(data-brief-step='2').hide
+                    .brief-top
+                        .brief__head
+                            .brief__title
+                                | Online бриф
+                            .brief__desc
+                                | Техническое задание, займет < 5 минут.
+                        .brief__status-bar.status-bar
+                            .status-bar__item.selected.js-brief-status(data-brief-status='1')
+                                .status-bar__number 1
+                                .status-bar__desc
+                                    .status-bar__icon.business
+                                    .status-bar__text
+                                        ul
+                                            li + Макетирование
+                                            li + Нанесение
+                            .status-bar__line
+                            .status-bar__item.active.js-brief-status(data-brief-status='2')
+                                .status-bar__number 2
+                                .status-bar__desc.status-bar__desc_center
+                                    .status-bar__text Выберите срок и тираж
+                            .status-bar__line
+                            .status-bar__item.js-brief-status(data-brief-status='3')
+                                .status-bar__number 3
+                    .brief-center
+                        .brief-row
+                            .brief-card.business.selected
+                                .brief-card__inner
+                                    .brief-card__title
+                                        | Бизнес
+                                    label.btn.btn-fix.brief__btn.disabled Выбрано
+                                        input.hide(type='radio' name='price' value='business' disabled=true)
+                            .brief-settings
+                                .brief-settings__inner
+                                    .brief-options
+                                        +switch('<b>от 15 дней</b><span>Есть время ждать - <br>поставка из Китая</span>', 'from-15-days', true)
+                                        +switch('<b>10-15 дней</b><span>Есть время - <br>склад в Москве</span>', '10-15-days', false)
+                                        +switch('<b class="icon-pseudo-fire">до 15 дней</b><span>Нет времени ни на что!<br> Все уже вот-вот начнется</span>', '10-15-days', false)
+                                    .brief-options
+                                        +price-slider(days, 'catalog-filter')
+                                        +price-slider(count, 'catalog-filter')
+                    .brief-bottom
+                        .brief-bottom__inner
+                            .brief__back
+                                a(href='javascript:void(0)').btn.btn-back.brief__btn-back
+                                .brief__back-text назад
+                            .brief__step
+                                .brief__step-count 2/3
+                                a(href='javascript:void(0)').btn.btn-rounded.btn-rounded_large.btn-check-mark.brief__btn-step
 
-            .brief-inner.js-brief-step(data-brief-step='3').hide
-                .brief-top
-                    .brief__head
-                        .brief__title
-                            | Online бриф
-                        .brief__desc
-                            | Техническое задание, займет < 5 минут.
-                    .brief__status-bar.status-bar
-                        .status-bar__item.selected.js-brief-status(data-brief-status='1')
-                            .status-bar__number 1
-                            .status-bar__desc
-                                .status-bar__icon.business
-                                .status-bar__text
-                                    ul
-                                        li + Макетирование
-                                        li + Нанесение
-                        .status-bar__line
-                        .status-bar__item.selected.js-brief-status(data-brief-status='2')
-                            .status-bar__number 2
-                            .status-bar__desc.status-bar__desc_center
-                                .status-bar__text
-                                    |от 15 дней
-                                    br
-                                    |1 500 - 4 900 шт.
-                        .status-bar__line
-                        .status-bar__item.active.js-brief-status(data-brief-status='3')
-                            .status-bar__number 3
-                            .status-bar__desc.status-bar__desc_right
-                                .status-bar__text Заполните контактные данные
+                .brief-inner.js-brief-step(data-brief-step='3').hide
+                    .brief-top
+                        .brief__head
+                            .brief__title
+                                | Online бриф
+                            .brief__desc
+                                | Техническое задание, займет < 5 минут.
+                        .brief__status-bar.status-bar
+                            .status-bar__item.selected.js-brief-status(data-brief-status='1')
+                                .status-bar__number 1
+                                .status-bar__desc
+                                    .status-bar__icon.business
+                                    .status-bar__text
+                                        ul
+                                            li + Макетирование
+                                            li + Нанесение
+                            .status-bar__line
+                            .status-bar__item.selected.js-brief-status(data-brief-status='2')
+                                .status-bar__number 2
+                                .status-bar__desc.status-bar__desc_center
+                                    .status-bar__text
+                                        |от 15 дней
+                                        br
+                                        |1 500 - 4 900 шт.
+                            .status-bar__line
+                            .status-bar__item.active.js-brief-status(data-brief-status='3')
+                                .status-bar__number 3
+                                .status-bar__desc.status-bar__desc_right
+                                    .status-bar__text Заполните контактные данные
 
-                .brief-center
-                    .brief-row
-                        .brief-options.selected
-                            +switch('<b>от 15 дней</b><span>Есть время ждать - <br>поставка из Китая</span>', 'from-15-days', true, true)
-                            +switch('<b>10-15 дней</b><span>Есть время - <br>склад в Москве</span>', '10-15-days', false, true)
-                            +switch('<b class="icon-pseudo-fire">до 15 дней</b><span>Нет времени ни на что!<br> Все уже вот-вот начнется</span>', '10-15-days', false, true)
-                        .brief-settings
-                            label.brief-form__label
-                                input.brief-form__input(name="name" type="text" placeholder="Имя Фамилия")
-                            .brief-form__half
+                    .brief-center
+                        .brief-row
+                            .brief-options.selected
+                                +switch('<b>от 15 дней</b><span>Есть время ждать - <br>поставка из Китая</span>', 'from-15-days', true, true)
+                                +switch('<b>10-15 дней</b><span>Есть время - <br>склад в Москве</span>', '10-15-days', false, true)
+                                +switch('<b class="icon-pseudo-fire">до 15 дней</b><span>Нет времени ни на что!<br> Все уже вот-вот начнется</span>', '10-15-days', false, true)
+                            .brief-settings
                                 label.brief-form__label
-                                    input.brief-form__input(name="name" type="text" placeholder="Сайт")
+                                    input.brief-form__input(name="name" type="text" placeholder="Имя Фамилия" data-validator-require='true')
+                                .brief-form__half
+                                    label.brief-form__label
+                                        input.brief-form__input(name="site" type="text" placeholder="Сайт" data-validator-require='true')
+                                    label.brief-form__label
+                                        input.brief-form__input.js-input-mask(name="phone" type="text" placeholder="Телефон" data-validator-require='true' data-validator-type='phone')
+                                .brief-form__half
+                                    label.brief-form__label
+                                        input.brief-form__input(name="email" type="text" placeholder="Email" data-validator-require='true' data-validator-type='email')
+                                    label.brief-form__label
+                                        input.brief-form__input(name="company" type="text" placeholder="Компания" data-validator-require='true')
                                 label.brief-form__label
-                                    input.brief-form__input(name="name" type="text" placeholder="Телефон")
-                            .brief-form__half
-                                label.brief-form__label
-                                    input.brief-form__input(name="email" type="text" placeholder="Email")
-                                label.brief-form__label
-                                    input.brief-form__input(name="email" type="text" placeholder="Компания")
-                            label.contacts-form__label
-                                textarea.contacts-form__textarea(name="message", placeholder="Сообщение")
+                                    textarea.brief-form__textarea(name="message", placeholder="Сообщение" data-validator-require='true')
 
 
-                .brief-bottom
-                    .brief-bottom__inner
-                        .brief__back
-                            a(href='javascript:void(0)').btn.btn-back.brief__btn-back
-                            .brief__back-text назад
-                        .brief__step
-                            label.form__label.form__label_checkbox
-                                input.form__input-checkbox(type="checkbox" name="agree")
-                                span.form__input-checkbox-custom
-                                span.form__label-text Даю согласие на обработку персональных данных
-                            .brief__step-count 3/3
-                            a(href='javascript:void(0)').btn.btn-rounded.btn-rounded_large.btn-check-mark.brief__btn-step
+                    .brief-bottom
+                        .brief-bottom__inner
+                            .brief__back
+                                a(href='javascript:void(0)').btn.btn-back.brief__btn-back
+                                .brief__back-text назад
+                            .brief__step
+                                label.form__label.form__label_checkbox
+                                    input.form__input-checkbox.js-validator-agree(type="checkbox" name="agree")
+                                    span.form__input-checkbox-custom
+                                    span.form__label-text Даю согласие на обработку персональных данных
+                                .brief__step-count 3/3
+                                button(type='submit' disabled=true).btn.btn-rounded.btn-rounded_large.btn-check-mark.brief__btn-step
 
 
 

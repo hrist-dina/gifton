@@ -1,8 +1,8 @@
 import $ from "jquery";
 
 export class Map {
-    constructor(selector = "map") {
-        this.map = selector;
+    constructor(id = "map") {
+        this.map = id;
         this.idZoomIn = "zoom-in";
         this.idZoomOut = "zoom-out";
 

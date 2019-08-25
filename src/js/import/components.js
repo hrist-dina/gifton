@@ -16,6 +16,8 @@ import {ContactMap} from "%components%/contacts/ContactMap";
 import {Brief} from "%components%/brief/Brief";
 import {SliderAbout} from "%components%/slider-about/SliderAbout";
 import {ScrollToUp} from "../classes/ScrollToUp";
+import {ContactForm} from "%components%/contacts/ContactForm";
+import {InputMask} from "../classes/InputMask";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -44,7 +46,9 @@ $(document).ready(function () {
     new SliderMain('.js-slider-main');
     new Map();
     new ContactMap('contact-map');
+    new ContactForm();
     new Brief();
     new SliderAbout('.js-slider-about');
     new ScrollToUp();
+    new InputMask().phone();
 });

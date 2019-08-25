@@ -1,4 +1,5 @@
 import $ from "jquery";
+import Validator from "../../../js/classes/Validator";
 
 export class Brief {
     constructor(selector = '.js-brief') {
@@ -6,12 +7,14 @@ export class Brief {
 
         this.step = `${selector}-step`;
         this.status = `${selector}-status`;
+        this.form = `${selector}-form`;
 
         this.init();
     }
 
     init() {
         this.onClick();
+        this.onSubmit();
     }
 
     get steps() {
@@ -32,6 +35,16 @@ export class Brief {
                     step.addClass('hide');
                 }
             });
+        });
+    }
+
+    onSubmit() {
+        let briefForm = new Validator(this.form);
+        briefForm.validateAgree();
+        $(this.form).on('submit', function (e) {
+            if (briefForm.init()) {
+                e.preventDefault();
+            }
         });
     }
 }
