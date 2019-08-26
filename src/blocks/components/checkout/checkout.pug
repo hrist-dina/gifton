@@ -2,7 +2,7 @@ include ../switch/switch
 
 mixin checkout(isSuccess = false)
     section.checkout
-        form(action='' method='POST')
+        form(action='' method='POST').js-checkout-form.validator
             .checkout__inner(class=isSuccess ? 'hide' : '')
                 .checkout-left
                     .checkout__title Оформление:
@@ -17,23 +17,23 @@ mixin checkout(isSuccess = false)
                 .checkout-right
                     .checkout-form
                         label.checkout-form__label
-                            input.checkout-form__input(name="name" type="text" placeholder="Имя Фамилия")
+                            input.checkout-form__input(name="name" type="text" placeholder="Имя Фамилия" data-validator-require='true')
                         label.checkout-form__label
-                            input.checkout-form__input(name="email" type="text"  placeholder="Email")
+                            input.checkout-form__input(name="email" type="text"  placeholder="Email" data-validator-require='true' data-validator-type='email')
                         label.checkout-form__label
-                            input.checkout-form__input(name="name" type="text" placeholder="Телефон")
+                            input.checkout-form__input.js-input-mask(name="name" type="text" placeholder="Телефон" data-validator-require='true' data-validator-type='phone')
                         label.checkout-form__label.active
-                            input.checkout-form__input(name="name" type="text" placeholder="Организация" value="Advantage Media")
+                            input.checkout-form__input(name="name" type="text" placeholder="Организация" value="Advantage Media" data-validator-require='true')
                         label.checkout-form__label
-                            input.checkout-form__input(name="name" type="text" placeholder="Сайт")
+                            input.checkout-form__input(name="name" type="text" placeholder="Сайт" data-validator-require='true')
                         label.checkout-form__label
-                            textarea.checkout-form__textarea(name="message", placeholder="Комментарий")
+                            textarea.checkout-form__textarea(name="message", placeholder="Комментарий" data-validator-require='true')
                     .checkout-block
                         label.form__label.form__label_checkbox
-                            input.form__input-checkbox(type="checkbox" name="agree")
+                            input.form__input-checkbox.js-validator-agree(type="checkbox" name="agree")
                             span.form__input-checkbox-custom
                             span.form__label-text Даю согласие на обработку персональных данных
-                        button.btn.btn-fix.btn-registration Отправить
+                        button.btn.btn-fix.btn-registration(type='submit' disabled=true) Отправить
             .checkout-done(class=!isSuccess ? 'hide' : '' style='background-image: url(img/bg/checkout-done-bg.png)')
                 .checkout-done__inner
                     .checkout-done__icon

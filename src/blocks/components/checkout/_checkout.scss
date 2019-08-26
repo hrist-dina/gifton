@@ -14,44 +14,81 @@
 
   &__inner {
     display: flex;
-    padding: 30px;
+    flex-direction: column;
+    padding: 20px;
+    @include xl-block {
+      flex-direction: row;
+    }
+
+    @include md-block {
+      padding: 30px;
+    }
   }
 
   &__alternative {
-    padding: 30px;
-    max-width: 349px;
+    padding: 20px;
     width: 100%;
-    min-height: 464px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     @include blue-pattern();
+
+    @include xl-block {
+      min-height: 464px;
+      max-width: 349px;
+    }
+
+    @include md-block {
+      padding: 30px;
+    }
 
     &-desc {
       font-size: 19px;
       color: #fff;
       font-weight: 500;
     }
+
     &-bottom {
       font-size: 12px;
       line-height: 18px;
       color: #fff;
       font-weight: 500;
+      margin-top: 16px;
+      @include md-block {
+        margin-top: 0;
+      }
     }
   }
 
   &-right {
-    max-width: 440px;
     width: 100%;
-    margin-left: 48px;
+    margin-top: 30px;
+
+    @include xl-block {
+      max-width: #{calc(100% - 349px)};
+      margin-top: 0;
+      margin-left: 48px;
+    }
   }
 
   &-form {
     &__label {
+      position: relative;
       display: block;
       margin-bottom: 8px;
       &:last-child {
         margin-bottom: 0;
+      }
+
+      & .tooltip {
+        position: absolute;
+        right: -190px;
+        top: 50%;
+        margin: auto;
+        left: auto;
+        transform: translateY(-50%);
+        display: none;
       }
 
       &.active {
@@ -119,21 +156,45 @@
   }
 
   &-block {
-    margin-top: 45px;
+    margin-top: 25px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    @include md-block {
+      margin-top: 45px;
+      flex-wrap: nowrap;
+    }
+
+    & .form__label {
+      margin-bottom: 16px;
+      @include md-block {
+        margin-bottom: 0;
+      }
+
+      & span {
+        display: inline-block;
+        max-width: #{calc(100% - 40px)};
+      }
+    }
   }
 
   &-done {
     width: 100%;
-    min-height: 570px;
+    min-height: 470px;
     display: flex;
     justify-content: center;
     align-items: center;
     @include blue-pattern();
 
+    @include md-block {
+      min-height: 570px;
+    }
+
     &__inner {
       text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
     }
 
     &__icon {
@@ -145,17 +206,27 @@
     }
 
     &__title {
-      font-size: 40px;
+      font-size: 32px;
       color: #fff;
       font-weight: 600;
       margin-top: 40px;
+      line-height: 1.1;
+
+      @include md-block {
+        font-size: 40px;
+      }
     }
 
     &__desc {
-      font-size: 18px;
+      font-size: 16px;
       color: #fff;
       font-weight: 400;
-      margin-top: 25px;
+      margin-top: 10px;
+      line-height: 1.3;
+
+      @include md-block {
+        font-size: 18px;
+      }
     }
   }
 }

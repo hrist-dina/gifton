@@ -1,12 +1,25 @@
 extends ../views/layouts/default
 
+include ../blocks/components/attention/attention
+include ../blocks/components/order-price/order-price
+
 block variables
 	- var title = "Корзина";
 	//- Данные для миксинов Pug
+	- var rightSidebar = true;
 	include ../data/basket
 
-block content
-	include ../blocks/modules/content-right-sidebar/content-right-sidebar
+block content-right
+	include ../blocks/components/product-card-basket/product-card-basket
+	+product-card-basket-list(productCards)
+
+block sidebar
+	+order-price()
+	+attention(true)
+
+block content-bottom
+	include ../blocks/components/product-recommended/product-recommended
+	+product-recommended(productRecommended, true)
 
 block header-bottom-right
 	include ../blocks/components/order-header-info/order-header-info

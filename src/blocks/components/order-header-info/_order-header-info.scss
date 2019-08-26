@@ -1,16 +1,24 @@
 .order-header-info {
 
+  @include to($break_md) {
+    margin-top: 16px;
+  }
+
   &__number {
     font-size: 25px;
     color: #fff;
     font-weight: 500;
     margin-bottom: 15px;
+    line-height: 1.1;
   }
 
   &__upload {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    @include to($break_md) {
+      justify-content: flex-start;
+    }
 
     &-title {
       font-size: 14px;

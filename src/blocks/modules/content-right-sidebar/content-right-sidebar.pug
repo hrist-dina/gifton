@@ -1,16 +1,8 @@
-include ../../components/product-card-basket/product-card-basket
-include ../../components/product-recommended/product-recommended
-include ../../components/attention/attention
-include ../../components/order-price/order-price
-
 section.content-right-sidebar.content-right-sidebar_cut-bottom
     .container
         .content-right-sidebar__flex
             .content
-                +product-card-basket-list(productCards)
-
+                block content-right
             .sidebar
-                +order-price()
-                +attention(true)
-+product-recommended(productRecommended, true)
-
+                block sidebar
+block content-bottom

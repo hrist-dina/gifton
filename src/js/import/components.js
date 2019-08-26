@@ -18,6 +18,7 @@ import {SliderAbout} from "%components%/slider-about/SliderAbout";
 import {ScrollToUp} from "../classes/ScrollToUp";
 import {ContactForm} from "%components%/contacts/ContactForm";
 import {InputMask} from "../classes/InputMask";
+import {CheckoutForm} from "%components%/checkout/CheckoutForm";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -51,4 +52,5 @@ $(document).ready(function () {
     new SliderAbout('.js-slider-about');
     new ScrollToUp();
     new InputMask().phone();
+    new CheckoutForm();
 });

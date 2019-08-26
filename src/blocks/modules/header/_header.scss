@@ -99,6 +99,9 @@
 
     &-right {
       text-align: right;
+      @include to($break_md) {
+        text-align: left;
+      }
     }
 
     &-full {
