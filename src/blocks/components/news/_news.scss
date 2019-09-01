@@ -14,7 +14,8 @@
 
   &-card {
     @include col();
-    @include size(8);
+    @include size-md(8);
+    @include size(16);
     border-radius: 6px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 4px 20px 0 rgba(1, 1, 1, 0.15);
@@ -23,11 +24,15 @@
     &__img {
       position: relative;
       width: 100%;
-      height: 330px;
+      height: 200px;
       border-radius: 6px 6px 0 0;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+
+      @include md-block {
+        height: 330px;
+      }
 
       &:before {
         content: '';
@@ -46,7 +51,10 @@
     }
 
     &__inner {
-      padding: 30px 60px 50px;
+      padding: 25px;
+      @include md-block {
+        padding: 30px 60px 50px;
+      }
     }
 
     &__row {
@@ -79,7 +87,10 @@
       height: 21px;
       border-radius: 11px;
       box-sizing: border-box;
-      margin-left: 30px;
+      margin-left: 10px;
+      @include md-block {
+        margin-left: 30px;
+      }
 
       &.articles {
         background-color: #0a95dd;

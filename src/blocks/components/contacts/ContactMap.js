@@ -5,9 +5,13 @@ export class ContactMap extends Map{
     controlOptions() {
         return {
             position: {
-                bottom: 90,
+                bottom: 60,
                 right: 50
             },
         };
+    }
+
+    getCenter() {
+        return [55.67481315859148, 37.555618350509616];
     }
 }

@@ -29,30 +29,47 @@
     box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
     background-color: #fff;
     box-sizing: border-box;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 13px;
+    line-height: 20px;
     color: #3c414c;
     font-weight: 500;
+    @include lg-block {
+      font-size: 14px;
+      line-height: 21px;
+    }
 
     &__bottom {
-      padding: 60px;
+      padding: 30px;
       box-sizing: border-box;
+      @include lg-block {
+        padding: 60px;
+      }
 
       & > p {
-        margin-bottom: 16px;
+        margin-bottom: 10px;
+        @include lg-block {
+          margin-bottom: 16px;
+        }
       }
     }
 
     &__top {
       box-sizing: border-box;
-      padding: 60px;
+      padding: 30px;
       border-bottom: 1px solid #ecf1f5;
       @include row-flex();
+
+      @include lg-block {
+        padding: 60px;
+      }
     }
 
     &__option {
       display: flex;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
+      @include lg-block {
+        margin-bottom: 16px;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -104,14 +121,27 @@
 
       &-list {
         @include col();
-        @include u-size(4, 6, $offset);
+        @include u-size(6, 6, $offset);
+        order: 2;
+        @include sm-block {
+          @include u-size(4, 6, $offset);
+          order: 0;
+        }
       }
     }
 
     &__logo {
       @include col();
-      @include u-size(2, 6, $offset);
-      text-align: right;
+      @include u-size(6, 6, $offset);
+      order: 1;
+      margin-bottom: 16px;
+      text-align: left;
+      @include sm-block {
+        @include u-size(2, 6, $offset);
+        margin-bottom: 0;
+        order: 0;
+        text-align: right;
+      }
 
       & img {
         max-width: 111px;

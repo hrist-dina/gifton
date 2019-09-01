@@ -5,25 +5,42 @@
     border-radius: 6px;
     box-shadow: 0 4px 20px rgba(1,1,1,0.15);
     background-color: #ffffff;
-    padding: 60px 75px;
+    padding: 30px;
     box-sizing: border-box;
+
+    @include lg-block {
+      padding: 60px 75px;
+    }
   }
 
   &__content {
     text-align: left;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 13px;
+    line-height: 19px;
     color: #3c414c;
     font-weight: 500;
+    @include lg-block {
+      font-size: 14px;
+      line-height: 21px;
+    }
 
     & p {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      @include lg-block {
+        margin-bottom: 20px;
+      }
     }
 
     & h4 {
-      font-size: 20px;
-      line-height: 21px;
-      margin-bottom: 30px;
+      font-size: 18px;
+      line-height: 20px;
+      margin-bottom: 20px;
+
+      @include lg-block {
+        font-size: 20px;
+        line-height: 21px;
+        margin-bottom: 30px;
+      }
     }
 
     &  img {
@@ -33,40 +50,61 @@
     }
 
     & > img {
-      float:left;
-      margin: 0 30px 30px 0;
+      margin: auto;
+
+      @include sm-block {
+        float:left;
+        margin: 0 30px 30px 0;
+      }
     }
 
     & .half {
-      width: 50%;
-      display: inline-block;
-      float:left;
-      margin: 0 30px 30px 0;
+      width: 100%;
+      margin-bottom: 15px;
+      @include sm-block {
+        width: 50%;
+        display: inline-block;
+        float:left;
+        margin: 0 30px 30px 0;
+      }
     }
 
     & .row {
       @include row-flex();
       clear: both;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+
+      @include sm-block {
+        margin-bottom: 30px;
+      }
     }
 
     & .col-1 {
       @include col();
-      @include u-size(4, 14, $offset);
+      @include u-size(14, 14, $offset);
+      margin-bottom: 15px;
+      @include sm-block {
+        @include u-size(4, 14, $offset);
+        margin-bottom: 0;
+      }
     }
 
     & .col-3 {
       @include col();
-      @include u-size(10, 14, $offset);
-      padding-left: 16px;
+      @include u-size(14, 14, $offset);
+      @include sm-block {
+        @include u-size(10, 14, $offset);
+        padding-left: 16px;
+      }
     }
 
     & .col-mini {
       @include col();
-      @include u-size(2, 14, $offset);
+      @include u-size(7, 14, $offset);
+      margin-bottom: 15px;
+      @include sm-block {
+        @include u-size(2, 14, $offset);
+      }
     }
-
-
-
   }
 }

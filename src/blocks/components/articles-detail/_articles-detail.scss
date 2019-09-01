@@ -13,12 +13,18 @@
     border-radius: 6px;
     box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
     background-color: #fff;
-    padding: 60px;
+    padding: 30px;
     box-sizing: border-box;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 13px;
+    line-height: 20px;
     color: #3c414c;
     font-weight: 500;
+
+    @include lg-block {
+      padding: 60px;
+      font-size: 14px;
+      line-height: 21px;
+    }
 
     & > p {
       margin-bottom: 16px;

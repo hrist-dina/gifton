@@ -13,6 +13,10 @@
     @include col();
     @include size-lg(8);
     @include size(16);
+    margin-bottom: 10px;
+    @include lg-block {
+      margin-bottom: 0;
+    }
 
     &__top {
       &-action {

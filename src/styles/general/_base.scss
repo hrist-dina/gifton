@@ -185,13 +185,20 @@ h6,
 
 	& h2,
 	&.h2 {
-		margin-top: 5px;
-		margin-bottom: 20px;
+		margin-top: 3px;
+		margin-bottom: 15px;
+		@include sm-block {
+			margin-top: 5px;
+			margin-bottom: 20px
+		}
 	}
 
 
 	& p {
-		margin-bottom: 25px;
+		margin-bottom: 20px;
+		@include sm-block {
+			margin-bottom: 25px;
+		}
 	}
 
 	& img {
@@ -199,7 +206,11 @@ h6,
 		width: 100%;
 		display: inline-block;
 		float:left;
-		margin: 0 30px 30px 0;
+		margin: 0 20px 20px 0;
+
+		@include sm-block {
+			margin: 0 30px 30px 0;
+		}
 	}
 
 	& .row {
@@ -207,34 +218,58 @@ h6,
 	}
 
 	& .half {
-		width: 50%;
-		display: inline-block;
-		float:left;
-		margin: 0 30px 30px 0;
+		width: 100%;
+		margin: auto;
+		@include sm-block {
+			display: inline-block;
+			float:left;
+			width: 50%;
+			margin: 0 30px 30px 0;
+		}
 	}
 
 	& .col-2{
-		@include size(8);
 		@include col();
-		margin-bottom: 40px;
+		@include size(16);
+		margin-bottom: 20px;
+
+		@include sm-block {
+			@include size(8);
+			margin-bottom: 40px;
+		}
 	}
 
 	& .col-4 {
 		@include col();
-		@include size(4);
-		margin-bottom: 30px;
+		@include size(16);
+		margin-bottom: 15px;
+
+		@include sm-block {
+			@include size(4);
+			margin-bottom: 30px;
+		}
 	}
 
 	& .col-2-half {
 		@include col();
-		@include size(10);
-		margin-bottom: 30px;
+		@include size(16);
+		margin-bottom: 15px;
+
+		@include sm-block {
+			@include size(10);
+			margin-bottom: 30px;
+		}
 	}
 
 	& .col-1-half {
 		@include col();
-		@include size(6);
-		margin-bottom: 30px;
+		@include size(16);
+		margin-bottom: 15px;
+
+		@include sm-block {
+			@include size(6);
+			margin-bottom: 30px;
+		}
 	}
 
 	& ul {
@@ -278,10 +313,15 @@ h6,
 .table {
 
 	&__head {
+		display: none;
 		font-size: 14px;
 		line-height: 1.2;
 		color: #32394d;
 		font-weight: 600;
+
+		@include md-block {
+			display: block;
+		}
 	}
 
 	&__body {
@@ -294,8 +334,14 @@ h6,
 	&__row {
 		display: flex;
 		justify-content: space-between;
-		padding: 16px 60px;
+		flex-direction: column;
+		padding: 16px 30px;
 		border-bottom: 1px solid #ecf1f5;
+
+		@include md-block {
+			flex-direction: row;
+			padding: 16px 60px;
+		}
 
 		&:last-child {
 			border-bottom-color: transparent;
@@ -303,9 +349,35 @@ h6,
 	}
 
 	&__col {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
 		box-sizing: border-box;
 		text-align: left;
-		width: 10%;
+		width: 100%;
+		margin-bottom: 10px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		@include md-block {
+			margin-bottom: 0;
+			width: 10%;
+		}
+
+		&:before {
+			position: relative;
+			content: attr(data-title);
+			display: inline-block;
+			width: 50%;
+			left: 0;
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 1.2;
+			padding-right: 10px;
+			@include md-block {
+				content: none;
+			}
+		}
 	}
 }
 

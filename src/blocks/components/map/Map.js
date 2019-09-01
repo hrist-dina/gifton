@@ -29,10 +29,14 @@ export class Map {
         };
     }
 
+    getCenter() {
+        return [55.67581315829148, 37.558698350509616];
+    }
+
     initMap() {
         ymaps.ready().then(() => {
             let map = new ymaps.Map(this.map, {
-                center: [55.67581315829148, 37.558698350509616],
+                center: this.getCenter(),
                 zoom: 16,
                 controls: []
             });

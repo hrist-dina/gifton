@@ -3,9 +3,11 @@
 
   &-card {
     @include col();
-    @include size(4);
+    @include size-lg(4);
+    @include size-sm(8);
+    @include size(16);
     position: relative;
-    height: 270px;
+    height: 200px;
     border-radius: 6px;
     box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
     background-color: #ffffff;
@@ -15,6 +17,10 @@
     background-size: cover;
     background-position: center;
     z-index: 0;
+
+    @include lg-block {
+      height: 270px;
+    }
 
     &:before {
       content: '';
@@ -29,12 +35,29 @@
     }
 
     &.big {
-      @include size(8);
-      background-size: 380px;
+      @include size-lg(8);
+      @include size(16);
+      background-size: cover;
       background-position: center right;
 
+
+      @include sm-block {
+        background-size: 50%;
+      }
+
+      @include lg-block {
+        background-size: 65% 270px;
+      }
+
+      @include xl-block {
+        background-size: 380px 270px;
+      }
+
+
       &:before {
-        content: none;
+        @include sm-block {
+          content: none;
+        }
       }
     }
 
@@ -69,7 +92,9 @@
 
       &-list {
         .big & {
-          width: 30%;
+          @include sm-block {
+            width: 30%;
+          }
         }
       }
     }
@@ -84,8 +109,10 @@
       overflow: hidden;
 
       .big & {
-        color: #32394d;
-        width: 30%;
+        @include sm-block {
+          width: 30%;
+          color: #32394d;
+        }
       }
     }
   }

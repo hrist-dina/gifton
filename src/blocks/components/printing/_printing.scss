@@ -17,6 +17,7 @@
 
   &-pic {
     & img {
+      width: 100%;
       border-radius: 6px;
       box-shadow: 0 4px 20px rgba(1,1,1,0.15);
       background-color: #fff;
@@ -51,8 +52,12 @@
     margin-bottom: 16px;
 
     &__bottom {
-      padding: 60px;
+      padding: 30px;
       box-sizing: border-box;
+
+      @include md-block {
+        padding: 60px;
+      }
 
       & > p {
         margin-bottom: 16px;
@@ -61,9 +66,13 @@
 
     &__top {
       box-sizing: border-box;
-      padding: 60px;
+      padding: 30px;
       border-bottom: 1px solid #ecf1f5;
       @include row-flex();
+
+      @include md-block {
+        padding: 60px;
+      }
     }
 
     &__option {
@@ -102,23 +111,37 @@
 
       &-list {
         @include col();
-        @include u-size(3, 6, $offset);
+        @include u-size(6, 6, $offset);
         justify-content: space-between;
+
+        @include md-block {
+          @include u-size(3, 6, $offset);
+        }
       }
     }
 
     &__logo {
       @include col();
-      @include u-size(3, 6, $offset);
-      text-align: right;
+      @include u-size(6, 6, $offset);
+      margin-top: 20px;
+
+      @include md-block {
+        text-align: right;
+        margin-top: 0;
+        @include u-size(3, 6, $offset);
+      }
 
       & img {
-        max-width: 200px;
+        max-width: 180px;
         width: 100%;
-        margin-right: -95px;
-        margin-top: -40px;
-        margin-bottom: -40px;
         opacity: .1;
+
+        @include md-block {
+          max-width: 200px;
+          margin-right: -95px;
+          margin-top: -40px;
+          margin-bottom: -40px;
+        }
       }
     }
   }
@@ -128,6 +151,10 @@
     box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
     background-color: #fff;
     box-sizing: border-box;
-    padding: 40px 0;
+    padding: 20px 0;
+    @include md-block {
+      padding: 40px 0;
+
+    }
   }
 }
