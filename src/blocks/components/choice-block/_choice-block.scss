@@ -9,26 +9,38 @@
     margin: auto;
     background: url("../img/choice-block/arrow.png") no-repeat center;
     background-size: contain;
-    width: 231px;
-    height: 54px;
+    width: 90px;
+    height: 22px;
+
+    @include lg-block {
+      width: 231px;
+      height: 54px;
+    }
   }
 
   &__wrap {
-    @include m-top(4);
-    @include p-bottom(4);
+    @include m-top(1.5);
+    @include p-bottom(1.5);
+    @include lg-block {
+      @include m-top(4);
+      @include p-bottom(4);
+    }
   }
 
   &__inner {
-  display: flex;
+    display: flex;
     justify-content: space-between;
   }
 
   &__left,
   &__right {
-    height: 300px;
+    height: 120px;
     box-shadow: 0 4px 20px rgba(1,1,1,0.15);
     background-color: #fff;
     width: 50%;
+    @include lg-block {
+      height: 300px;
+    }
   }
 
   &__left {
@@ -38,22 +50,51 @@
 
     &-box {
       position: absolute;
-      right: 76px;
+      right: 25px;
       top: 0;
       bottom: 0;
       left: auto;
       margin: auto;
       display: flex;
       align-items: center;
+      @include lg-block {
+        right: 76px;
+      }
     }
   }
 
   &__done {
+    position: relative;
     background: url("../img/choice-block/done.png") no-repeat center;
     background-size: contain;
-    margin-left: 30px;
-    width: 153px;
-    height: 153px;
+    width: 70px;
+    height: 70px;
+
+    @include lg-block {
+      width: 153px;
+      height: 153px;
+      margin-left: 30px;
+    }
+
+    &:before {
+      content: 'Да';
+      position: absolute;
+      display: inline-table;
+      top: 0;
+      bottom: 0;
+      left: auto;
+      right: -10px;
+      margin: auto;
+      font-size: 36px;
+      line-height: 1;
+      color: rgba(70, 74, 84, .2);
+      font-weight: 700;
+      text-align: center;
+      @include lg-block {
+        right: -30px;
+        font-size: 100px;
+      }
+    }
   }
 
   &__right {
@@ -63,45 +104,80 @@
 
     &-box {
       position: absolute;
-      left: 76px;
+      left: 25px;
       top: 0;
       bottom: 0;
       right: auto;
       margin: auto;
-    display: flex;
+      display: flex;
       align-items: center;
+      @include lg-block {
+        left: 76px;
+      }
     }
   }
 
   &__question {
+    position: relative;
     background: url("../img/choice-block/question.png") no-repeat center;
     background-size: contain;
-    margin-right: 30px;
-    width: 153px;
-    height: 153px;
+    width: 70px;
+    height: 70px;
+
+    @include lg-block {
+      width: 153px;
+      height: 153px;
+      margin-right: 30px;
+    }
+
+    &:before {
+      content: 'Нет';
+      position: absolute;
+      display: inline-table;
+      top: 0;
+      bottom: 0;
+      left: -10px;
+      right: auto;
+      margin: auto;
+      font-size: 36px;
+      line-height: 1;
+      color: rgba(70, 74, 84, .2);
+      font-weight: 700;
+      text-align: center;
+      @include lg-block {
+        left: -30px;
+        font-size: 100px;
+      }
+    }
   }
 
   &__btn {
+    display: none;
     width: 136px;
     height: 40px;
     text-align: center;
     padding-top: 12px;
     padding-bottom: 12px;
+    @include xl-block {
+      display: block;
+    }
   }
 
   &__center {
-
-
     &-box {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
-      width: 288px;
+      width: 135px;
       height: 100%;
       padding: 0 50px;
       box-sizing: border-box;
+
+      @include lg-block {
+        width: 288px;
+      }
 
       &:before {
         @include choice-block-arrow();
@@ -116,20 +192,27 @@
   }
 
   &__title {
-    font-size: 25px;
+    font-size: 14px;
     line-height: 1.2;
     color: #3c414c;
     font-weight: 500;
     text-align: center;
-    margin-bottom: 10px;
+    @include lg-block {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
   }
 
   &__desc {
+    display: none;
     font-size: 12px;
     line-height: 18px;
     color: #3c414c;
     font-weight: 400;
     text-align: center;
+    @include lg-block {
+      display: block;
+    }
   }
 }
 

@@ -5,16 +5,24 @@
   overflow: hidden;
 
   &__wrap {
-    @include p-top(3);
-    @include m-bottom(3);
+    @include p-top(1.5);
+    @include m-bottom(1.5);
+    @include lg-block {
+      @include p-top(3);
+      @include m-bottom(3);
+    }
   }
 
   &__inner {
-    padding: 60px 78px;
+    padding: 30px;
     position: relative;
 
+    @include lg-block {
+      padding: 60px 78px;
+    }
+
     &:before {
-      content: '';
+      content: none;
       position: absolute;
       right: 44px;
       top: 0;
@@ -26,15 +34,22 @@
       width: 289px;
       height: 361px;
       z-index: 1;
+      @include lg-block {
+        content: '';
+      }
     }
   }
 
   &__title {
     font-size: 24px;
+    line-height: 28px;
     color: #fff;
     font-style: normal;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    @include lg-block {
+      margin-bottom: 10px;
+    }
   }
 
   &__text {
@@ -49,12 +64,23 @@
     &-list {
       margin-top: 20px;
       @include row-flex();
-      @include shift-right(2);
+      margin-bottom: -16px;
+
+      @include lg-block {
+        margin-bottom: 0;
+        @include shift-right(2);
+      }
     }
 
     &-item {
       @include col();
-      @include u-size(3, 12, $offset);
+      @include u-size(6, 12, $offset);
+      margin-bottom: 16px;
+
+      @include lg-block {
+        @include u-size(3, 12, $offset);
+        margin-bottom: 0;
+      }
 
       &:last-child {
         margin-right: 0;

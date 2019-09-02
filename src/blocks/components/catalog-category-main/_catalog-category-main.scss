@@ -1,25 +1,39 @@
 .catalog-category-main {
-  @include m-top(3);
+  @include m-top(1);
   @include row-flex();
   flex-wrap: wrap;
+  @include lg-block {
+    @include m-top(3);
+  }
 
   &__wrap {
     background: #fff;
-    @include p-top(3);
-    @include p-bottom(3);
+    @include p-top(1);
+    @include p-bottom(1);
+    @include lg-block {
+      @include p-top(3);
+      @include p-bottom(3);
+    }
   }
 
   &__title {
-    font-size: 31px;
-    line-height: 46px;
+    font-size: 16px;
+    line-height: 24px;
     color: #3c414c;
     font-weight: 500;
     text-align: center;
+
+    @include lg-block {
+      font-size: 31px;
+      line-height: 46px;
+    }
   }
 
   &__group {
     @include col();
-    @include size(4);
+    @include size-lg(4);
+    @include size-sm(8);
+    @include size(16);
     height: 514px;
     display: flex;
     flex-direction: column;
@@ -146,7 +160,10 @@
   }
 
   &__group.big &__item {
-    height: 436px;
+    height: 100%;
+    @include lg-block {
+      height: 436px;
+    }
   }
 
   &__group.big-half-small {
@@ -167,6 +184,12 @@
     }
   }
 
+  &__icon {
+    & img {
+      max-height: 50px;
+    }
+  }
+
   &__group.big-half-small &__item:first-child &__icon,
   &__group.big-half-small &__item:nth-child(2) &__icon {
     margin: 0 auto;
@@ -178,15 +201,22 @@
 
   &__group.equal-half {
     position: relative;
-    top: -78px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    height: 100%;
+
+    @include lg-block {
+      top: -78px;
+    }
   }
   &__group.equal-half &__item {
     &:first-child {
-      height: 288px;
       width: 100%;
+      height: 210px;
+      @include lg-block {
+        height: 288px;
+      }
     }
 
     &:nth-child(2),
