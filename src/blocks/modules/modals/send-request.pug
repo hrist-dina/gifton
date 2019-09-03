@@ -1,0 +1,22 @@
+.modal.modal__send-request
+    .modal__inner
+        .close.modal__close
+            form(action='', method='post').modal__request-form
+                .modal__request-form__title Отправить запрос
+                    label.request-form__label
+                        input.request-form__input(name="name" type="text" placeholder="Имя" data-validator-require='true')
+                    label.request-form__label
+                        input.request-form__input(name="email" type="text"  placeholder="Email" data-validator-require='true' data-validator-type='email')
+                    label.request-form__label
+                        input.request-form__input(name="company" type="text"  placeholder="Компания" data-validator-require='true')
+                    .request-form__file-box
+                        label.request-form__label
+                            textarea.request-form__textarea(name="message", placeholder="Сообщение" data-validator-require='true')
+                        label.request-form__label-file
+                            input.request-form__file(name='file' type='file' )
+                    .request-block
+                        label.form__label.form__label_checkbox
+                            input.form__input-checkbox.js-validator-agree(type="checkbox" name="agree")
+                            span.form__input-checkbox-custom
+                            span.form__label-text Даю согласие на обработку персональных данных
+                        button.btn.btn-fix.request__btn(type='submit' disabled=true) Отправить    
