@@ -5,8 +5,8 @@
 include ../select/select
 include ../select-quantity/select-quantity
 
-mixin product-card(productId, productCard)
-    .product-card(class=!isEmpty(productCard) ? 'empty' : '' id=productId data-price=productCard.price data-quantity=productCard.quantityCurrent)
+mixin product-card(productId, productCard, customClass)
+    .product-card(class=!isEmpty(productCard) ? 'empty' : '' id=productId data-price=productCard.price data-quantity=productCard.quantityCurrent class=customClass)
         .product-card__inner
             .product-card__marker-list
                 .product-card__marker(class=[isEmptyForMarks(productCard), isLittle(productCard)])=`${productCard.quantity} шт.`

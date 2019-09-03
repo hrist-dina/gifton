@@ -4,11 +4,12 @@ mixin product-recommended(productRecommended, isBigTop = false)
     section.product-recommended(class=isBigTop?'product-recommended_big-top':'')
         .container
             .product-recommended__title=productRecommended.title
-            .product-recommended__list.blocks
-                for product, key in productRecommended.list
-                    +product-card(id('product-recommended', key), product)
-                a.product-recommended__more(href="#" style='background-image: url("img/bg/product-more-bg.png")')
-                    .product-recommended__more-inner
-                        .product-recommended__more-title Больше товаров
-                        .btn.btn-rounded.btn-rounded_large.btn-arrow-right.product-recommended__more-arrow
+            .swiper-container.js-slider-recommended
+                .product-recommended__list.blocks.swiper-wrapper
+                    for product, key in productRecommended.list
+                        +product-card(id('product-recommended', key), product, 'swiper-slide')
+                    a.product-recommended__more.swiper-slide(href="#" style='background-image: url("img/bg/product-more-bg.png")')
+                        .product-recommended__more-inner
+                            .product-recommended__more-title Больше товаров
+                            .btn.btn-rounded.btn-rounded_large.btn-arrow-right.product-recommended__more-arrow
 

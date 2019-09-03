@@ -19,6 +19,8 @@ import {ScrollToUp} from "../classes/ScrollToUp";
 import {ContactForm} from "%components%/contacts/ContactForm";
 import {InputMask} from "../classes/InputMask";
 import {CheckoutForm} from "%components%/checkout/CheckoutForm";
+import {SwiperRecommended} from "%components%/product-recommended/SwiperRecommended";
+import {SwiperAnnounce} from "%components%/announce/SwiperAnnounce";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -45,6 +47,8 @@ $(document).ready(function () {
     new ChangeViewMode();
     new Slider();
     new SliderMain('.js-slider-main');
+    new SwiperRecommended('.js-slider-recommended');
+    new SwiperAnnounce('.js-slider-announce');
     new Map();
     new ContactMap('contact-map');
     new ContactForm();

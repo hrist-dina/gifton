@@ -141,7 +141,7 @@
         }
         
         @include to($break_md) {
-            display: none;
+            display: none !important;
         }
     }
 

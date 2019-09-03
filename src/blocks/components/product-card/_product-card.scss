@@ -28,8 +28,7 @@
     @include size-xl(4); // Ставим 4, так как не считаем сайдбар
     @include size-sm(8);
     @include size(16);
-    max-height: 270px;
-    min-height: 100%;
+    height: 270px;
     display: flex;
     flex-direction: column;
   }
@@ -51,15 +50,15 @@
   &__inner {
     position: relative;
     box-sizing: border-box;
-
+    display: flex;
     .blocks & {
       padding: 40px 20px 20px 20px;
       flex: 1 0 auto;
+      flex-direction: column;
     }
 
     .rows & {
       padding: 20px 5px 20px 25px;
-      display: flex;
       align-items: center;
       justify-content: space-between;
       width: 77%;
@@ -142,7 +141,7 @@
 
     .blocks & {
       max-width: 100%;
-      margin-top: 30px;
+      margin-top: 20px;
     }
   }
 
@@ -296,6 +295,7 @@
       max-height: 40px;
       height: 100%;
       flex: 0 1 auto;
+      border-top: 1px solid #ecf1f5;
     }
   }
 
@@ -306,7 +306,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-top: 1px solid #ecf1f5;
       width: 50%;
       height: 100%;
       font-size: 14px;
@@ -331,6 +330,7 @@
       font-weight: 600;
       text-align: center;
       padding: 12px 0;
+      margin-bottom: 1px;
     }
   }
 
