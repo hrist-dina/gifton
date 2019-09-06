@@ -177,6 +177,10 @@
         bottom: 10px;
         cursor: pointer;
 
+        &.success-file {
+          background: #b9cf1b;        
+        }
+
         &:before {
           content: '';
           position: absolute;
@@ -272,4 +276,10 @@
       margin-left: auto;
     }
   }
+}
+p.success-file {
+  color: #b9cf1b;        
+}
+p.error-file {
+  color: #d73124;
 }
