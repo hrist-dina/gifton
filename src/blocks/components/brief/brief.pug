@@ -59,39 +59,40 @@ section.brief__wrap.section-gray
                                 .status-bar__number 3
 
                     .brief-center
-                        .brief-card__list
-                            .brief-card.promo
-                                .brief-card__inner
-                                    .brief-card__title
-                                        |Промо
-                                    .brief-card__price
-                                        |до
-                                        |
-                                        span 500 ₽
-                                    label.btn.btn-fix.brief__btn Выбрать
-                                        input.hide(type='radio' name='price' value='promo')
+                        .swiper-container.js-slider-brief
+                            .brief-card__list.swiper-wrapper
+                                .brief-card.promo.swiper-slide
+                                    .brief-card__inner
+                                        .brief-card__title
+                                            |Промо
+                                        .brief-card__price
+                                            |до
+                                            |
+                                            span 500 ₽
+                                        label.btn.btn-fix.brief__btn Выбрать
+                                            input.hide(type='radio' name='price' value='promo')
 
-                            .brief-card.business.active
-                                .brief-card__inner
-                                    .brief-card__title
-                                        |Бизнес
-                                    .brief-card__price
-                                        |до
-                                        |
-                                        span 1500 ₽
-                                    label.btn.btn-fix.brief__btn.active Выбрано
-                                        input.hide(type='radio' name='price' value='business' checked=true)
+                                .brief-card.business.active.swiper-slide
+                                    .brief-card__inner
+                                        .brief-card__title
+                                            |Бизнес
+                                        .brief-card__price
+                                            |до
+                                            |
+                                            span 1500 ₽
+                                        label.btn.btn-fix.brief__btn.active Выбрано
+                                            input.hide(type='radio' name='price' value='business' checked=true)
 
-                            .brief-card.vip
-                                .brief-card__inner
-                                    .brief-card__title
-                                        |VIP
-                                    .brief-card__price
-                                        |до
-                                        |
-                                        span 5000 ₽
-                                    label.btn.btn-fix.brief__btn Выбрать
-                                        input.hide(type='radio' name='price' value='vip')
+                                .brief-card.vip.swiper-slide
+                                    .brief-card__inner
+                                        .brief-card__title
+                                            |VIP
+                                        .brief-card__price
+                                            |до
+                                            |
+                                            span 5000 ₽
+                                        label.btn.btn-fix.brief__btn Выбрать
+                                            input.hide(type='radio' name='price' value='vip')
                     .brief-bottom
                         .brief__title Дополнительные опции
                         .brief-bottom__inner

@@ -1,5 +1,6 @@
 import $ from "jquery";
 import Validator from "../../../js/classes/Validator";
+import {SwiperBrief} from "%components%/brief/SwiperBrief";
 
 export class Brief {
     constructor(selector = '.js-brief') {
@@ -15,6 +16,7 @@ export class Brief {
     init() {
         this.onClick();
         this.onSubmit();
+        this.initSwiper();
     }
 
     get steps() {
@@ -46,5 +48,9 @@ export class Brief {
                 e.preventDefault();
             }
         });
+    }
+
+    initSwiper() {
+        new SwiperBrief('.js-slider-brief');
     }
 }
