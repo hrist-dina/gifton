@@ -1,10 +1,10 @@
-mixin switch(title, name, isChecked=false, isDisabled = false)
+mixin switch(title, name, isChecked=false, isDisabled = false, customClass=[])
     - let attr = [];
     if isChecked
         - attr['checked'] = 'checked';
     if isDisabled
         - attr['disabled'] = 'disabled';
-    label.switch-wrap
+    label.switch-wrap(class=customClass)
         .switch
             input(type="checkbox" name=name)&attributes(attr)
             span.switch-slider

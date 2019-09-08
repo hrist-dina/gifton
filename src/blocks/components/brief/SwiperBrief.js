@@ -8,11 +8,12 @@ export class SwiperBrief extends SwiperBase {
     }
 
     bindOptions(...options) {
-        super.bindOptions(...options, {
-            breakpoints: {
-                992: {
-                    slidesPerView: 1,
-                },
+        super.bindOptions( {
+            centeredSlides: true,
+            // breakpoints: {
+            //     992: {
+            //         slidesPerView: 3,
+            //     },
                 // 768: {
                 //     slidesPerView: 3,
                 // },
@@ -22,7 +23,8 @@ export class SwiperBrief extends SwiperBase {
                 // 480: {
                 //     slidesPerView: 1,
                 // }
-            }
+            //}
         });
+        console.log(this.options);
     }
 }

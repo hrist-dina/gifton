@@ -13,12 +13,10 @@ export class SwiperBase {
 
     init() {
         this.bindOptions();
-        $(window).on('resize', () => {
-            this.initSwiper();
-        }).resize();
+        this.initSwiper();
     }
 
-    bindOptions(...options) {
+    bindOptions(options) {
         let defaultOptions = {
             slidesPerView: "auto",
         };
@@ -28,14 +26,16 @@ export class SwiperBase {
     initSwiper() {
         let mySwiper = undefined;
 
-        let screenWidth = $(window).width();
-        if (screenWidth <= this.screenWidht && mySwiper == undefined) {
-            mySwiper = new Swiper(this.selector, this.options);
-        } else if (screenWidth > this.screenWidht && mySwiper != undefined) {
-            mySwiper.destroy();
-            mySwiper = undefined;
-            $(this.selector).removeAttr("style");
-            $(".swiper-slide").removeAttr("style");
-        }
+        $(window).on('resize', () => {
+            let screenWidth = $(window).width();
+            if (screenWidth <= this.screenWidht && mySwiper == undefined) {
+                mySwiper = new Swiper(this.selector, this.options);
+            } else if (screenWidth > this.screenWidht && mySwiper != undefined) {
+                mySwiper.destroy();
+                mySwiper = undefined;
+                $(this.selector).removeAttr("style");
+                $(".swiper-slide").removeAttr("style");
+            }
+        }).resize();
     }
 }
