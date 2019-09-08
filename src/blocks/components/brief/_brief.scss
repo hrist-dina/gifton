@@ -47,8 +47,8 @@
 
       @include lg-block {
         border: none;
+        margin-top: -50px;
       }
-
 
       &:after {
         content: '';
@@ -142,7 +142,7 @@
 
     & .swiper-container {
       @include sm-block {
-        margin-top: -30px;
+          margin-top: -45px;
       }
     }
   }
@@ -457,10 +457,9 @@
     }
 
     &-inner {
-
+      display: flex;
       @include to($break_sm) {
         width: 100%;
-        display: flex;
         justify-content: space-between;
       }
     }
