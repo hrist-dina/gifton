@@ -7,24 +7,9 @@ export class SwiperBrief extends SwiperBase {
         super.init();
     }
 
-    bindOptions(...options) {
+    bindOptions() {
         super.bindOptions( {
             centeredSlides: true,
-            // breakpoints: {
-            //     992: {
-            //         slidesPerView: 3,
-            //     },
-                // 768: {
-                //     slidesPerView: 3,
-                // },
-                // 640: {
-                //     slidesPerView: 2,
-                // },
-                // 480: {
-                //     slidesPerView: 1,
-                // }
-            //}
         });
-        console.log(this.options);
     }
 }

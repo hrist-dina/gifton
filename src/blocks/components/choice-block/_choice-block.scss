@@ -86,13 +86,18 @@
       right: -10px;
       margin: auto;
       font-size: 36px;
-      line-height: 1;
+      line-height: 72px;
       color: rgba(70, 74, 84, .2);
       font-weight: 700;
       text-align: center;
       @include lg-block {
+        line-height: 1.5;
         right: -30px;
         font-size: 100px;
+      }
+
+      @include xl-block {
+        content: none;
       }
     }
   }
@@ -140,13 +145,17 @@
       right: auto;
       margin: auto;
       font-size: 36px;
-      line-height: 1;
+      line-height: 72px;
       color: rgba(70, 74, 84, .2);
       font-weight: 700;
       text-align: center;
       @include lg-block {
         left: -30px;
         font-size: 100px;
+        line-height: 1.5;
+      }
+      @include xl-block {
+        content: none;
       }
     }
   }

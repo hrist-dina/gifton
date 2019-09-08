@@ -32,11 +32,24 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
 	@include container();
-	//@include xs(max-width, 320px);
-	//@include sm(max-width, 576px);
-	//@include md(max-width, 768px);
-	//@include lg(max-width, 992px);
-	//@include xl(max-width, 1200px);
+}
+
+.content-full {
+	width: 100%;
+	padding: 30px;
+	border-radius: 6px;
+	box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
+	background-color: #fff;
+	font-size: 13px;
+	line-height: 20px;
+	box-sizing: border-box;
+	@include m-bottom(1);
+	@include lg-block {
+		padding: 60px;
+		font-size: 14px;
+		line-height: 21px;
+		@include m-bottom(2);
+	}
 }
 
 .welcome {
