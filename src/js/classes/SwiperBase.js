@@ -24,18 +24,20 @@ export class SwiperBase {
     }
 
     initSwiper() {
-        let mySwiper = undefined;
+        if ($(this.selector).length) {
+            let mySwiper = undefined;
 
-        $(window).on('resize', () => {
-            let screenWidth = $(window).width();
-            if (screenWidth <= this.screenWidht && mySwiper == undefined) {
-                mySwiper = new Swiper(this.selector, this.options);
-            } else if (screenWidth > this.screenWidht && mySwiper != undefined) {
-                mySwiper.destroy();
-                mySwiper = undefined;
-                $(this.selector).removeAttr("style");
-                $(".swiper-slide").removeAttr("style");
-            }
-        }).resize();
+            $(window).on('resize', () => {
+                let screenWidth = $(window).width();
+                if (screenWidth <= this.screenWidht && mySwiper === undefined) {
+                    mySwiper = new Swiper(this.selector, this.options);
+                } else if (screenWidth > this.screenWidht && mySwiper !== undefined) {
+                    mySwiper.destroy();
+                    mySwiper = undefined;
+                    $(this.selector).removeAttr("style");
+                    $(".swiper-slide").removeAttr("style");
+                }
+            }).resize();
+        }
     }
 }

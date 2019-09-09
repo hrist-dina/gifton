@@ -2,10 +2,14 @@
   border-radius: 6px;
   box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
   background-color: #fff;
-  padding: 60px 78px;
+  padding: 30px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+
+  @include xl-block {
+    padding: 60px 78px;
+  }
 
   &:before {
     content: '';
@@ -17,13 +21,21 @@
     background-image: url(../img/description-about/description-about.jpg);
     background-repeat: no-repeat;
     z-index: 0;
+    opacity: .2;
+    @include lg-block {
+      opacity: 1;
+    }
   }
 
   &__wrap {
-    @include p-top(4);
-    @include p-bottom(4);
+    @include p-top(1);
+    @include p-bottom(1);
     background: url(../img/description-about/description-about_bg.jpg) no-repeat center;
     background-size: cover;
+    @include lg-block {
+      @include p-top(4);
+      @include p-bottom(4);
+    }
   }
 
   &__inner {
@@ -34,21 +46,31 @@
 
   &__left {
     @include col();
-    @include u-size(6, 14, $offset);
-    @include shift-right(1)
+    @include u-size(14, 14, $offset);
+
+    @include lg-block {
+      @include shift-right(1);
+      @include u-size(6, 14, $offset);
+    }
   }
 
   &__center {
     @include col();
-    @include u-size(3, 14, $offset);
-    @include shift-right(1);
-    padding-right: 20px;
+    @include u-size(14, 14, $offset);
+    @include lg-block {
+      @include shift-right(1);
+      @include u-size(3, 14, $offset);
+      padding-right: 20px;
+    }
   }
 
   &__right {
     @include col();
-    @include u-size(3, 14, $offset);
-    padding-right: 20px;
+    @include u-size(14, 14, $offset);
+    @include lg-block {
+      @include u-size(3, 14, $offset);
+      padding-right: 20px;
+    }
   }
 
 

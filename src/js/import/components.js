@@ -21,6 +21,7 @@ import {InputMask} from "../classes/InputMask";
 import {CheckoutForm} from "%components%/checkout/CheckoutForm";
 import {SwiperRecommended} from "%components%/product-recommended/SwiperRecommended";
 import {SwiperAnnounce} from "%components%/announce/SwiperAnnounce";
+import {SwiperSystem} from "%components%/system/SwiperSystem";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -49,6 +50,7 @@ $(document).ready(function () {
     new SliderMain('.js-slider-main');
     new SwiperRecommended('.js-slider-recommended');
     new SwiperAnnounce('.js-slider-announce');
+    new SwiperSystem('.js-slider-system');
     new Map();
     new ContactMap('contact-map');
     new ContactForm();

@@ -12,6 +12,9 @@ export class ContactMap extends Map{
     }
 
     getCenter() {
-        return [55.67481315859148, 37.555618350509616];
+        if (!this.isMobile()) {
+            return [55.67481315859148, 37.555618350509616];
+        }
+        return [55.67591315859148, 37.561118350509616];
     }
 }

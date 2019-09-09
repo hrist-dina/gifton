@@ -1,6 +1,11 @@
 .system {
-  @include p-top(5);
-  @include p-bottom(2);
+  @include p-top(3);
+  @include p-bottom(1);
+
+  @include lg-block {
+    @include p-top(5);
+    @include p-bottom(2);
+  }
 
   &__title {
     font-size: 25px;
@@ -28,14 +33,21 @@
   &__list {
     margin-top: 60px;
     @include row-flex();
+    flex-wrap: nowrap;
   }
 
   &__item {
     @include col();
-    @include size(3);
+    @include size-lg(3);
+    @include size(14);
+    max-width: 212px;
+    @include xl-block {
+      max-width: inherit;
+    }
 
     &:last-child {
-      @include size(4);
+      @include size-lg(4);
+      @include size(16);
     }
   }
 
@@ -126,7 +138,8 @@
       line-height: 1.2;
       font-weight: 400;
       @include col();
-      @include size(6);
+      @include size-md(6);
+      @include size(16);
       text-align: right;
     }
 

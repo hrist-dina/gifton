@@ -67,9 +67,15 @@
     position: relative;
     background: url("../img/choice-block/done.png") no-repeat center;
     background-size: contain;
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
 
+
+    @include sm-block {
+      width: 70px;
+      height: 70px;
+
+    }
     @include lg-block {
       width: 153px;
       height: 153px;
@@ -126,8 +132,13 @@
     position: relative;
     background: url("../img/choice-block/question.png") no-repeat center;
     background-size: contain;
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
+
+    @include sm-block {
+      width: 70px;
+      height: 70px;
+    }
 
     @include lg-block {
       width: 153px;

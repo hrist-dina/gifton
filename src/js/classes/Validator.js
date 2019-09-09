@@ -1,12 +1,14 @@
 import $ from "jquery";
 
 export default class Validator {
-    constructor(selectorForm) {
+    constructor(selectorForm, needShowMessage = true) {
         if (typeof selectorForm === "string") {
             this.form = $(selectorForm);
         } else if (typeof selectorForm === "object") {
             this.form = selectorForm;
         }
+
+        this.needShowMessage = needShowMessage;
 
         this.requireFiled = "validator-require";
         this.typeFiled = "validator-type";
@@ -47,6 +49,9 @@ export default class Validator {
     }
 
     showErrorMessage(item, message) {
+        if (!this.needShowMessage) {
+            return;
+        }
         let error = $("<div class='tooltip'>").addClass(this.selectorErrorMessage).text(message);
         $(item).after(error);
         $(item).addClass(this.selectorError);

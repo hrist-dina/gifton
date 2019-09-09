@@ -117,7 +117,6 @@
       font-size: 14px;
     }
 
-
     .blocks & {
       margin-bottom: 0;
       line-height: 15px;
@@ -235,7 +234,7 @@
 
     @include to($break_md) {
       margin-right: 10px;
-      width: auto;
+      width: 100%;
       margin-bottom: 10px;
     }
   }

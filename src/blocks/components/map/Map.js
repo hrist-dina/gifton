@@ -13,6 +13,10 @@ export class Map {
         this.initMap();
     }
 
+    isMobile() {
+        return $(window).width() <= 992;
+    }
+
     zoomTemplate() {
         return "<div class='map-zoom'>" +
             `<div id='${this.idZoomIn}' class='plus'>+</div>` +
@@ -23,13 +27,16 @@ export class Map {
     controlOptions() {
         return {
             position: {
-                top: 320,
-                right: 320
+                top: this.isMobile() ? 60 : 320,
+                right: '7%'
             },
         };
     }
 
     getCenter() {
+        if (this.isMobile()) {
+            return [55.67591315859148, 37.561118350509616];
+        }
         return [55.67581315829148, 37.558698350509616];
     }
 

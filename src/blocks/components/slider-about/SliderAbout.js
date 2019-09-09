@@ -8,7 +8,30 @@ class SliderAbout extends Slider {
             prevArrow: "<div class=\"slider-round-button prev\"></div>",
             dots: false,
             slidesToShow: 5,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 786,
+                    settings: {
+                        slidesToShow: 2,
+                        centerMode: true,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        centerMode: true,
+                    }
+                }
+            ]
         });
     }
 

@@ -1,2 +1,7 @@
 import "%modules%/header/header.js";
-import "%modules%/footer/footer.js";
+import $ from "jquery";
+import {Footer} from "%modules%/footer/Footer";
+
+$(document).ready(function () {
+    new Footer() ;
+});

@@ -163,6 +163,40 @@
       padding: 3px 4px;
       border-radius: 20px;
       box-sizing: border-box;
+      border: 2px solid transparent;
+
+      &.error {
+        border: 2px solid #d73124;
+      }
+
+      &.success {
+        @extend .btn-check-mark;
+        border: 2px solid #f3f3f3;
+        padding-left: 0 !important;
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 20px !important;
+          height: 16px !important;
+          background-color: #b9cf1b;
+          background-repeat: no-repeat;
+          background-size: contain;
+          left: 0 !important;
+          right: 0 !important;
+          margin: auto;
+          z-index: 1;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: #b9cf1b;
+          border-radius: 15px;
+        }
+      }
     }
 
     &__text {
@@ -175,7 +209,7 @@
 
     body &__input {
       width: #{calc(100% - 40px)};
-      padding: 10px 5px 10px 16px;
+      padding: 8px 5px 8px 16px;
       height: auto;
       font-size: 12px;
       color: #b4bfc7;
@@ -188,6 +222,13 @@
 
       @include placeholder {
         color: #b4bfc7;
+      }
+    }
+
+    &__form.error &__input {
+      color: #d73124;
+      @include placeholder {
+        color: #d73124;
       }
     }
 

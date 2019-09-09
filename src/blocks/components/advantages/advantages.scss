@@ -13,7 +13,10 @@
     }
 
     &__inner {
-        padding: 60px 70px;
+        padding: 30px;
+        @include lg-block {
+            padding: 60px 70px;
+        }
     }
 
     &__title {
@@ -40,25 +43,44 @@
     }
 
     &__list {
-        margin-top: 60px;
+        margin-top: 20px;
         @include row-flex();
         align-items: flex-start;
+
+        @include lg-block {
+            margin-top: 60px;
+        }
       }
 
     &__item {
         @include col();
-        @include u-size(4, 14, $offset);
         min-height: 190px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        @include shift-right(1);
+        @include u-size(14, 14, $offset);
+        margin-top: 20px;
+
+        @include sm-block {
+            @include u-size(7, 14, $offset);
+        }
+
+        @include md-block {
+            @include shift-right(1);
+            @include u-size(4, 14, $offset);
+        }
+
+        @include lg-block {
+            margin-top: 0;
+        }
 
         &:nth-child(3n) {
             @include shift-right(0);
         }
         &:nth-child(n + 4) {
-            margin-top: 45px;
+            @include md-block {
+                margin-top: 45px;
+            }
         }
 
     }

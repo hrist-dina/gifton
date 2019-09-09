@@ -1,13 +1,23 @@
 .slider-about {
-    @include p-top(3);
-    @include p-bottom(3);
+    @include p-top(1);
+    @include p-bottom(1);
+    @include lg-block {
+        @include p-top(3);
+        @include p-bottom(3);
+    }
 
     &__list {
         display: flex;
         align-items: center;
         justify-content: space-between;
         list-style-type: none;
-        padding: 0 180px;
+        padding: 0 50px;
+        @include lg-block {
+            padding: 0 100px;
+        }
+        @include xl-block {
+            padding: 0 180px;
+        }
     }
 
     .slider-about &__item {
@@ -15,7 +25,10 @@
         align-items: center;
         max-width: 120px;
         height: 75px;
-        margin: 0 35px;
+        margin: 0 10px;
+        @include lg-block {
+            margin: 0 35px;
+        }
     }
 
     &__img {

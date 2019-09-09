@@ -1,6 +1,6 @@
 .not-found {
   position: relative;
-  height: 750px;
+  height: 350px;
   border-radius: 6px;
   box-shadow: 0 4px 20px rgba(1, 1, 1, 0.15);
   background-color: #fff;
@@ -8,11 +8,18 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  @include md-block {
+    height: 750px;
+  }
   
 
 
   &__wrap {
-    @include p-bottom(3);
+    @include p-bottom(1);
+    @include md-block {
+      @include p-bottom(3);
+    }
   }
 
   &__block {
@@ -26,19 +33,26 @@
   }
 
   &__title {
-    font-size: 31px;
+    font-size: 24px;
     line-height: 1.1;
     color: #fff;
     font-weight: 600;
     margin-bottom: 16px;
+    @include md-block {
+      font-size: 31px;
+    }
   }
 
   &__desc {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.1;
     color: #fcfcfe;
     font-weight: 500;
     margin-bottom: 25px;
+
+    @include md-block {
+      font-size: 14px;
+    }
   }
 
   &__btn {
