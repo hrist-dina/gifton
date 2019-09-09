@@ -17,23 +17,35 @@ export class ContactForm {
         contactForm.validateAgree();
         $(this.form).on('submit', function (e) {
             e.preventDefault();
-            $(form).find('.contacts-form__title').next('p').remove();
-            var form = $(this);
+            let form = $(this);
+            $(form).find('.contacts-form__title').next('p').remove();            
             if (!contactForm.init()) {
                 //отправка формы
-                $.post("/local/script/ajax.php", $(this).serialize(),
-                    function(data) {
-                        data=$.parseJSON(data);
-                        var classMess = '';
-                        if(data.result=='success') {
-                            $(form).find('[type=text], textarea').val('');
-                            classMess = 'mess-success';
-                        }
-                        else
-                            classMess = 'mess-error';
-                        $(form).find('.contacts-form__title').after('<p class="'+classMess+'">'+data.mess+'</p>');
+                let dataForm = new FormData(document.querySelector('form#'+$(form).attr('id')));
+                BX.showWait();
+                $.ajax(
+                    '/local/script/ajax.php',
+                    {
+                        method: 'post',
+                        dataType: 'json',
+                        data: dataForm,
+                        processData: false,
+                        contentType: false
                     }
-                );
+                ).done(function(data) {
+                    var classMess = '';
+                    if(data.result=='success') {
+                        $(form).find('[type=text], textarea, [type=file]').val('');
+                        classMess = 'mess-success';
+                    }
+                    else
+                        classMess = 'mess-error';
+                    $(form).find('.contacts-form__title').after('<p class="'+classMess+'">'+data.mess+'</p>');
+                    BX.closeWait();
+                }).fail(function() {
+                    $(form).find('.contacts-form__title').after('<p class="mess-error">Произошла ошибка. Повторите немного позже</p>');
+                    BX.closeWait();
+                });
             }        
         });
     }
