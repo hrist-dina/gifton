@@ -838,7 +838,7 @@
   }
 
   &__item.selected &__desc {
-    display: none;
+    /*display: none;*/
   }
 
   &__desc {
@@ -922,6 +922,16 @@
 
     &.business {
       background: url("../img/brief/business_icon_green.png") no-repeat center;
+      background-size: contain;
+    }
+
+    &.vip {
+      background: url("../img/brief/vip_icon_green.png") no-repeat center;
+      background-size: contain;
+    }
+
+    &.promo {
+      background: url("../img/brief/promo_icon_green.png") no-repeat center;
       background-size: contain;
     }
   }
