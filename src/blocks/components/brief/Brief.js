@@ -94,10 +94,10 @@ $(document).ready(function () {
     });
     
     console.log(document.querySelector('.js-slider-brief'));
-    var mySwiper = document.querySelector('.js-slider-brief').swiper;
+    var mySwiper = document.querySelector('.js-slider-brief');
     console.log(mySwiper);
-    if(mySwiper) {
-        mySwiper.on('slideChange', function () { 
+    if(mySwiper && mySwiper.swiper) {
+        mySwiper.swiper.on('slideChange', function () {
             console.log(15);
             getSroki();
         });    

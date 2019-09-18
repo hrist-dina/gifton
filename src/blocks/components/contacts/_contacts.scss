@@ -248,7 +248,6 @@
         outline: none;
       }
     }
-
   }
 
   &-block {
@@ -282,6 +281,10 @@
     @include lg-block {
       margin-left: auto;
     }
+  }
+
+  &  p.mess-success  {
+    margin-top: -18px;
   }
 }
 p.success-file, p.mess-success {

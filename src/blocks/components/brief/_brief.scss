@@ -326,6 +326,7 @@
       box-sizing: border-box;
       min-height: 245px;
       @include lg-block {
+        min-height: 350px;
         justify-content: center;
         padding: 60px 20px 20px;
       }
@@ -838,7 +839,10 @@
   }
 
   &__item.selected &__desc {
-    /*display: none;*/
+    display: none;
+     @include sm-block {
+       display: flex;
+     }
   }
 
   &__desc {

@@ -239,6 +239,7 @@
       height: 288px;
       width: #{calc(50% - 8px)};
       margin-bottom: 0;
+      padding: 30px 20px;
     }
   }
 
@@ -250,6 +251,15 @@
   &__group.equal-half &__item:nth-child(2) &__content,
   &__group.equal-half &__item:last-child &__content {
     text-align: center;
+    align-items: center;
+  }
+
+  &__group.equal-half &__item:nth-child(2) &__name,
+  &__group.equal-half &__item:last-child &__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
   }
 
   &__more {

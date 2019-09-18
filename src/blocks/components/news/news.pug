@@ -18,3 +18,4 @@ mixin news(newsList)
             .news__list
                 for news in newsList
                     +news-card(news)
+            include ../pagination/pagination

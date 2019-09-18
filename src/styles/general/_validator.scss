@@ -32,7 +32,9 @@ body .validator {
 
 body .validator input.validator-error {
   @extend .border-error;
-  background: url("../img/icons/icon-cross-red.png") no-repeat  97% center;
+  background-image: url("../img/icons/icon-cross-red.png");
+  background-repeat: no-repeat;
+  background-position: 97% center;
   background-size: 12px 11px;
   padding-right: 25px;
 }
