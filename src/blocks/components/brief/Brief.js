@@ -92,10 +92,8 @@ $(document).ready(function () {
     $('[data-brief-step="2"] [name=srok], [data-brief-step="2"] [name=min], [data-brief-step="2"] [name=max]').on('change', function() {
         getSroki();
     });
-    
-    console.log(document.querySelector('.js-slider-brief'));
+
     var mySwiper = document.querySelector('.js-slider-brief');
-    console.log(mySwiper);
     if(mySwiper && mySwiper.swiper) {
         mySwiper.swiper.on('slideChange', function () {
             console.log(15);

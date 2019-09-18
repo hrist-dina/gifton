@@ -5,6 +5,15 @@
         text-align: center;
     }
 
+    &__list >  &__item {
+
+        &:first-child {
+            display: block;
+        }
+
+        display: none;
+    }
+
     &__item {
         position: relative;
         background-repeat: no-repeat;
