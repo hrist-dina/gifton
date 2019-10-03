@@ -45,3 +45,10 @@ export class CatalogFilter {
         });
     }
 }
+
+$(document).ready(function () {
+
+    $('[name="catalog-sort"]').on('change', function() {
+        $(this).closest('form').submit();
+    });
+});

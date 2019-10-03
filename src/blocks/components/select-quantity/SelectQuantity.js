@@ -71,6 +71,7 @@ export class SelectQuantity {
             newVal = max;
         }
         input.val(newVal);
+        input.trigger('change');
         this.sum(input, this.price(input), newVal);
         this.total(input);
         // TODO:: тут можно добавить ajax для отправки значений на сервер (известен id продукта и количество)
