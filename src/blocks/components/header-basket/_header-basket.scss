@@ -114,6 +114,8 @@
       padding-right: 15px;
       box-sizing: border-box;
       text-align: left;
+      overflow: hidden;
+      max-height: 55px;
     }
 
     &-name {
