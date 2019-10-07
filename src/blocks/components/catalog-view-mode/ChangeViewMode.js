@@ -25,6 +25,7 @@ export class ChangeViewMode {
             }
             $(self.cnangedBlock).removeClass([self.rows, self.blocks]);
             $(self.cnangedBlock).addClass(mode);
+            $.get("/local/script/ajax.php", {label: 'changeView', view: mode});
         });
     }
 }

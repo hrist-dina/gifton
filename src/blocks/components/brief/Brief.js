@@ -44,9 +44,19 @@ export class Brief {
         let briefForm = new Validator(this.form);
         briefForm.validateAgree();
         $(this.form).on('submit', function (e) {
-            if (briefForm.init()) {
-                e.preventDefault();
-
+            e.preventDefault();
+            var breifForm = $(this);
+            $(briefForm).find('p.mess').remove();
+            if (!briefForm.init()) {
+                BX.showWait();                
+                $.get("/local/script/ajax.php", $(this).serialize(),
+                    function(data) {
+                        data=$.parseJSON(data);
+                        $('[data-brief-step="3"]').find('.brief-settings').append('<p class="mess">Мы получили вашу заявку и скоро свяжемся с Вами</p>');
+                        BX.closeWait();                        
+                        $(breifForm).find('[type=text], textarea').val('');
+                    }
+                );
             }
         });
     }
@@ -59,6 +69,7 @@ export class Brief {
 $(document).ready(function () {
 
     function getPrice() {
+        $('[data-brief-step="3"]').find('p.mess').remove();
         let price = $('.brief-card').find('[name=price]:checked');
         $(price).closest('label').addClass('active').closest('.brief-card').addClass('swiper-slide-active').siblings().removeClass('swiper-slide-active').find('label').removeClass('active');  
         $('[data-brief-step="2"], [data-brief-step="3"]').find('.status-bar__item:eq(0)').find('.status-bar__icon').attr('class', 'status-bar__icon '+$(price).val());
@@ -71,6 +82,7 @@ $(document).ready(function () {
     getPrice();   
 
     function getOptions() {
+        $('[data-brief-step="3"]').find('p.mess').remove();
         let lis = '';
         $('[data-brief-step="1"]').find('.brief__options').find(':checked').each(function() {
             lis = lis+'<li>+ '+$(this).closest('label').find('.switch-title').text()+'</li>';    
@@ -83,6 +95,7 @@ $(document).ready(function () {
     getOptions();
 
     function getSroki() {
+        $('[data-brief-step="3"]').find('p.mess').remove();
         let text = '';
         text = $('[data-brief-step="2"]').find(':checked').closest('label').find('.switch-title b').text()+'<br>';
         text = text+$('[data-brief-step="2"]').find('.catalog-filter__list [name=min]').val().replace(/\D+/g,"")+' - ';
@@ -91,15 +104,13 @@ $(document).ready(function () {
     }
     $('[data-brief-step="2"] [name=srok], [data-brief-step="2"] [name=min], [data-brief-step="2"] [name=max]').on('change', function() {
         getSroki();
+        if($(this).is('[name=srok]')) {
+            $(document).find('[name=srok_copy][value='+$(this).val()+']').prop('checked', true);
+        }
     });
-
-    var mySwiper = document.querySelector('.js-slider-brief');
-    if(mySwiper && mySwiper.swiper) {
-        mySwiper.swiper.on('slideChange', function () {
-            console.log(15);
-            getSroki();
-        });    
-    }
+    
+    
+    
 
     $('a.brief__btn-step').on('click', function() {
         $(this).closest('.js-brief-step').find('.status-bar__item.active').nextUntil('.status-bar__item').next().trigger('click');

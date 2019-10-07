@@ -431,3 +431,8 @@
     display: block;
  } 
 }
+.btn.not-availible, .btn.not-availible:hover {
+  cursor: default;
+  background: #dddddd;
+  box-shadow: none;
+}

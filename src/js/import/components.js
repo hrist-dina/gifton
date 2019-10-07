@@ -39,7 +39,7 @@ $(document).ready(function () {
         dropdownAutoWidth : true
     });
     new SelectQuantity();
-    new ProductDetail();
+    //new ProductDetail();
     new Search();
     new BaronScroll({
         root: '.js-scroll'
