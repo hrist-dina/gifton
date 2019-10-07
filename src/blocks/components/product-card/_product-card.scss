@@ -112,6 +112,8 @@
     font-weight: bold;
     text-decoration: none;
     margin-bottom: 10px;
+    overflow: hidden;
+    max-height: 70px;
 
     @include xl-block {
       font-size: 14px;
