@@ -61,6 +61,7 @@
 		"slick-carousel": "^1.8.1",
 		"smart-grid": "^2.1.2",
 		"swiper": "^4.5.0",
-		"wnumb": "^1.1.0"
+		"wnumb": "^1.1.0",
+		"@fancyapps/fancybox": "^3.5.7"
 	}
 }

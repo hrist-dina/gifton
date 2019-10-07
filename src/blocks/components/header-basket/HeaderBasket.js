@@ -11,19 +11,16 @@ export class HeaderBasket {
     }
 
     init() {
-        this.onClick();
+        this.hover();
     }
 
-    onClick() {
+    hover() {
         let self = this;
-        this.active.find('> a').on('click', function (event) {
-            if (event.target !== this) {
-                return;
-            }
+        this.active.hover(function (event) {
             if ($(window).width() > 768) {
                 event.preventDefault();
             }
-            self.active.toggleClass('active');
+            $(this).toggleClass('active');
             new BaronScroll({
                 root: self.scrollSelector
             });

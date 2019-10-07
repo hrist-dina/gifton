@@ -13,56 +13,66 @@
     background-color: #ffffff;
     margin-bottom: 16px;
     text-decoration: none;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     z-index: 0;
 
     @include lg-block {
       height: 270px;
     }
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(1deg, #3c414c 0%, rgba(60,65,76,0) 100%);
-      border-radius: 6px;
-      z-index: -1;
-    }
-
     &.big {
       @include size-lg(8);
       @include size(16);
-      background-size: cover;
-      background-position: center right;
-
-
-      @include sm-block {
-        background-size: 50%;
-      }
-
-      @include lg-block {
-        background-size: 65% 270px;
-      }
-
-      @include xl-block {
-        background-size: 380px 270px;
-      }
-
-
-      &:before {
-        @include sm-block {
-          content: none;
-        }
-      }
     }
 
     &__list {
       @include row-flex();
+    }
+
+    &__pic {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      z-index: -1;
+
+      .big & {
+        left: auto;
+        right: 0;
+        width: 100%;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        @include sm-block {
+          width: 50%;
+        }
+
+        @include lg-block {
+          width: #{calc(100% - 212px)};
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(1deg, #3c414c 0%, rgba(60,65,76,0) 100%);
+        border-radius: 6px;
+        z-index: -2;
+
+        .big & {
+          @include sm-block {
+            content: none;
+          }
+        }
+      }
     }
 
     &__inner {

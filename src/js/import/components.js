@@ -22,6 +22,7 @@ import {CheckoutForm} from "%components%/checkout/CheckoutForm";
 import {SwiperRecommended} from "%components%/product-recommended/SwiperRecommended";
 import {SwiperAnnounce} from "%components%/announce/SwiperAnnounce";
 import {SwiperSystem} from "%components%/system/SwiperSystem";
+import {FancyBox} from "../classes/FancyBox";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -59,4 +60,5 @@ $(document).ready(function () {
     new ScrollToUp();
     new InputMask().phone();
     new CheckoutForm();
+    new FancyBox();
 });

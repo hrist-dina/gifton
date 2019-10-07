@@ -196,6 +196,17 @@ h6,
 	color: #3c414c;
 	font-weight: 500;
 
+	& a {
+		font-size: 12px;
+		line-height: 18px;
+		color: #3c414c;
+		font-weight: 500;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
 	& h2,
 	&.h2 {
 		margin-top: 3px;

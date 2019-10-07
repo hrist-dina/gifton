@@ -1,10 +1,11 @@
 mixin portfolio-card(portfolioCard)
-    a.portfolio-card(href="#" class=portfolioCard.type ? portfolioCard.type : '' style=`background-image: url(${portfolioCard.img})`)
+    a.portfolio-card(href="#" class=portfolioCard.type ? portfolioCard.type : '')
         .portfolio-card__inner
             .portfolio-card__marker-list
                 for marker in  portfolioCard.markers
                     .portfolio-card__marker=marker
             .portfolio-card__title=portfolioCard.title
+            .portfolio-card__pic(style=`background-image: url(${portfolioCard.img})`)
 
 
 

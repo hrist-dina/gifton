@@ -20,20 +20,12 @@ mixin news-detail()
                             br
                             | Желаете оставить приятное впечатление о себе и своей компании? Компания «Гифтон» станет
                     .row
-                        .col-mini
-                            img(src='img/news/video-container-mini.png')
-                        .col-mini
-                            img(src='img/news/video-container-mini.png')
-                        .col-mini
-                            img(src='img/news/video-container-mini.png')
-                        .col-mini
-                            img(src='img/news/video-container-mini.png')
-                        .col-mini
-                            img(src='img/news/video-container-mini.png')
-                        .col-mini
-                            img(src='img/news/video-container-mini.png')
-                        .col-mini
-                            img(src='img/news/video-container-mini.png')
+                        - var i = 0;
+                        while i < 7
+                            .col-mini
+                                a(data-fancybox="images" href='img/news/video-container-mini.png')
+                                    img(src='img/news/video-container-mini.png')
+                            - i++
                     | Желаете оставить приятное впечатление о себе и своей компании? Компания «Гифтон» станет вашим надежным помощником. Занимаясь более 10 лет поставкой и продажей сувенирной продукции оптом, мы предлагаем изготовление промоматериалов с нанесением корпоративной символики и оригинальным дизайнерским оформлением.
                     br
                     | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
