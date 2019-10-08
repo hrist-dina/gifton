@@ -62,6 +62,8 @@
     color: #b4bfc7;
     font-weight: 600;
     text-decoration: none;
+    overflow: hidden;
+    max-height: 55px;
     @include to($break_md) {
       font-size: 11px;
     }
