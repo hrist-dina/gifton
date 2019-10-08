@@ -12,7 +12,7 @@ mixin product-card(productId, productCard, customClass)
                 .product-card__marker(class=[isEmptyForMarks(productCard), isLittle(productCard)])=`${productCard.quantity} шт.`
                 if (productCard.isNew)
                     .product-card__marker.product-card__marker_new new
-            .product-card__img
+            a(href='#').product-card__img
                 img(src=productCard.img alt=productCard.title)
             if productCard.selectColors
                 .product-card__select-color-list
