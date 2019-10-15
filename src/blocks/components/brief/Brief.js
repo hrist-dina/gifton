@@ -71,12 +71,12 @@ $(document).ready(function () {
     function getPrice() {
         $('[data-brief-step="3"]').find('p.mess').remove();
         let price = $('.brief-card').find('[name=price]:checked');
-        $(price).closest('label').addClass('active').closest('.brief-card').addClass('swiper-slide-active').siblings().removeClass('swiper-slide-active').find('label').removeClass('active');  
+        $(price).closest('.btn').addClass('active').closest('.brief-card').addClass('swiper-slide-active').siblings().removeClass('swiper-slide-active').find('.btn').removeClass('active');
         $('[data-brief-step="2"], [data-brief-step="3"]').find('.status-bar__item:eq(0)').find('.status-bar__icon').attr('class', 'status-bar__icon '+$(price).val());
         $('[data-brief-step="2"]').find('.brief-card:eq(0)').attr('class', 'brief-card selected '+$(price).val());
         $('[data-brief-step="2"]').find('.brief-card__title:eq(0)').text($(price).closest('.brief-card').find('.brief-card__title').text());         
     }
-    $('.brief-card label').on('click', function() {        
+    $('.brief-card').on('click', function() {
         getPrice();
     });
     getPrice();   

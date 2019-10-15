@@ -2,7 +2,7 @@ mixin select-quantity(productId, value, max, isEmpty = false)
     .select-quantity(class=isEmpty ? 'empty' : '')
         .select-quantity__inner
             span.select-quantity__minus.js-quantity-minus -
-            input.js-quantity-input(type="text" value=value data-product-id=productId data-quantity-max=max)
+            input.js-quantity-input(type="text" value=value data-product-id=productId )
             span.select-quantity__plus.js-quantity-plus +
         if !isEmpty
             .select-quantity__text шт.

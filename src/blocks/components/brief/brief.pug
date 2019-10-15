@@ -61,7 +61,7 @@ section.brief__wrap.section-gray
                     .brief-center
                         .swiper-container.js-slider-brief
                             .brief-card__list.swiper-wrapper
-                                .brief-card.promo.swiper-slide
+                                label.brief-card.promo.swiper-slide
                                     .brief-card__inner
                                         .brief-card__title
                                             |Промо
@@ -69,10 +69,10 @@ section.brief__wrap.section-gray
                                             |до
                                             |
                                             span 500 ₽
-                                        label.btn.btn-fix.brief__btn Выбрать
+                                        .btn.btn-fix.brief__btn Выбрать
                                             input.hide(type='radio' name='price' value='promo')
 
-                                .brief-card.business.swiper-slide-active.swiper-slide
+                                label.brief-card.business.swiper-slide
                                     .brief-card__inner
                                         .brief-card__title
                                             |Бизнес
@@ -80,10 +80,10 @@ section.brief__wrap.section-gray
                                             |до
                                             |
                                             span 1500 ₽
-                                        label.btn.btn-fix.brief__btn.active Выбрано
-                                            input.hide(type='radio' name='price' value='business' checked=true)
+                                        .btn.btn-fix.brief__btn Выбрать
+                                            input.hide(type='radio' name='price' value='business')
 
-                                .brief-card.vip.swiper-slide
+                                label.brief-card.vip.swiper-slide
                                     .brief-card__inner
                                         .brief-card__title
                                             |VIP
@@ -91,16 +91,16 @@ section.brief__wrap.section-gray
                                             |до
                                             |
                                             span 5000 ₽
-                                        label.btn.btn-fix.brief__btn Выбрать
+                                        .btn.btn-fix.brief__btn Выбрать
                                             input.hide(type='radio' name='price' value='vip')
                     .brief-bottom.js-dropdown
                         .brief__title.brief__title_arrow.js-dropdown-name Дополнительные опции
                         .brief-bottom__inner
                             .brief__options.js-dropdown-block
                                 +switch('Упаковака', 'packaging', true, true)
-                                +switch('Макетирование', 'prototyping', true, false)
+                                +switch('Макетирование', 'prototyping', true, true)
                                 +switch('Доставка', 'delivery', true, true, 'always-on')
-                                +switch('Нанесение', 'infliction', true, false)
+                                +switch('Нанесение', 'infliction', true, true)
                             .brief__step
                                 .brief__step-count 1/3
                                 a(href='javascript:void(0)').btn.btn-rounded.btn-rounded_large.btn-check-mark.brief__btn-step

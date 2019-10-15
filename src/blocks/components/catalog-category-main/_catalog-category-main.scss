@@ -93,7 +93,6 @@
     background-size: cover;
     background-position: center;
     @include blur();
-    @include transition(0.2s);
   }
 
   &__item:hover &__bg {
