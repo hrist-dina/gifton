@@ -30,6 +30,15 @@
         }
       }
     }
+    &-ppt {
+      &-white {
+        @include icon-pseudo {
+        background: url(icon-ppt-white()) no-repeat center;
+        width: 34px;
+        height: 32px;
+        }
+      }
+    }
     &-ms-word {
       &-white {
         @include icon-pseudo {
