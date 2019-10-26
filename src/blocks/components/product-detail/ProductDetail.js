@@ -32,7 +32,16 @@ export class ProductDetail {
             dots: false,
             variableWidth: true,
             focusOnSelect: true,
-            rows: 0
+            rows: 0,
+            responsive: [
+                {
+                    breakpoint: 500,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
+            ]
         });
     }
     unSlider() {
@@ -45,7 +54,7 @@ $(document).ready(function () {
     let prodGallery = new ProductDetail();
     //обновление корзины в шапке
     function refreshCart() {
-        $('[data-basket-count]').find('.header-basket__link').siblings().remove();        
+        $('[data-basket-count]').find('.header-basket__link').siblings().remove();
         $('.header-basket__link').hide();
         $.ajax({
             type: "POST",
@@ -113,8 +122,8 @@ $(document).ready(function () {
     //удаление в малой корзине
     $(document).on('click', '[data-del-prod]', function() {
         let id = $(this).data('del-prod');
-        $(this).closest('.header-basket__product').remove();    
-        $(this).closest('.product-card-basket').remove();        
+        $(this).closest('.header-basket__product').remove();
+        $(this).closest('.product-card-basket').remove();
         $.ajax({
             type: "POST",
             data: {label: 'delProd', id: id},

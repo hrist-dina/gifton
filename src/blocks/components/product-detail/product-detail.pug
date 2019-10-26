@@ -11,7 +11,7 @@ mixin product-pic(productPic)
                         .product-pic__marker(class=marker.type)=marker.text
             .product-pic__slider-main.js-product-slider-main
                 for mainSlide in productPic.mainSlider
-                    a(href=mainSlide.img).slide
+                    a(href=mainSlide.img data-fancybox="product").slide
                         img(src=mainSlide.img alt='')
         .product-pic__bottom
             .product-pic__slider-nav.js-product-slider-nav

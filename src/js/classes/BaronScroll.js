@@ -38,11 +38,15 @@ export class BaronScroll {
         if (!$(this.options.root).length || $(this.options.root).hasClass(this.options.barOnCls)) {
             return;
         }
-        baron({
-            root    : this.options.root,
-            scroller: `.${this.scroller}`,
-            bar     : `.${this.bar}`,
-            barOnCls: this.options.barOnCls
+        const self = this;
+        $(this.options.root).each(function (key,item) {
+            $(item).addClass(`js-baron-activate-${key}`);
+            baron({
+                root    : `.js-baron-activate-${key}`,
+                scroller: `.${self.scroller}`,
+                bar     : `.${self.bar}`,
+                barOnCls: self.options.barOnCls
+            });
         });
         this.checkSize();
     }
