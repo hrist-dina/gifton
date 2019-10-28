@@ -26,9 +26,10 @@ export class Brief {
     onClick() {
         const self = this;
         $(this.status).on('click', function (event) {
+            if($('[name=price]:checked').length==0 && $('[name=price_all]:checked').length==0)
+                return false;
             event.preventDefault();
             let status = $(this).data('brief-status');
-
             self.steps.each(function (i, item) {
                 let step = $(item);
                 if (step.data('brief-step') === status) {
@@ -69,10 +70,11 @@ export class Brief {
 $(document).ready(function () {
 
     function getPrice() {
+        $('[name=price_all]').prop('checked', false);
         $('[data-brief-step="3"]').find('p.mess').remove();
         let price = $('.brief-card').find('[name=price]:checked');
-        $(price).closest('.btn').addClass('active').closest('.brief-card').addClass('swiper-slide-active').siblings().removeClass('swiper-slide-active').find('.btn').removeClass('active');
-        $('[data-brief-step="2"], [data-brief-step="3"]').find('.status-bar__item:eq(0)').find('.status-bar__icon').attr('class', 'status-bar__icon '+$(price).val());
+        $(price).closest('.btn').addClass('active').find('span').text('Выбрано').closest('.brief-card').addClass('swiper-slide-active').siblings().removeClass('swiper-slide-active').find('.btn').removeClass('active').find('span').text('Выбрать');
+        $('[data-brief-step="2"], [data-brief-step="3"]').find('.status-bar__item:eq(0)').find('.status-bar__icon').attr('class', 'status-bar__icon '+$(price).val()).attr('title', $(price).closest('.brief-card').find('.brief-card__title').text());
         $('[data-brief-step="2"]').find('.brief-card:eq(0)').attr('class', 'brief-card selected '+$(price).val());
         $('[data-brief-step="2"]').find('.brief-card__title:eq(0)').text($(price).closest('.brief-card').find('.brief-card__title').text());         
     }
@@ -107,17 +109,29 @@ $(document).ready(function () {
         if($(this).is('[name=srok]')) {
             $(document).find('[name=srok_copy][value='+$(this).val()+']').prop('checked', true);
         }
-    });
-    
-    
-    
+    });  
+    getSroki();
 
     $('a.brief__btn-step').on('click', function() {
-        $(this).closest('.js-brief-step').find('.status-bar__item.active').nextUntil('.status-bar__item').next().trigger('click');
+        if($('[name=price]:checked').length>0 || $('[name=price_all]:checked').length>0) {
+            $(this).closest('.js-brief-step').find('.status-bar__item.active').nextUntil('.status-bar__item').next().trigger('click');
+        }
     });
 
     $('.brief__btn-back').on('click', function() {
         $(this).closest('.js-brief-step').find('.status-bar__item.active').prevUntil('.status-bar__item').prev().trigger('click');
+    });
+
+    $('.js-brief-all-price').on('click', function() {
+        $('[name=price_all]').prop('checked', true);
+        $('[name=price]').prop('checked', true);
+        $('[data-brief-step="3"]').find('p.mess').remove();
+        $('[data-brief-step="1"] .brief-card .btn').addClass('active').find('span').text('Выбрано').closest('.brief-card').addClass('swiper-slide-active');
+        $('[data-brief-step="2"], [data-brief-step="3"]').find('.status-bar__item:eq(0)').find('.status-bar__icon').attr('class', 'status-bar__icon vip').attr('title', 'Все выбрано');
+        $('[data-brief-step="2"]').find('.brief-card:eq(0)').attr('class', 'brief-card selected vip');
+        $('[data-brief-step="2"]').find('.brief-card__title:eq(0)').text('Все выбрано');  
+        $('[data-brief-step="2"], [data-brief-step="3"]').find('.status-bar__text:eq(0) ul').html('<li>Все выбрано</li>');
+        $(this).closest('.js-brief-step').find('[data-brief-status="3"]').trigger('click');       
     });
 
 });

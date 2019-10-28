@@ -46,7 +46,10 @@ export class PriceSlider {
         let self = this;
         this.priceSlider.noUiSlider.on("update", function (values, handle) {
             inputs[handle].val(self.getValue(values[handle]));
-        });
+        }); 
+        this.priceSlider.noUiSlider.on("end", function (values, handle) {
+            $('[data-brief-step="2"] [name=min]').trigger("change");
+        });        
     }
 
     onChange() {

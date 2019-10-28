@@ -20,7 +20,12 @@ export class HeaderBasket {
             if ($(window).width() > 768) {
                 event.preventDefault();
             }
-            $(this).toggleClass('active');
+            if(event.type=="mouseover" || event.type=="mouseenter") {
+                $(this).addClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
+            
             new BaronScroll({
                 root: self.scrollSelector
             });
