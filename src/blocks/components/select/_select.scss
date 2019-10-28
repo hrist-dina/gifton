@@ -74,6 +74,11 @@
     width: 100%;
   }
 
+  & .select2-results__options {
+    max-height: 200px;
+    overflow-y: scroll;
+  }
+
   & .select2-results__option {
     font-size: 12px;
     color: #32394d;
