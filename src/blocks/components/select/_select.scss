@@ -74,9 +74,29 @@
     width: 100%;
   }
 
-  & .select2-results__options {
-    max-height: 200px;
+  & .select2-results {
+    height: 200px;
     overflow-y: scroll;
+
+    & .scroller__content {
+      padding-right: 10px;
+    }
+
+    & .scroller__bar-wrapper {
+      top: 5px;
+      bottom: 5px;
+      right: 3px;
+    }
+
+    &.without-scroll {
+      height: auto !important;
+
+      & .scroller__content {
+        padding-right: 0;
+      }
+    }
+
+
   }
 
   & .select2-results__option {
