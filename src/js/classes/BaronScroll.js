@@ -22,7 +22,7 @@ export class BaronScroll {
         this.initScroll();
         setTimeout( () => {
             this.checkSize();
-        }, 100);
+        }, 400);
     }
 
     initWrap() {
