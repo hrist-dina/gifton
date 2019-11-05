@@ -1,6 +1,5 @@
 @mixin filter-container {
   padding: 20px;
-  box-sizing: border-box;
 }
 
 @mixin filter-modal-block {
@@ -92,6 +91,7 @@
 
     &-half {
       @include filter-container();
+      box-sizing: border-box;
       width: 50%;
       height: 100%;
       display: flex;

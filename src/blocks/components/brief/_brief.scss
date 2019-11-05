@@ -332,6 +332,7 @@
       padding: 25px 20px 20px;
       box-sizing: border-box;
       min-height: 245px;
+      height: auto;
       @include lg-block {
         min-height: 350px;
         justify-content: center;
