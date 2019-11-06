@@ -64,6 +64,21 @@
     }
   }
 
+  &-white {
+    background:  rgb(255, 255, 255);
+    box-shadow: 0 4px 10px 0 rgba(185, 207, 27, 0.4);
+    color: rgb(185, 207, 27);
+
+    &:hover {
+      background: rgba(185, 207, 27, 0.1);
+      box-shadow: 0 2px 5px 0 rgba(185, 207, 27, 0.4);
+    }
+
+    &:active {
+      background: rgb(229, 229, 229);
+    }
+  }
+
   &-arrow-right {
     position: relative;
 

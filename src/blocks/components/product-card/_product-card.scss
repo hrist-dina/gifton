@@ -33,6 +33,10 @@
     flex-direction: column;
   }
 
+  &.in-basket {
+    box-shadow: 0 4px 20px 0 rgba(185, 207, 27, 0.3);
+  }
+
   &.empty {
     background-color: #ffffff;
     border: 2px solid #ecf1f5;
@@ -319,6 +323,15 @@
       color: #b6b7b9;
     }
   }
+
+  & .btn-white {
+    .blocks & {
+      border-left: 1px solid #ecf1f5;
+      box-shadow: none;
+    }
+  }
+
+
 
   & .btn-basket {
     max-height: 40px;

@@ -6,7 +6,7 @@ include ../select/select
 include ../select-quantity/select-quantity
 
 mixin product-card(productId, productCard, customClass)
-    .product-card(class=!isEmpty(productCard) ? 'empty' : '' id=productId data-price=productCard.price data-quantity=productCard.quantityCurrent class=customClass)
+    .product-card(class=!isEmpty(productCard) ? 'empty' : '' id=productId data-price=productCard.price data-quantity=productCard.quantityCurrent class=customClass class=productCard.inBasket ? 'in-basket' : '')
         .product-card__inner
             .product-card__marker-list
                 .product-card__marker(class=[isEmptyForMarks(productCard), isLittle(productCard)])=`${productCard.quantity} шт.`
@@ -32,7 +32,9 @@ mixin product-card(productId, productCard, customClass)
 
         .product-card__order
             .product-card__blocks-price=ruble(productCard.price)
-            if isEmpty(productCard)
+            if productCard.inBasket
+                a(href='#').btn.btn-basket.btn-white Уже в корзине
+            else if isEmpty(productCard)
                 a(href='#').btn.btn-basket В корзину
             else
                 a(href='#').btn.btn-basket.btn-gray Заказать
