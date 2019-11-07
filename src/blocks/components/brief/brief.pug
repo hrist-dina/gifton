@@ -142,12 +142,12 @@ section.brief__wrap.section-gray
                                         input.hide(type='radio' name='price' value='business' disabled=true)
                             .brief-settings
                                 .brief-settings__inner
-                                    .brief-options.brief-options_hide-on-mobile
+                                    .brief-options
                                         +switch('<b>от 15 дней</b><span>Есть время ждать - <br>поставка из Китая</span>', 'from-15-days', true)
                                         +switch('<b>10-15 дней</b><span>Есть время - <br>склад в Москве</span>', '10-15-days', false)
                                         +switch('<b class="icon-pseudo-fire">до 15 дней</b><span>Нет времени ни на что!<br> Все уже вот-вот начнется</span>', '10-15-days', false)
                                     .brief-options
-                                        +price-slider(days, 'catalog-filter')
+                                        //+price-slider(days, 'catalog-filter')
                                         +price-slider(count, 'catalog-filter')
                     .brief-bottom
                         .brief-bottom__inner
