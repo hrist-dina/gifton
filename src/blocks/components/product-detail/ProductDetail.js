@@ -108,7 +108,7 @@ $(document).ready(function () {
                 $('[data-addprod]').removeClass('btn-white').text('В корзину');
                 for (var i = 0; i < inCart.length ; i++) {
                     $('[data-add-offer="'+inCart[i]+'"]').addClass('btn-white').text('Уже в корзине');
-                    $('[data-addprod="'+inCart[i]+'"]').addClass('btn-white').text('Уже в корзине');
+                    $('[data-addprod="'+inCart[i]+'"]').addClass('btn-white').text('Уже в корзине').closest('.product-card').addClass('in-basket');
                 }
             }
         });
@@ -262,10 +262,11 @@ $(document).ready(function () {
         $(card).find('.js-quantity-input').attr('data-quantity-max', mass['QUANTITY']).val(1);
 
         if(inCart.indexOf(mass['ID'])==-1) {
-            $(card).find('[data-addprod]').removeClass('btn-white').text('В корзину');
+            $(card).find('[data-addprod]').removeClass('btn-white').text('В корзину').closest('.product-card').removeClass('in-basket');
         }
-        else 
-            $(card).find('[data-addprod]').addClass('btn-white').text('Уже в корзине');            
+        else {
+            $(card).find('[data-addprod]').addClass('btn-white').text('Уже в корзине').closest('.product-card').addClass('in-basket');            
+        }
         
         $(card).find('[data-addprod]').attr('data-addprod', mass['ID']);
     }
@@ -294,7 +295,7 @@ $(document).ready(function () {
             url: '/local/script/ajax.php',
             success: function(data) {
                 refreshCart();
-                $(button).addClass('btn-white').text('Уже в корзине');
+                $(button).addClass('btn-white').text('Уже в корзине').closest('.product-card').addClass('in-basket');
                 BX.closeWait();                
             }
         });
