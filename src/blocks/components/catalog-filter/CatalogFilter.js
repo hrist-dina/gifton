@@ -51,4 +51,9 @@ $(document).ready(function () {
     $('[name="catalog-sort"]').on('change', function() {
         $(this).closest('form').submit();
     });
+
+    $('.catalog-filter__clean').on('click', function() {
+        $(this).closest('form').find(':checked').prop('checked', false);
+        $(this).closest('form').find('name="filter_count"').val('');
+    });
 });

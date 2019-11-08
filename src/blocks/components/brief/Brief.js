@@ -26,8 +26,16 @@ export class Brief {
     onClick() {
         const self = this;
         $(this.status).on('click', function (event) {
+            
+            
             if($('[name=price]:checked').length==0 && $('[name=price_all]:checked').length==0)
                 return false;
+
+            if($(event.target).is('.js-brief-all-price'))
+                return false;
+
+            
+            
             event.preventDefault();
             let status = $(this).data('brief-status');
             self.steps.each(function (i, item) {
@@ -71,10 +79,11 @@ $(document).ready(function () {
 
     function getPrice() {
         $('[name=price_all]').prop('checked', false);
+        console.log($(price).closest('.brief-card').find('.brief-card__title').text());
         $('[data-brief-step="3"]').find('p.mess').remove();
         let price = $('.brief-card').find('[name=price]:checked');
         $(price).closest('.btn').addClass('active').find('span').text('Выбрано').closest('.brief-card').addClass('swiper-slide-active').siblings().removeClass('swiper-slide-active').find('.btn').removeClass('active').find('span').text('Выбрать');
-        $('[data-brief-step="2"], [data-brief-step="3"]').find('.status-bar__item:eq(0)').find('.status-bar__icon').attr('class', 'status-bar__icon '+$(price).val()).attr('title', $(price).closest('.brief-card').find('.brief-card__title').text());
+        $('[data-brief-step="2"], [data-brief-step="3"]').find('.status-bar__item:eq(0)').find('.status-bar__icon').attr('class', 'status-bar__icon '+$(price).val()).attr('title', $(price).closest('.brief-card').find('.brief-card__title').text()).parent().find('ul').html('<li>'+$(price).closest('.brief-card').find('.brief-card__title').text()+'</li>');
         $('[data-brief-step="2"]').find('.brief-card:eq(0)').attr('class', 'brief-card selected '+$(price).val());
         $('[data-brief-step="2"]').find('.brief-card__title:eq(0)').text($(price).closest('.brief-card').find('.brief-card__title').text());         
     }
@@ -131,7 +140,9 @@ $(document).ready(function () {
         $('[data-brief-step="2"]').find('.brief-card:eq(0)').attr('class', 'brief-card selected vip');
         $('[data-brief-step="2"]').find('.brief-card__title:eq(0)').text('Все выбрано');  
         $('[data-brief-step="2"], [data-brief-step="3"]').find('.status-bar__text:eq(0) ul').html('<li>Все выбрано</li>');
-        $(this).closest('.js-brief-step').find('[data-brief-status="3"]').trigger('click');       
+        $(document).find('[data-brief-step]').addClass('hide');  
+        $(document).find('[data-brief-step=3]').removeClass('hide');  
+        
     });
 
 });

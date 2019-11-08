@@ -51,6 +51,7 @@ export class ProductDetail {
 }
 
 $(document).ready(function () {
+    window.inCart = window.inCart || [];
     let prodGallery = new ProductDetail();
     //обновление корзины в шапке
     function refreshCart() {
@@ -66,9 +67,11 @@ $(document).ready(function () {
                 let minSum = data.minSum;
                 data = data.prods;
                 $('[data-basket-count]').attr('data-basket-count', data.length);
+                inCart = [];
                 if(data.length>0) {
                     let list = '';
                     for (var i = 0; i < data.length ; i++) {
+                        inCart.push(data[i].id);
                         list = list + '<div class="header-basket__product" id="header-basket-product-'+i+'" data-price="'+data[i].price+'" data-quantity="'+data[i].qty+'">\
                             <div class="header-basket__product-img"><img src="'+data[i].pic+'"></div>\
                             <div class="header-basket__product-center">\
@@ -100,11 +103,16 @@ $(document).ready(function () {
                 } else {
                     $('[data-basket-count]').addClass('is-empty');
                 }      
-                $('.header-basket__link').show();          
+                $('.header-basket__link').show();   
+                $('[data-add-offer]').removeClass('btn-white').text('В корзину');
+                $('[data-addprod]').removeClass('btn-white').text('В корзину');
+                for (var i = 0; i < inCart.length ; i++) {
+                    $('[data-add-offer="'+inCart[i]+'"]').addClass('btn-white').text('Уже в корзине');
+                    $('[data-addprod="'+inCart[i]+'"]').addClass('btn-white').text('Уже в корзине');
+                }
             }
         });
-    }
-    refreshCart();
+    }    
 
     //изменение кол-ва в малой корзине
     $(document).on('change', '[data-add-prod]', function() {
@@ -153,14 +161,16 @@ $(document).ready(function () {
         }
         let offer = window.elementOffers[0][offerColor][offerSize];        
         if(offer['QUANTITY']==0) {
-            $('.product-box__actions').hide();
-            $('[data-add-offer]').addClass('not-availible').text('Нет в наличии');
-            $(document).find('[data-add-offer]').attr('data-add-offer', '');
-        } else {
-            $('.product-box__actions').show();
-            $('[data-add-offer]').removeClass('not-availible').text('В корзину');
-            $(document).find('[data-add-offer]').attr('data-add-offer', offer['ID']);
+            //
         }
+            $('.product-box__actions').show();
+            if(inCart.indexOf(offer['ID'])==-1) {
+                $('[data-add-offer]').removeClass('btn-white').text('В корзину');
+            }
+            else 
+                $('[data-add-offer]').addClass('btn-white').text('Уже в корзине');            
+            $(document).find('[data-add-offer]').attr('data-add-offer', offer['ID']);
+
         $(document).find('[data-price-offer]').html(offer['PRICE']+' ₽');
         $(document).find('.product-box__title').text(offer['NAME']);
         $(document).find('[data-qnt-offer]').attr('data-quantity-max', offer['QUANTITY']).val(1);
@@ -182,7 +192,7 @@ $(document).ready(function () {
         prodGallery.unSlider();
         $('.js-product-slider-main, .js-product-slider-nav').html('');
         for ( var i = 0; i < offer['PICS'].length ; i++) {
-            $('.js-product-slider-main').append('<a class="slide" href="'+offer['PICS'][i][0]+'"><img src="'+offer['PICS'][i][1]+'" alt=""></a>');
+            $('.js-product-slider-main').append('<a class="slide" data-fancybox="product" href="'+offer['PICS'][i][0]+'"><img src="'+offer['PICS'][i][1]+'" alt=""></a>');
             $('.js-product-slider-nav').append('<div class="slide"><img src="'+offer['PICS'][i][2]+'" alt=""></div>');
         }
         prodGallery.initSlider();
@@ -221,6 +231,7 @@ $(document).ready(function () {
         if($(this).attr('data-add-offer')=='') return;
         e.preventDefault();
         BX.showWait();
+        var button = $(this);
         $('[data-basket-count]').removeClass('active');
         $.ajax({
             type: "POST",
@@ -228,6 +239,7 @@ $(document).ready(function () {
             url: '/local/script/ajax.php',
             success: function(data) {
                 refreshCart();
+                $(button).addClass('btn-white').text('Уже в корзине');
                 BX.closeWait();                
             }
         });
@@ -248,11 +260,14 @@ $(document).ready(function () {
         $(card).find('.product-card__img img').attr('src', mass['PIC']);
         $(card).find('.product-card__article').text(mass['ARTICLE']?'Арт.'+mass['ARTICLE']:'');
         $(card).find('.js-quantity-input').attr('data-quantity-max', mass['QUANTITY']).val(1);
-        if(mass['QUANTITY']==0) {
-            $(card).find('[data-addprod]').html('Нет в наличии').addClass('not-availible').attr('data-addprod', '');
-        } else {
-            $(card).find('[data-addprod]').html('В корзину').removeClass('not-availible').attr('data-addprod', mass['ID']);
+
+        if(inCart.indexOf(mass['ID'])==-1) {
+            $(card).find('[data-addprod]').removeClass('btn-white').text('В корзину');
         }
+        else 
+            $(card).find('[data-addprod]').addClass('btn-white').text('Уже в корзине');            
+        
+        $(card).find('[data-addprod]').attr('data-addprod', mass['ID']);
     }
     //смена предложения по фотке в списке товаров
     $('[data-pic-offer]').on('click', function(e) {
@@ -269,6 +284,7 @@ $(document).ready(function () {
     $('[data-addprod]').on('click', function(e) {
         e.preventDefault();
         if($(this).attr('data-addprod')=='') return;
+        var button = $(this);
         let card = $(this).closest('.product-card');
         BX.showWait();
         $('[data-basket-count]').removeClass('active');
@@ -278,8 +294,11 @@ $(document).ready(function () {
             url: '/local/script/ajax.php',
             success: function(data) {
                 refreshCart();
+                $(button).addClass('btn-white').text('Уже в корзине');
                 BX.closeWait();                
             }
         });
     });
+
+    refreshCart();
 });
