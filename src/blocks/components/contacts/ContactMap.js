@@ -1,12 +1,20 @@
 import {Map} from "%components%/map/Map";
 
-export class ContactMap extends Map{
+export class ContactMap extends Map {
 
     controlOptions() {
+        if (!this.isMobile()) {
+            return {
+                position: {
+                    bottom: 60,
+                    right: 50
+                },
+            };
+        }
         return {
             position: {
                 bottom: 60,
-                right: 50
+                right: 15
             },
         };
     }

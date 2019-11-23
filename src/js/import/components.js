@@ -23,6 +23,7 @@ import {SwiperRecommended} from "%components%/product-recommended/SwiperRecommen
 import {SwiperAnnounce} from "%components%/announce/SwiperAnnounce";
 import {SwiperSystem} from "%components%/system/SwiperSystem";
 import {FancyBox} from "../classes/FancyBox";
+import {Video} from "../classes/Video";
 
 $(document).ready(function () {
     new CatalogFilter();
@@ -61,4 +62,5 @@ $(document).ready(function () {
     new InputMask().phone();
     new CheckoutForm();
     new FancyBox();
+    new Video();
 });

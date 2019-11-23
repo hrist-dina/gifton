@@ -171,6 +171,13 @@
       padding: 10px;
     }
 
+    & img {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+      display: block;
+    }
+
     &:nth-child(6n) {
       margin-right: 0;
     }
@@ -472,6 +479,7 @@
     & img {
       max-width: 100%;
       max-height: 100%;
+      width: 100%;
     }
 
     &-video {

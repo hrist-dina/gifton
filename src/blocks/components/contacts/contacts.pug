@@ -25,7 +25,9 @@ section.contacts__wrap
                     form(enctype="multipart/form-data" action="" method="POST").validator.js-contact-form
                         .contacts-form__title Отправить запрос
                         label.contacts-form__label
-                            input.contacts-form__input(name="name" type="text" placeholder="Имя Фамилия" data-validator-require='true')
+                            input.contacts-form__input(name="name" type="text" placeholder="Имя" data-validator-require='true')
+                        label.contacts-form__label
+                            input.contacts-form__input(name="first_name" type="text" placeholder="Фамилия" data-validator-require='true')
                         label.contacts-form__label
                             input.contacts-form__input(name="email" type="text"  placeholder="Email" data-validator-require='true' data-validator-type='email')
                         label.contacts-form__label
@@ -43,3 +45,17 @@ section.contacts__wrap
                                 span.form__input-checkbox-custom
                                 span.form__label-text Даю согласие на обработку персональных данных
                             button.btn.btn-fix.contacts__btn(type='submit' disabled=true) Отправить
+        .content-full.typography
+            p
+                b Реквизиты компании:
+            p
+                b ООО «ГИФТОН»
+            p
+                b   ИНН:
+                |  7728583400
+            p
+                b   Юр. адрес:
+                |  117574, г. Москва, Голубинская ул., д.16
+            p
+                b   КПП:
+                |  772801001

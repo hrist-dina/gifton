@@ -57,7 +57,7 @@
 
     @include to($break_lg) {
       @include container();
-      min-height: 800px;
+      min-height: 840px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;

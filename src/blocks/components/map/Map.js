@@ -57,12 +57,12 @@ export class Map {
                 // Необходимо указать данный тип макета.
                 iconLayout: "default#image",
                 // Своё изображение иконки метки.
-                iconImageHref: $('#'+this.map).attr('data-img')?$('#'+this.map).attr('data-img'):"img/map/placemark.png",
+                iconImageHref: $('#'+this.map).attr('data-img')?$('#'+this.map).attr('data-img'):"img/map/gifton-placemark.png",
                 // Размеры метки.
-                iconImageSize: [92, 103],
+                iconImageSize: [86, 95],
                 // Смещение левого верхнего угла иконки относительно
                 // её "ножки" (точки привязки).
-                iconImageOffset: [-45, -100]
+                iconImageOffset: [-43, -95]
             });
             map.geoObjects.add(placemark);
 
