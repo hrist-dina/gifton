@@ -112,6 +112,7 @@ $(document).ready(function () {
                 }
             }
         });
+        yaCounter32922876.reachGoal('vkorzinu');
     }    
 
     //изменение кол-ва в малой корзине

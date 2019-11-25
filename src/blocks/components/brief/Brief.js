@@ -62,6 +62,7 @@ export class Brief {
                     function(data) {
                         data=$.parseJSON(data);
                         $('[data-brief-step="3"]').find('.brief-settings').append('<p class="mess">Мы получили вашу заявку и скоро свяжемся с Вами</p>');
+                        yaCounter32922876.reachGoal('otpravzap');
                         BX.closeWait();                        
                         $(breifForm).find('[type=text], textarea').val('');
                     }
