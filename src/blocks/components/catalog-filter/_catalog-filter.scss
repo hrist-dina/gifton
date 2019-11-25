@@ -144,6 +144,7 @@
   &__block {
     @include filter-container();
     border-bottom: 1px solid #ecf1f5;
+    overflow: hidden;
 
     &:last-child {
       border-bottom: 0;
