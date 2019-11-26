@@ -56,7 +56,7 @@
     right: 0;
     bottom: 0;
     background: rgb(229, 229, 229);
-    @include transition(.4s);
+    @include transition(.4s, $cubic);
 
     &:before {
       content: '';
@@ -67,7 +67,7 @@
       background-color: #fff;
       left: 4px;
       bottom: 3px;
-      @include transition(.4s)
+      @include transition(.4s, $cubic);
     }
 
     &:after {

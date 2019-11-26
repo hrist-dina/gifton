@@ -27,6 +27,8 @@ $col-height: 30px;
   filter: $blur;
 }
 
+$ease-google: cubic-bezier(0.4, 0.0, 0.2, 1);
+$cubic: cubic-bezier(0.19,1,0.22,1);
 @mixin transition($time: .3s, $type: ease-in-out, $prop: all) {
   -webkit-transition: $time $type $prop;
   -moz-transition: $time $type $prop;
@@ -41,6 +43,14 @@ $col-height: 30px;
   -ms-transform: rotate($deg);
   -o-transform: rotate($deg);
   transform: rotate($deg);
+}
+
+@mixin scale($deg: 1.02) {
+  -webkit-transform: scale($deg);
+  -moz-transform: scale($deg);
+  -ms-transform: scale($deg);
+  -o-transform: scale($deg);
+  transform: scale($deg);
 }
 
 @mixin placeholder() {

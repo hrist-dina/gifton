@@ -1,0 +1,20 @@
+extends ../views/layouts/default
+
+include ../blocks/components/attention/attention
+include ../blocks/components/order-price/order-price
+
+block variables
+	- var title = "Корзина";
+	//- Данные для миксинов Pug
+	- var rightSidebar = true;
+	include ../data/basket
+
+block content
+	section.content-right-sidebar.content-right-sidebar_cut-bottom
+		.container
+			.content-full.typography
+				p
+					| Корзина пуста. Перейти в
+					|
+					a(href='/catalog/') каталог
+

@@ -203,7 +203,7 @@
     border: 2px solid #ecf1f5;
     cursor: pointer;
     @include col();
-    @include transition(.2s, linear);
+    @include transition(.2s, $cubic);
     @include lg-block {
       @include u-size(4, 12, $offset);
       height: 240px;
@@ -212,13 +212,8 @@
     @include xl-block {
       @include u-size(4.5, 14, $offset);
 
-      &:not(.swiper-slide-active):hover {
-        max-width: 370px;
-        @include u-size(4.6, 14, $offset);
-        @include shift-left(-.05);
-        @include shift-right(-.05);
-        height: 245px;
-        z-index: 1;
+      &:not(.swiper-slide-active):not(.selected):hover {
+        @include scale();
       }
     }
 
